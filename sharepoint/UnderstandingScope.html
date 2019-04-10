@@ -1,0 +1,518 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Understanding Scope of SharePoint Features</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="SharePoint Features can be scoped to the Farm, Web Application, Site Collection, and Web 
+                            Site level depending on the purpose of the feature. The Feature scope is 
+                            determined by the setting of the Scope attribute in the Feature element defined in the feature.xml file." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Understanding Scope of SharePoint Features</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Understanding Scope of SharePoint Features</h3>
+						</header>
+						<p>
+                            SharePoint 
+                            Features can be scoped to the Farm, Web Application, Site Collection, and Web 
+                            Site level depending on the purpose of the feature. The Feature scope is 
+                            determined by the setting of the Scope attribute in the Feature element defined 
+                            in the feature.xml file. 
+                        </p>
+                        <p>
+                            A sample 
+                            Feature element tag is given below:</p>
+                        <p>
+                            &lt;Feature Id=&quot;F62C96CF-79FD-44be-8882-E9BFBD199184&quot; 
+                        </p>
+                        <p>
+                            
+                            Title=&quot;Feature Title&quot; 
+                        </p>
+                        <p>
+                            
+                            Description=&quot;Feature Description&quot; 
+                        </p>
+                        <p>
+                            
+                            Version=&quot;1.0.0.0&quot; 
+                        </p>
+                        <p>
+                            <b>
+                            Scope=&quot;Site&quot; </b><span><span class="style1" 
+                                style="text-underline: single;">
+                        </p>
+                        <p>
+                            
+                            Hidden=&quot;false&quot;&gt; 
+                        </p>
+                        <p>
+                            &lt;/Feature&gt; 
+                            
+                        </p>
+                        <p>
+                            </p>
+                        <p>
+                            <b>Web Site 
+                            scoped Feature (Scope=&quot;Web&quot;):</b></p>
+                        <p>
+                            A Web Site 
+                            scoped Feature is one that can be activated only at the individual Web site 
+                            level. List templates, list instances, custom actions, event receivers, etc are 
+                            the some common elements for web site scoped features. Web Site scoped features 
+                            can be activated by using one of the following two methods:</p>
+                        <ul type="disc">
+                            <li>
+                                Run the following STSADM command:<br />
+                                stsadm -o installfeature -name FeatureFolderName –url 
+                                http://servername/site/subsite</li>
+                            <li>
+                                Open the Site Features page in the SharePoint site (Site Actions -&gt; Site 
+                                Settings -&gt; Modify All Site Settings -&gt; Site Features) and click the Activate 
+                                button.</li>
+                        </ul>
+                        
+                        <p>
+                            <b>Site 
+                            Collection scoped Feature (Scope=&quot;Site&quot;):</b></p>
+                        <p>
+                            A Site 
+                            Collection scoped Feature is one that can be activated at the site collection 
+                            level and contains items that apply to the site collection as a whole (for 
+                            example, content types that are shared across the site collection), as well as 
+                            items that can be activated per site (for example, list instances, etc). Site 
+                            Collection scoped features can be activated by using one of the following two 
+                            methods:</p>
+                        <ul type="disc">
+                            <li>
+                                Run the following STSADM command:<br />
+                                stsadm -o installfeature -name FeatureFolderName –url 
+                                http://servername/site/sitecollection</li>
+                            <li>
+                                Open the Site Features page in the SharePoint site (Site Actions -&gt; Site 
+                                Settings -&gt; Modify All Site Settings -&gt; Site Collection Features) and click the 
+                                Activate button.</li>
+                        </ul>
+                        
+                        <p>
+                            <b>Web Application scoped Feature (Scope=&quot;WebApplication&quot;):</b>
+                        <p>
+                            A Web Application scoped Feature is one that can be activated at the web application 
+                            level and contains items like administrative web application links, delegate 
+                            control registrations, feature/site template association, document form 
+                            registrations, etc. A farm Feature can contain, for example, links to /_layouts 
+                            pages and files, /_admin pages, and other elements. Web Applicationscoped 
+                            features can be activated by using one of the following two methods:</p>
+                        <ul type="disc">
+                            <li>
+                                Run the following STSADM command:<br />
+                                stsadm -o installfeature -name FeatureFolderName -url http://servername</li>
+                            <li>
+                                Open the &quot;Manage Web Application Features&quot; page in the Central Admin 
+                                application<b> </b>(SharePoint Central Administration -&gt; Application Management 
+                                -&gt; Manage Web Application Features) and click the Activate button.</li>
+                        </ul>
+                        <p>
+                            </p>
+                        <p>
+                            <b>Farm 
+                            scoped Feature (Scope=&quot;Farm&quot;):</b>
+                        <p>
+                            A Farm scoped 
+                            Feature can be activated at the server farm level. A farm Feature contains a 
+                            number of elements that are critical for implementing applications and logic 
+                            anywhere within a deployment. A farm Feature can contain, for example, links to 
+                            /_layouts pages and files, /_admin pages, and other elements. Farm scoped 
+                            features can be activated by using one of the following two methods:</p>
+                        <ul type="disc">
+                            <li>
+                                Run the following STSADM command:<br />
+                                stsadm -o installfeature -name FeatureFolderName</li>
+                            <li>
+                                Open the &quot;Manage Farm Features&quot; page in the Central Admin application<b>
+                                </b>(SharePoint Central Administration -&gt; Operations -&gt; Manage Farm Features) 
+                                and click the Activate button.</li>
+                        </ul>
+                        <p>
+                            <b>Note:</b>Farm scoped feature is 
+                            activated automatically once it is installed on the server farm. 
+                            
+                        </p>
+                        <p>
+                            </p>
+                        <p>
+                            <b>SharePoint 
+                            Element Types for Features:</b>
+                        <p>
+                            The following 
+                            table describes various element types for Features and shows their possible 
+                            settings for scope.</p>
+                        <table border="1" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td valign="top">
+                                    <p>
+                                        <b><span>Element</span></b></p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <b><span>Description</span></b></p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Scope</span></b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Content Type </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Contains a schema definition you can reuse and apply to multiple list 
+                                        definitions. </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Site</span></b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Content Type Binding </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Content type binding enables you to provision a content type on a list 
+                                        defined in the Onet.xml schema. Lists defined in the Onet.xml schema cannot be 
+                                        modified directly. </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Site</span></b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Control </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>A delegate control contains a registration for a well-known control 
+                                        installed on a Web page. This lets you replace existing controls, such as the 
+                                        Windows SharePoint Services search control, with another control. 
+                                        </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Farm</span></b><span>, <b>WebApplication</b>, <b>Site</b>, <b>
+                                        Web</b></span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" >
+                                    <p>
+                                        <span>Custom Action </span>
+                                    </p>
+                                </td>
+                                <td valign="top">
+                                    <p>
+                                        <span>You can define the following kinds of custom actions: 
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>· Content type links for the content type settings page</span><</p>
+                                    <p>
+                                        <span>· Drop-down menu actions for the drop-down menu that appears for an 
+                                        item</span></p>
+                                    <p>
+                                        <span>· Form toolbar buttons for New, Edit, or Display form toolbars.</span></p>
+                                    <p>
+                                        <span>· Site Settings link for the <b>Site Settings</b> page.</span></p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Farm</span></b><span>, <b>WebApplication</b>, <b>Site</b>, <b>
+                                        Web</b></span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Custom Action Group </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Defines a group of custom actions.</span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Farm</span></b><span>, <b>WebApplication</b>, <b>Site</b>, <b>
+                                        Web</b></span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Document Converter </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Contains the definition of a document converter. A document converter 
+                                        is a custom executable file that takes a document of one file type, and 
+                                        generates a copy of that file in another file type. </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>WebApplication</span></b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Feature/Site Template Association </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Binds a Feature to a site definition configuration so that created 
+                                        sites are provisioned with the Feature. </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Farm</span></b><span>, <b>WebApplication</b>, <b>Site</b></span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Field </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Contains a field definition that can be reused among multiple lists. 
+                                        </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Site</span></b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Hide Custom Action </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Hides a custom action that has been added through another custom 
+                                        action. </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Farm</span></b><span>, <b>WebApplication</b>, <b>Site</b>, <b>
+                                        Web</b></span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>List Instance </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Provisions a SharePoint site with a specific list of data. 
+                                        </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Site</span></b><span>, <b>Web</b></span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>List Template </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Contains a list definition or template, which defines a list that can 
+                                        be provisioned in a SharePoint site. </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Site</span></b><span>, <b>Web</b></span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Module </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Contains a set of files with which to provision sites. 
+                                        </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Site</span></b><span>, <b>Web</b></span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Receiver </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Contains an item event receiver registration. </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Web</span></b></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="172">
+                                    <p>
+                                        <span>Workflow </span>
+                                    </p>
+                                </td>
+                                <td valign="top" width="300">
+                                    <p>
+                                        <span>Contains the definition for a workflow in a list. </span>
+                                        
+                                    </p>
+                                </td>
+                                <td valign="top" width="180">
+                                    <p>
+                                        <b><span>Site</span></b></p>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

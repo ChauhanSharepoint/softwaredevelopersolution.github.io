@@ -1,0 +1,403 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Self-Joins</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A join does not always have to involve two different tables. You can join a table to itself, creating a self-join. Joining a table to itself can be useful when you want to compare values in a column to other values in the same column." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+
+ table.MsoNormalTable
+	{font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Self-Joins</strong></a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Self-Joins</h3>
+						</header>						
+                        <p>
+                            A join does not always have to involve two different tables. You can join a 
+                            table to itself, creating a <em>self-join</em>. Joining a table to itself can be 
+                            useful when you want to compare values in a column to other values in the same 
+                            column.</p>
+                        <p>
+                            To create a self-join, list a table twice in the FROM clause, and assign it a 
+                            different alias each time. Use the aliases to refer to the table in the 
+                            Projection and WHERE clauses as if it were two separate tables. (Aliases in 
+                            SELECT statements are discussed in Using Aliases and in the <cite>IBM&nbsp;Informix: Guide to SQL Syntax</cite>.)</p>
+                        <p>
+                            Just as in joins between tables, you can use arithmetic expressions in 
+                            self-joins. You can test for null values, and you can use an ORDER BY clause to 
+                            sort the values in a specified column in ascending or descending order.</p>
+                        <p>
+                            finds pairs of orders where the <strong>ship_weight</strong> 
+                            differs by a factor of five or more and the <strong>ship_date</strong> is not 
+                            null. The query then orders the data by <strong>ship_date</strong>. 
+                        </p>
+                        <pre>SELECT x.order_num, x.ship_weight, x.ship_date,</pre>
+                        <pre><span>       </span>y.order_num, y.ship_weight, y.ship_date </pre>
+                        <pre><span>&nbsp;&nbsp;&nbsp;</span>FROM orders x, orders y</pre>
+                        <pre><span>   </span>WHERE x.ship_weight &gt;= 5 * y.ship_weight</pre>
+                        <pre><span>      </span>AND x.ship_date IS NOT NULL</pre>
+                        <pre><span>      </span>AND y.ship_date IS NOT NULL</pre>
+                        <pre><span>   </span>ORDER BY x.ship_date</pre>
+                        <table border="1" cellpadding="0" class="MsoNormalTable" 
+                            style="width:100.0%;mso-cellspacing:1.5pt" width="100%">
+                            <thead>
+                                <tr>
+                                    <td colspan="6">
+                                        <p align="center">
+                                            <a name="wq136"></a>Table 5. Query Result</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="15%">
+                                        <p>
+                                            <b>order_num</b></p>
+                                    </td>
+                                    <td width="18%">
+                                        <p>
+                                            <b>ship_weight</b></p>
+                                    </td>
+                                    <td width="17%">
+                                        <p>
+                                            <b>ship_date</b></p>
+                                    </td>
+                                    <td width="15%">
+                                        <p>
+                                            <b>order_num</b></p>
+                                    </td>
+                                    <td width="18%">
+                                        <p>
+                                            <b>ship_weight</b></p>
+                                    </td>
+                                    <td width="17%">
+                                        <p>
+                                            <b>ship_date</b></p>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    <p>
+                                        1004</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        95.80</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        05/30/1998</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        1011</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        10.40</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        07/03/1998</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        1004</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        95.80</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        05/30/1998</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        1020</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        14.00</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        07/16/1998</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        1004</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        95.80</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        05/30/1998</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        1022</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        15.00</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        07/30/1998</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        1007</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        125.90</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        06/05/1998</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        1015</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        20.60</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        07/16/1998</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        1007</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        125.90</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        06/05/1998</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        1020</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        14.00</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        07/16/1998</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            If you want to 
+                            store the results of a self-join into a temporary table, append an INTO TEMP 
+                            clause to the SELECT statement and assign display labels to at least one set of 
+                            columns to rename them. Otherwise, the duplicate column names cause an error and 
+                            the temporary table is not created.</p>
+                        <p>
+                            which is similar to, labels all columns selected from the <strong>orders</strong> 
+                            table and puts them in a temporary table called <strong>shipping</strong>. 
+                        </p>
+                       
+                        <pre>SELECT x.order_num orders1, x.po_num purch1, </pre>
+                        <pre><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>x.ship_date ship1, y.order_num orders2, </pre>
+                        <pre><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>y.po_num purch2, y.ship_date ship2</pre>
+                        <pre><span>   </span>FROM orders x, orders y</pre>
+                        <pre><span>   </span>WHERE x.ship_weight &gt;= 5 * y.ship_weight</pre>
+                        <pre><span>      </span>AND x.ship_date IS NOT NULL</pre>
+                        <pre><span>      </span>AND y.ship_date IS NOT NULL</pre>
+                        <pre><span>   </span>ORDER BY orders1, orders2</pre>
+                        <pre><span>   </span>INTO TEMP shipping</pre>
+                        <p>
+                            If you query with <tt><span>SELECT *</span></tt> from table <strong>shipping</strong>, 
+                            you see the rows that shows. 
+                        </p>
+                        
+                        <pre><span>       </span>orders1 purch1<span>  </span>ship1<span>             </span>orders2 purch2<span> </span>ship2</pre>
+                        <pre><span>       </span>1004 8006<span>       </span>05/30/1998<span>        </span>1011 B77897<span>    </span>07/03/1998</pre>
+                        <pre><span>       </span>1004 8006<span>       </span>05/30/1998<span>        </span>1020 W2286<span>     </span>07/16/1998</pre>
+                        <pre><span>       </span>1004 8006<span>       </span>05/30/1998<span>        </span>1022 W9925<span>     </span>07/30/1998</pre>
+                        <pre><span>       </span>1005 2865<span>       </span>06/09/1998<span>        </span>1011 B77897<span>    </span>07/03/1998</pre>
+                        <pre><span>       </span>1019 Z55709<span>     </span>07/16/1998<span>        </span>1020 W2286<span>     </span>07/16/1998</pre>
+                        <pre><span>       </span>1019 Z55709<span>     </span>07/16/1998<span>        </span>1022 W9925<span>     </span>07/30/1998</pre>
+                        <pre><span>       </span>1023 KF2961<span>     </span>07/30/1998<span>        </span>1011 B77897<span>    </span>07/03/1998</pre>
+                        <p>
+                            You can join a table to itself more than once. The maximum number of self-joins 
+                            depends on the resources available to you.</p>
+                        <p>
+                            The self-join in creates a list of those items in the <strong>stock</strong> table 
+                            that are supplied by three manufacturers. The self-join includes the last two 
+                            conditions in the WHERE clause to eliminate duplicate manufacturer codes in rows 
+                            that are retrieved. 
+                        </p>
+                         
+                        <pre>SELECT s1.manu_code, s2.manu_code, s3.manu_code,s1.stock_num, s1.description 
+                        FROM stock s1, stock s2, stock s3 WHERE s1.stock_num = s2.stock_num
+                        AND s2.stock_num = s3.stock_num AND s1.manu_code &lt; s2.manu_code 
+                        AND s2.manu_code &lt; s3.manu_code ORDER BY stock_num</pre>
+                         
+                        <pre>HRO<span>       </span>HSK<span>       </span>SMT<span>             </span>1 baseball gloves</pre>
+                        <pre>ANZ<span>       </span>NRG<span>       </span>SMT<span>             </span>5 tennis racquet </pre>
+                        <pre>ANZ<span>       </span>HRO<span>       </span>HSK<span>             </span>110 helmet</pre>
+                        <pre>ANZ<span>       </span>HRO<span>       </span>PRC<span>             </span>110 helmet</pre>
+                        <pre>ANZ<span>       </span>HRO<span>       </span>SHM<span>             </span>110 helmet</pre>
+                        <pre>ANZ<span>       </span>HSK<span>       </span>PRC<span>             </span>110 helmet</pre>
+                        <pre>ANZ<span>       </span>HSK<span>       </span>SHM<span>             </span>110 helmet</pre>
+                        <pre>ANZ<span>       </span>PRC<span>       </span>SHM<span>             </span>110 helmet</pre>
+                        <pre>HRO<span>       </span>HSK<span>       </span>PRC<span>             </span>110 helmet</pre>
+                        <pre>HRO<span>       </span>HSK<span>       </span>SHM<span>             </span>110 helmet</pre>
+                        <pre>HRO<span>       </span>PRC<span>       </span>SHM<span>             </span>110 helmet</pre>
+                        <pre>KAR<span>       </span>NKL<span>       </span>PRC<span>             </span>301 running shoes</pre>
+                        <pre>KAR<span>       </span>NKL<span>       </span>SHM<span>             </span>301 running shoes</pre>
+                        <pre>KAR<span>       </span>PRC<span>       </span>SHM<span>             </span>301 running shoes</pre>
+                        <pre>NKL<span>       </span>PRC<span>       </span>SHM<span>             </span>301 running shoes</pre>
+                        <p>
+                            If you want to select rows from a payroll table to determine which employees 
+                            earn more than their manager, you might construct the self-join as the following 
+                            SELECT statement shows: 
+                        </p>
+                        <pre>SELECT emp.employee_num, emp.gross_pay, emp.level, </pre>
+                        <pre><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>emp.dept_num, mgr.employee_num, mgr.gross_pay, </pre>
+                        <pre><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>mgr.dept_num, mgr.level</pre>
+                        <pre><span>   </span>FROM payroll emp, payroll mgr</pre>
+                        <pre><span>   </span>WHERE emp.gross_pay &gt; mgr.gross_pay </pre>
+                        <pre><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>AND emp.level &lt; mgr.level</pre>
+                        <pre><span>      </span>AND emp.dept_num = mgr.dept_num</pre>
+                        <pre><span>   </span>ORDER BY 4</pre>
+                        <p>
+                            uses a <em>correlated subquery</em> to retrieve and list the 10 
+                            highest-priced items ordered. 
+                        </p>
+                        
+                        <pre>SELECT order_num, total_price FROM items a WHERE 10 &gt; (SELECT COUNT (*) 
+                        FROM items b WHERE b.total_price &lt; a.total_price)< ORDER BY total_price</pre>
+                        <p>
+                            returns the 10 rows that shows. 
+                        </p>
+                         
+                        <pre><span>       </span>order_num<span> </span>total_price</pre>
+                        <pre> <span>      </span>1018<span>      </span>$15.00</pre>
+                        <pre><span>       </span>1013<span>      </span>$19.80</pre>
+                        <pre><span>       </span>1003<span>      </span>$20.00</pre>
+                        <pre><span>       </span>1005<span>      </span>$36.00</pre>
+                        <pre><span>       </span>1006<span>      </span>$36.00</pre>
+                        <pre><span>       </span>1013<span>      </span>$36.00</pre>
+                        <pre><span>       </span>1010<span>      </span>$36.00</pre>
+                        <pre><span>       </span>1013<span>      </span>$40.00</pre>
+                        <pre><span>       </span>1022<span>      </span>$40.00</pre>
+                        <pre><span>       </span>1023<span>      </span>$40.00</pre>
+                        <p>
+                            You can create a similar query to find and list the 10 employees in the company 
+                            who have the most seniority.</p>
+                        
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+                        <li>
+							<span class="opener active">SQL</span>
+							<ul>
+								<li><a href="/sql/index.html">sql</a></li>
+                                <li><a href="/sql/SelfJoins.html">Self-Joins</a></li>
+                                <li><a href="/sql/ClusteredIndex.html">Clustered Index</a></li>
+                                <li><a href="/sql/VarcharAndNVarchar.html">Varchar And NVarchar</a></li>
+                                <li><a href="/sql/TableUserDefinedFunction.html">Table Valued User Defined Function</a></li>
+                                <li><a href="/sql/TriggersSQLSERVER.html">Triggers in SQL SERVER</a></li>
+							</ul>
+						</li>
+						<li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>                        
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav> 
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

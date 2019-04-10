@@ -1,0 +1,431 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Table-Valued User-Defined Function</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="•	The RETURNS clause defines a local return variable name for the table returned by the function. The RETURNS clause also defines the format of the table. The scope of the local return variable name is local within the function." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Table-Valued User-Defined Function</strong></a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">						
+                        <p>
+                            <span>In a table-valued user-defined function: </span>
+                        </p>
+                        <ul type="disc">
+                            <li><span>The RETURNS clause defines a local return variable name 
+                                for the table returned by the function. The RETURNS clause also defines the 
+                                format of the table. The scope of the local return variable name is local within 
+                                the function.</span></li>
+                            <li><span>The Transact-SQL statements in the function body build 
+                                and insert rows into the return variable defined by the RETURNS clause.</span></li>
+                            <li><span>When a RETURN statement is executed, the rows inserted 
+                                into the variable are returned as the tabular output of the function. The RETURN 
+                                statement cannot have an argument.</span></li>
+                        </ul>
+                        <p>
+                            <span>No Transact-SQL statements in a table-valued function can return a result 
+                            set directly to a user. The only information the function can return to the user 
+                            is the table returned by the function.</span></p>
+                            <p>
+                                        <span>The text in row table option is automatically set to 256 for a table 
+                                        returned by a user-defined function. This cannot be changed. The READTEXT, 
+                                        WRITETEXT, and UPDATETEXT statements cannot be used to read or write parts of 
+                                        any text, ntext, or image columns in the table. For more information, see.</span></p>
+                        
+                        <p>
+                            <b><span>Example</span></b></p>
+                        <p>
+                            <span>The following example creates the dbo.ufnGetContactInformation function 
+                            and demonstrates the components of the table-valued function. In this function, 
+                            the local return variable name is @retContactInformation. Statements in the 
+                            function body insert rows into this variable to build the table result returned 
+                            by the function.</span></p>
+                        <p>
+                            <span>USE AdventureWorks2008R2;</span></p>
+                        <p>
+                            <span>GO</span></p>
+                        <p>
+                            <span>IF OBJECT_ID(N&#39;dbo.ufnGetContactInformation&#39;, N&#39;TF&#39;) IS NOT NULL</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; DROP FUNCTION dbo.ufnGetContactInformation;</span></p>
+                        <p>
+                            <span>GO</span></p>
+                        <p>
+                            <span>CREATE FUNCTION dbo.ufnGetContactInformation(@ContactID int)</span></p>
+                        <p>
+                            <span>RETURNS @retContactInformation TABLE </span>
+                        </p>
+                        <p>
+                            <span>(</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; -- Columns returned by the function</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; ContactID int PRIMARY KEY NOT NULL, </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; FirstName nvarchar(50) NULL, </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; LastName nvarchar(50) NULL, </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; JobTitle nvarchar(50) NULL, </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; ContactType nvarchar(50) NULL</span></p>
+                        <p>
+                            <span>)</span></p>
+                        <p>
+                            <span>AS </span>
+                        </p>
+                        <p>
+                            <span>-- Returns the first name, last name, job title, and contact type for the 
+                            specified contact.</span></p>
+                        <p>
+                            <span>BEGIN</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; DECLARE </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @FirstName nvarchar(50), 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @LastName nvarchar(50), 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @JobTitle nvarchar(50), 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @ContactType nvarchar(50);</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; -- Get common contact information</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; SELECT </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @ContactID = BusinessEntityID, 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @FirstName = FirstName, 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @LastName = LastName</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; FROM Person.Person </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; WHERE BusinessEntityID = @ContactID;</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; -- Get contact job title</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; SELECT @JobTitle = </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CASE </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 
+                            Check for employee</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHEN 
+                            EXISTS(SELECT * FROM Person.Person AS p </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE p.BusinessEntityID = @ContactID AND p.PersonType = &#39;EM&#39;) 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            THEN (SELECT JobTitle </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            FROM HumanResources.Employee AS e</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE e.BusinessEntityID = @ContactID)</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 
+                            Check for vendor</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHEN 
+                            EXISTS(SELECT * FROM Person.Person AS p </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE p.BusinessEntityID = @ContactID AND p.PersonType = &#39;VC&#39;) 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            THEN (SELECT ct.Name </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            FROM Person.ContactType AS ct </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            INNER JOIN Person.BusinessEntityContact AS bec </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            ON bec.ContactTypeID = ct.ContactTypeID&nbsp; </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE bec.PersonID = @ContactID)</span></p>
+                        <p>
+                            <span><o:p>&nbsp;</o:p></span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 
+                            Check for store</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHEN 
+                            EXISTS(SELECT * FROM Person.Person AS p </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE p.BusinessEntityID = @ContactID AND p.PersonType = &#39;SC&#39;) 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            THEN (SELECT ct.Name </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            FROM Person.ContactType AS ct </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            INNER JOIN Person.BusinessEntityContact AS bec </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON 
+                            bec.ContactTypeID = ct.ContactTypeID&nbsp; </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE bec.PersonID = @ContactID)</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ELSE 
+                            NULL </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END;</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; -- Get contact type</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; SET @ContactType = </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CASE </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 
+                            Check for employee</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;WHEN EXISTS(SELECT * FROM 
+                            Person.Person AS p </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE p.BusinessEntityID = @ContactID AND p.PersonType = &#39;EM&#39;) 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THEN 
+                            &#39;Employee&#39;</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 
+                            Check for vendor</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHEN 
+                            EXISTS(SELECT * FROM Person.Person AS p </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE p.BusinessEntityID = @ContactID AND p.PersonType = &#39;VC&#39;)</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THEN 
+                            &#39;Vendor Contact&#39;</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 
+                            Check for store</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHEN 
+                            EXISTS(SELECT * FROM Person.Person AS p </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE p.BusinessEntityID = @ContactID AND p.PersonType = &#39;SC&#39;)</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THEN 
+                            &#39;Store Contact&#39;</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -- 
+                            Check for individual consumer</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHEN 
+                            EXISTS(SELECT * FROM Person.Person AS p </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE p.BusinessEntityID = @ContactID AND p.PersonType = &#39;IN&#39;) 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THEN 
+                            &#39;Consumer&#39;</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            -- Check for general contact</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WHEN 
+                            EXISTS(SELECT * FROM Person.Person AS p </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            WHERE p.BusinessEntityID = @ContactID AND p.PersonType = &#39;GC&#39;) 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THEN 
+                            &#39;General Contact&#39;</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; END;</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; -- Return the information to the caller</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; IF @ContactID IS NOT NULL </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; BEGIN</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; INSERT @retContactInformation</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT @ContactID, @FirstName, 
+                            @LastName, @JobTitle, @ContactType;</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; END;</span></p>
+                        <p>
+                            <span>&nbsp;&nbsp;&nbsp; RETURN;</span></p>
+                        <p>
+                            <span>END;</span></p>
+                        <p>
+                            <span>GO</span></p>                        
+                        <p>
+                            <span>The following example uses the table-valued function 
+                            dbo.ufnGetContactInformation in the FROM clause of two SELECT statements.</span></p>
+                        <p>
+                            <span>USE AdventureWorks2008R2;</span></p>
+                        <p>
+                            <span>GO</span></p>
+                        <p>
+                            <span>SELECT ContactID, FirstName, LastName, JobTitle, ContactType</span></p>
+                        <p>
+                            <span>FROM dbo.ufnGetContactInformation(1209);</span></p>
+                        <p>
+                            <span>GO</span></p>
+                        <p>
+                            <span>SELECT ContactID, FirstName, LastName, JobTitle, ContactType</span></p>
+                        <p>
+                            <span>FROM dbo.ufnGetContactInformation(5);</span></p>
+						
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+                        <li>
+							<span class="opener active">SQL</span>
+							<ul>
+								<li><a href="/sql/index.html">sql</a></li>
+                                <li><a href="/sql/SelfJoins.html">Self-Joins</a></li>
+                                <li><a href="/sql/ClusteredIndex.html">Clustered Index</a></li>
+                                <li><a href="/sql/VarcharAndNVarchar.html">Varchar And NVarchar</a></li>
+                                <li><a href="/sql/TableUserDefinedFunction.html">Table Valued User Defined Function</a></li>
+                                <li><a href="/sql/TriggersSQLSERVER.html">Triggers in SQL SERVER</a></li>
+							</ul>
+						</li>
+						<li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/Powershell/index.html">Powershell</a></li>                    
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav> 
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

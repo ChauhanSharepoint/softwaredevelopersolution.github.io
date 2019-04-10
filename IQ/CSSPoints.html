@@ -1,0 +1,621 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>CSS Points</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Pseudo-elements are fictional elements that do not exist in HTML. They address the element's sub-part (non-existent in HTML) and not the element itself. In CSS1 there are two pseudo-elements: 'first-line pseudo-element' and 'first-letter pseudo-element'." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>CSS Points</strong></a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">						
+                        <p>
+                            <b><u><span>
+                            What are pseudo-elements?</span></u></b></p>
+                        <p>
+                            <span>Pseudo-elements are fictional elements that do not exist in HTML. They 
+                            address the element&#39;s sub-part (non-existent in HTML) and not the element 
+                            itself. In CSS1 there are two pseudo-elements: &#39;first-line pseudo-element&#39; and 
+                            &#39;first-letter pseudo-element&#39;. They can be attached to block-level elements 
+                            (e.g. paragraphs or headings) to allow typographical styling of their sub-parts. 
+                            Pseudo-element is created by a colon followed by pseudo-element&#39;s name, e.g:
+                            <br />
+                            <br />
+                            P:first-line
+                            <br />
+                            H1:first-letter
+                            <br />
+                            <br />
+                            and can be combined with normal classes; e.g:
+                            <br />
+                            <br />
+                            P.initial:first-line
+                            <br />
+                            <br />
+                            First-line pseudo-element allows sub-parting the element&#39;s first line and 
+                            attaching specific style exclusively to this sub-part; e.g.:
+                            <br />
+                            <br />
+                            P.initial:first-line {text-transform: uppercase}
+                            <br />
+                            <br />
+                            &lt;P class=initial&gt;The first line of this paragraph will be displayed in uppercase 
+                            letters&lt;/P&gt;
+                            <br />
+                            <br />
+                            First-letter pseudo-element allows sub-parting the element&#39;s first letter and 
+                            attaching specific style exclusively to this sub-part; e.g.:
+                            <br />
+                            <br />
+                            P.initial:first-letter { font-size: 200%; color: red}
+                            <br />
+                            <br />
+                            &lt;P class=initial&gt;The first letter of this paragraph will be displayed in red and 
+                            twice as large as the remaining letters&lt;/P&gt;</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is contextual selector?</span></u></b></p>
+                        <p>
+                            <span>Contextual selector is a selector that addresses specific occurrence of an 
+                            element. It is a string of individual selectors separated by white space, a 
+                            search pattern, where only the last element in the pattern is addressed 
+                            providing it matches the specified context.
+                            <br />
+                            <br />
+                            TD P CODE {color: red}
+                            <br />
+                            <br />
+                            The element CODE will be displayed in red but only if it occurs in the context 
+                            of the element P which must occur in the context of the element TD.
+                            <br />
+                            <br />
+                            TD P CODE, H1 EM {color: red}
+                            <br />
+                            <br />
+                            The element CODE will be displayed in red as described above AND the element EM 
+                            will also be red but only if it occurs in the context of H1
+                            <br />
+                            <br />
+                            P .footnote {color: red}
+                            <br />
+                            <br />
+                            Any element with CLASS footnote will be red but only if it occurs in the context 
+                            of P
+                            <br />
+                            <br />
+                            P .footnote [lang]{color: red}
+                            <br />
+                            <br />
+                            Any element with attribute LANG will be red but only if it is classed as 
+                            &quot;footnote&quot; and occurs in the context of P</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                             What is ID selector?</span></u></b></p>
+                        <p>
+                            <span>ID selector is an individually identified (named) selector to which a 
+                            specific style is declared. Using the ID attribute the declared style can then 
+                            be associated with one and only one HTML element per document as to 
+                            differentiate it from all other elements. ID selectors are created by a 
+                            character # followed by the selector&#39;s name. The name can contain characters 
+                            a-z, A-Z, digits 0-9, period, hyphen, escaped characters, Unicode characters 
+                            161-255, as well as any Unicode character as a numeric code, however, they 
+                            cannot start with a dash or a digit.
+                            <br />
+                            <br />
+                            #abc123 {color: red; background: black}
+                            <br />
+                            <br />
+                            &lt;P ID=abc123&gt;This and only this element can be identified as abc123 &lt;/P&gt;</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                            What is CSS rule &#39;ruleset&#39;?</span></u></b></p>
+                        <p>
+                            <span>There are two types of CSS rules: ruleset and at-rule. Ruleset identifies 
+                            selector or selectors and declares style which is to be attached to that 
+                            selector or selectors. For example P {text-indent: 10pt} is a CSS rule. CSS 
+                            rulesets consist of two parts: selector, e.g. P and declaration, e.g. 
+                            {text-indent: 10pt}.
+                            <br />
+                            <br />
+                            P {text-indent: 10pt} - CSS rule (ruleset)
+                            <br />
+                            {text-indent: 10pt} - CSS declaration
+                            <br />
+                            text-indent - CSS property
+                            <br />
+                            10pt - CSS value</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                            What is embedded style? How to link?</span></u></b></p>
+                        <p>
+                            <span>The HEAD area, where the TITLE and META tags are found, is also used to 
+                            store CSS commands.
+                            <br />
+                            These are called embedded CSS. Any embedded CSS command will over-ride an 
+                            external CSS command of the same tag. Embedded commands are more specific to the 
+                            page.
+                            <br />
+                            <br />
+                            Embedded CSS codes are placed within the HEAD area of the page code. That is 
+                            anywhere after the &lt;HEAD&gt; tag and before the &lt;/HEAD&gt; tag. NOT in the HEAD tag 
+                            itself.
+                            <br />
+                            <br />
+                            &lt;style type=&quot;text/css&quot; media=screen&gt;
+                            <br />
+                            &lt;!--
+                            <br />
+                            p {font-family: georgia, serif; font-size: x-small;}
+                            <br />
+                            hr {color: #ff9900; height: 1px }
+                            <br />
+                            a:hover {color: #ff0000; text-decoration: none}
+                            <br />
+                            --&gt;
+                            <br />
+                            &lt;/style&gt;
+                            <br />
+                            <br />
+                            Now, whenever any of those elements are used within the body of the document, 
+                            they will be formatted as instructed in the above style sheet.</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                             Is CSS case sensitive?</span></u></b></p>
+                        <p>
+                            <span>Cascading Style Sheets (CSS) is not case sensitve. However, font families, 
+                            URLs to images, and other direct references with the style sheet may be.
+                            <br />
+                            <br />
+                            If your page uses an XML declaration and an XHTML DOCTYPE then the CSS selectors 
+                            will be case-sensitive for some browsers, if your page uses a HTML DOCTYPE then 
+                            your CSS selectors will be case-insensitive.
+                            <br />
+                            <br />
+                            It is a good idea to avoid naming classes where the only difference is the case, 
+                            for example:
+                            <br />
+                            div.myclass { ...}
+                            <br />
+                            div.myClass { ... }</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                             What is the difference between specifying css class with # and .? i.e. #Class1 
+                            or .Class1?</span></u></b></p>
+                        <p>
+                            <span>Stylesheeet class declared with # applies to items which have same Id 
+                            value as of the class name.
+                            <br />
+                            <br />
+                            like </span>
+                        </p>
+                        <p>
+                            <span>#div1</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            {<br />
+&nbsp;&nbsp; font-weight:bold;<br />
+                            }<br />
+                            &lt;div id=&quot;div1&quot;&gt;Styled Container&lt;/div&gt;<br />
+                            <br />
+                            Where css class declared with . can be used for any html element. 
+                            </span>
+                        </p>
+                        <p>
+                            <span>.class1<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position:relative;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left:50px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+                            <![if !supportLineBreakNewLine]>
+                            <br />
+                            <![endif]></span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            &lt;div class=&quot;class1&quot;&gt;Styled Container&lt;/div&gt;</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                             Can you specify more than one css class for any HTML element?</span></u></b></p>
+                        <p>
+                            <span>Yes, you can. Just provide a space between both the class names.
+                            <br />
+                            <br />
+                            like.. </span>
+                        </p>
+                        <p>
+                            <span>&lt;div class=&quot;class1 class2&quot;&gt;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            &lt;/div&gt;</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                             display and visibility properties are used to hide and show elements in any 
+                            page. Then how they are different from each other?</span></u></b></p>
+                        <p>
+                            <span>As said Both the properties are used to hide and show elements but they 
+                            are different in the way they both work. visibility property, set to hidden will 
+                            still occupy the space in the layout but display:none does not take up the space 
+                            in the page.</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                             What is the default value of &quot;position&quot; attribute in css?</span></u></b></p>
+                        <p>
+                            <span>Default value is &quot;static&quot;.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                             What are the values of &quot;Position&quot; attribute in CSS?</span></u></b></p>
+                        <p>
+                            <span>Possible values are
+                            <br />
+                            static, relative, absolute, fixed, inherit</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                             Explain inline, embedded and external style sheets .</span></u></b></p>
+                        <p>
+                            <span>There are three ways of inserting a style sheet:
+                            <br />
+                            <br />
+                            1. External style sheet
+                            <br />
+                            2. Internal style sheet
+                            <br />
+                            3. Inline style
+                            <br />
+                            <br />
+                            <b>External Style Sheet :</b>
+                            <br />
+                            An external style sheet is ideal when the style is applied to many pages.
+                            <br />
+                            With an external style sheet, you can change the look of an entire Web site by 
+                            changing one file.
+                            <br />
+                            Each page must link to the style sheet using the &lt;link&gt; tag. The &lt;link&gt; tag goes 
+                            inside the head section:
+                            <br />
+                            &lt;head&gt;
+                            <br />
+                            &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;mystyle.css&quot; /&gt;
+                            <br />
+                            &lt;/head&gt;
+                            <br />
+                            <br />
+                            <b>Internal Style Sheet :</b>
+                            <br />
+                            An internal style sheet should be used when a single document has a unique 
+                            style. Internal styles sheet needs to put in the head section of an HTML page, 
+                            by using the &lt;style&gt; tag, like this:
+                            <br />
+                            &lt;head&gt;
+                            <br />
+                            &lt;style type=&quot;text/css&quot;&gt;
+                            <br />
+                            hr {color:sienna}
+                            <br />
+                            p {margin-left:20px}
+                            <br />
+                            body {background-image:url(&quot;images/back40.gif&quot;)}
+                            <br />
+                            &lt;/style&gt;
+                            <br />
+                            &lt;/head&gt;
+                            <br />
+                            <b>
+                            <br />
+                            Inline Styles :</b>
+                            <br />
+                            If only a small piece of code has to be styled then inline style sheets can be 
+                            used.
+                            <br />
+                            An inline style loses many of the advantages of style sheets by mixing content 
+                            with presentation.
+                            <br />
+                            To use inline styles you use the style attribute in the relevant tag.
+                            <br />
+                            The style attribute can contain any CSS property.
+                            <br />
+                            The example shows how to change the color and the left margin of a paragraph:
+                            <br />
+                            &lt;p style=&quot;color:sienna;margin-left:20px&quot;&gt;This is a paragraph.&lt;/p&gt;</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                            How do I center block-elements with CSS1?</span></u></b></p>
+                        <p>
+                            <span>There are two ways of centering block level elements:
+                            <br />
+                            <br />
+                            1. By setting the properties margin-left and margin-right to auto and width to 
+                            some explicit value:
+                            <br />
+                            <br />
+                            BODY {width: 30em; background: cyan;}
+                            <br />
+                            P {width: 22em; margin-left: auto; margin-right: auto}
+                            <br />
+                            <br />
+                            In this case, the left and right margins will each be four ems wide, since they 
+                            equally split up the eight ems left over from (30em - 22em). Note that it was 
+                            not necessary to set an explicit width for the BODY element; it was done here to 
+                            keep the math clean.
+                            <br />
+                            <br />
+                            Another example:
+                            <br />
+                            <br />
+                            TABLE {margin-left: auto; margin-right: auto; width: 400px;}
+                            <br />
+                            In most legacy browsers, a table&#39;s width is by default determined by its 
+                            content. In CSS-conformant browsers, the complete width of any element 
+                            (including tables) defaults to the full width of its parent element&#39;s content 
+                            area. As browser become more conformant, authors will need to be aware of the 
+                            potential impact on their designs.</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                             State some limitations of style sheets?</span></u></b></p>
+                        <p>
+                            <span>Style sheets do have its own share of limitations some of them are as 
+                            follows: -
+                            <br />
+                            1) Inconsistent browser support
+                            <br />
+                            2) Vertical control limitations
+                            <br />
+                            3) Margin collapsing, float containment, control of element shapes, etc
+                            <br />
+                            4) Lack of column declaration and variables are some of the limitations present 
+                            in CSS.</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                             How to display a link without underline and display underline when mouseover on 
+                            the link using CSS?</span></u></b></p>
+                        <p>
+                            <span>Write following css class. </span>
+                        </p>
+                        <p>
+                            <span>a<br />
+                            {<br />
+&nbsp;&nbsp;&nbsp; text-decoration:none;<br />
+                            }<br />
+                            a:hover<br />
+                            {<br />
+&nbsp;&nbsp;&nbsp; text-decoration:underline;<br />
+                            }<br />
+                            <br />
+                            The first class will force all anchor tag (link)to not display any docoration 
+                            (underline) and second class will force all anchor tag (link) to display text 
+                            decoration as underline when mouse over it (ie. display underline when mouse 
+                            over).</span></p>
+                        <p>
+                            <b><u><span>
+                             How to float the image left side and let the page content fill right side and 
+                            bottom in CSS?</span></u></b></p>
+                        <p>
+                            <span>Wrap the div element with fload:left style. </span>
+                        </p>
+                        <p>
+                            <span>&lt;div style=&quot;float: left&quot;&gt;<br />
+                            &lt;img src=&quot;fsdaf.gif&quot; /&gt;Your contents goes here.<br />
+                            &lt;/div&gt;<br />
+                            <br />
+                            To reverse, ie float the image in the right side and let the content fill the 
+                            space at the left and further down, specify float:right style </span></p>
+                        <p>
+                            <b><u><span>
+                             How to page break after an html element in CSS?</span></u></b></p>
+                        <p>
+                            <span>Use following code snippet </span>
+                        </p>
+                        <p>
+                            <span>&lt;p style=&quot;page-break-after: always&quot;&gt;Place your text&lt;/p&gt;<br />
+                            After above code, the rest content will appear in the next page. (It will not be 
+                            visible as next page in browser but on the printer and in Print Preview, you 
+                            will see them as next page)</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                            How to line break in CSS?</span></u></b></p>
+                        <p>
+                            <span>Use display:block style with span. </span>
+                        </p>
+                        <p>
+                            <span>&lt;span style=&quot;display:block;&quot; /&gt;</span></p>
+                         
+                        <p>
+                            <b><u><span>
+                             What are the possible values of the &quot;Position&quot; attributes?</span></u></b></p>
+                        <p>
+                            <span>The possible value of the &quot;Position&quot; attributes are
+                            <br />
+                            absolute
+                            <br />
+                            fixed
+                            <br />
+                            inherit
+                            <br />
+                            relative
+                            <br />
+                            static
+                            <br />
+                            <br />
+                            By default, relative value is considered. </span></p>
+                        <p>
+                            <b><u><span>
+                             How to write styles for all html elements of the same type?</span></u></b></p>
+                        <p>
+                            <span>If we want to maintain uniformity in the look and feel of all same type of 
+                            elements on the page, we can write CSS class with the element name.eg.
+                            <br />
+                            <br />
+                            If we want to change the look and feel of all table and h1 element on the page, 
+                            we can write like this. </span>
+                        </p>
+                        <p>
+                            <span>table
+                            <br />
+                            {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size:10pt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-family: Arial;<br />
+                            }</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            h1<br />
+                            {<br />
+&nbsp;&nbsp;&nbsp; font-size:14pt;<br />
+&nbsp;&nbsp;&nbsp; padding-left:5px;<br />
+&nbsp;&nbsp;&nbsp; margin:0px;<br />
+&nbsp;&nbsp;&nbsp; color:#094BBB;<br />
+                            }<br />
+                            <br />
+                            The first class &quot;table&quot; will apply to all the tables on the page and second 
+                            class &quot;h1&quot; will apply to all the h1 element of the page.
+                            <br />
+                            <br />
+                            Note that the name of the class is not prefixed with the . (dot) as it happens 
+                            with normal css class name. </span></p>
+                        <p>
+                            <b><u><span>
+                             How to write conditional statement in CSS?</span></u></b></p>
+                        <p>
+                            <span>Following is the example of conditional statement in CSS. 
+                            </span>
+                        </p>
+                        <p>
+                            <span>&nbsp;&lt;head&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;style type=&quot;text/css&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:blue;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt;</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!--[if IE 7]&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;style type=&quot;text/css&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color:red;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;![endif]--&gt;<br />
+                            &nbsp;&lt;/head&gt;<br />
+                            If this code will run in IE7 browser, the background color of the page will be 
+                            red, for other browser it will be default color (white).</span></p>
+						
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+                        <li>
+							<span class="opener active">Interview Question</span>
+							<ul>
+								<li><a href="/IQ/index.html">Interview Question</a></li>
+                                <li><a href="/IQ/InterviewTips.html">Interview Tips</a></li>
+                                <li><a href="/IQ/SkillsAndExperience.html">Skills and Experience</a></li>
+                                <li><a href="/IQ/ProjectManagementPoints.html">Project Management Points</a></li>
+                                <li><a href="/IQ/ADONETPoints.html">ADONET Points</a></li>
+                                <li><a href="/IQ/AJAXPoints.html">AJAX Points</a></li>
+                                <li><a href="/IQ/HtmlPoints.html">HTML Points</a></li>
+                                <li><a href="/IQ/jQueryPoints.html">jQuery Points</a></li>
+                                <li><a href="/IQ/HTMLDHTMLPoints.html">HTML DHTML Points</a></li>
+                                <li><a href="/IQ/WebServicesPoints.html">Web Services, XML, XSLT</a></li>
+                                <li><a href="/IQ/CSSPoints.html">CSS Points</a></li>
+                                <li><a href="/IQ/OOPSPoints.html">OOPS Points</a></li>
+                                <li><a href="/IQ/SharepointPoints.html">Sharepoint Points</a></li>
+                                <li><a href="/IQ/SQLServerPoints.html">SQL Server Points</a></li>
+                                <li><a href="/IQ/ASPNETPoints.html">ASPNET Points</a></li>
+                                <li><a href="/IQ/WWFPoints.html">WWF Points</a></li>
+                                <li><a href="/IQ/WPFPoints.html">WPF Points</a></li>
+                                <li><a href="/IQ/WCFPoints.html">WCF Points</a></li>
+                                <li><a href="/IQ/Sharepoint.html">Sharepoint</a></li>
+							</ul>
+						</li>
+						<li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/Powershell/index.html">Powershell</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>                        
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Allow Unsafe Updates</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="your code is processing a POST request then make sure you call  SPUtility.ValidateFormDigest
+                            before you do anything else. This will ensure that the post request is validated 
+                            (that it is not a cross-site scripting attack) and after that you will not have 
+                            to worry about AllowUnsafeUpdatesbecause its default value will 
+                            be true  after the form digest is validated." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Allow Unsafe Updates</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Allow Unsafe Updates</h3>
+						</header>
+                        <p>
+                            <span >In short here is how to deal with <b>AllowUnsafeUpdates</b>:</span></p>
+                        <p>
+                            <b><span >1</span></b><span >) Don’t update SharePoint objects 
+                            from your code behind on GET requests as if you do so your code will be 
+                            exploitable via a 
+                            <span >cross-site scripting</span>. If you 
+                            understand the consequences of doing this and still want to do it then read 
+                            below about how to use the <b>AllowUnsafeUpdates</b> property.</span></p>
+                        <p>
+                            <b><span >2</span></b><span >) If your code is processing a 
+                            POST request then make sure you call <span>SPUtility.ValidateFormDigest() </span>
+                            before you do anything else. This will ensure that the post request is validated 
+                            (that it is not a cross-site scripting attack) and after that you will not have 
+                            to worry about <b>AllowUnsafeUpdates</b>,<b> </b>because its default value will 
+                            be “<b><i>true</i></b>” after the form digest is validated. To find out more 
+                            about this read </span>
+                            the second part of this article.</p>
+                        <p>
+                            <span >The Microsoft idea behind introducing the <b>AllowUnsafeUpdates</b> 
+                            property is to protect YOU from cross-site scripting attacks. The way 
+                            this works is that if your application is running in an HTTPContext (i.e. it’s a 
+                            web part for instance) and the request is a GET request then SharePoint will 
+                            refuse to do any changes unless the value of <b>AllowUnsafeUpdates </b>is set to 
+                            true and by default it will be false for GET requests. If you try to do any 
+                            updates to lists, webs or any SharePoint objects that require an <b>SPSite</b> 
+                            to be created first, and if you don’t set <b>AllowUnsafeUpdates</b> to true you 
+                            will get this exception:</span></p>
+                        <p>
+                            <i><span >System.Exception: Microsoft.SharePoint.SPException: The 
+                            security validation for this page is invalid. Click Back in your Web browser, 
+                            refresh the page, and try your operation again. —&gt; 
+                            System.Runtime.InteropServices.COMException (0x8102006D): The security 
+                            validation for this page is invalid. Click Back in your Web browser, refresh the 
+                            page, and try your operation again.</span></i><span ></span></p>
+                        <p>
+                            <span >It is important to understand that if you are writing a class 
+                            library for example, your code will behave differently when called from a web 
+                            application and when called from a rich client. Actually if the <b>
+                            HTTPContext.Current</b> is null then <b>AllowSafeUpdates</b> will be always 
+                            true. This is the case in rich clients where no cross-scripting is possible as 
+                            there are simply no web requests.</span></p>
+                        <p>
+                            <span >Usually when you create your own <b>SPSite</b> or <b>SPWeb </b>
+                            objects, i.e. when you are not getting them from the <b>SPContext </b>(such as 
+                            SPContext.Web), and when you try to update anything such as web or list 
+                            properties, list items metadata etc, you may get the exception listed above. 
+                            This is a clear indication that <b>AllowUnsafeUpdates </b>of the SPWeb is false 
+                            and this is preventing you from doing the update. This problem is resolved 
+                            easily by setting the <b>AllowUnsafeUpdates</b> of the parent web object to 
+                            true. Still sometimes even after you have done this you may still be getting the 
+                            same error. This is typically caused by one of the the following reasons:</span></p>
+                        <p>
+                            <b><span >A</span></b><span >) You have set the <b>
+                            AllowUnsafeUpdate </b>to true for the wrong SPWeb</span></p>
+                        <p>
+                            <span >You have to be careful because sometimes the <b>ParentWeb</b> of 
+                            an object is not the same instance of the web you have retrieved the object 
+                            from. For example when you go <b>initialWeb.Lists[listId] </b>you would expect 
+                            that the returned list’s ParentWeb instance is the same as you <b>initialWeb</b>. 
+                            However this is not the case. So if somewhere later in your code you go <b>
+                            list.ParentWeb.UpdateSomething()</b> this will not work because you have never 
+                            set the <b>AllowUnsafeUpdates</b> property of <b>list.ParentWeb</b>. You have 
+                            set it for your <b>initialWeb </b>but even that this is the same web as the 
+                            list’s parent web both are different instances. Usually you see the error and 
+                            then you go and investigate in Reflector whether this is the same instance or 
+                            not.</span></p>
+                        <p>
+                            <span >The author suggests that you can set the <b>HttpContent.Current
+                            </b>to null before you do your updates and then reassign its initial preserved 
+                            value when done. This will work great but remember to set the HTTPContent to 
+                            null as early as possible. In the post above probably SharePoint uses the <b>
+                            site.RootWeb </b>to do the updates to the site scoped features and the RootWeb’s
+                            <b>AllowUnsafeUpdates </b>hasn’t been set to true explicitly.</span></p>
+                        <p>
+                            <b><span >B</span></b><span >) The <b>AllowUnsafeUpdates</b> 
+                            gets reset to false sometimes after you have set it to true</span></p>
+                        <p>
+                            <span >If we have a look at how the property is managed it turns out 
+                            that it is stored in the request object associated with every SPWeb (which is 
+                            actually a COM object)</span></p>
+                        <p>
+                            <span >[SharePointPermission(SecurityAction.Demand, UnsafeSaveOnGet =
+                            <span>true</span>)]</span></p>
+                        <p>
+                            <span >private <span>void</span> SetAllowUnsafeUpdates(<span>bool</span> 
+                            allowUnsafeUpdates)</span></p>
+                        <p>
+                            <span >{</span></p>
+                        <p>
+                            <span >this.Request.SetIgnoreCanary(allowUnsafeUpdates);</span></p>
+                        <p>
+                            <span >}</span></p>
+                        <p>
+                            <span >This actually means that every time the request is reset, the 
+                            property will be also reset to its default value. The <b>m_Request</b> member is 
+                            modified when a new web is created, when the web is disposed or when the <b>
+                            SPWeb.Invalidate()</b> method is called.</span></p>
+                        <p>
+                            <span >internal <span>void</span> Invalidate()</span></p>
+                        <p>
+                            <span >{</span></p>
+                        <p>
+                            <span >if (<span>this</span>.m_Request != <span>null</span>)</span></p>
+                        <p>
+                            <span >{</span></p>
+                        <p>
+                            <span >if (<span>this</span>.m_RequestOwnedByThisWeb)</span></p>
+                        <p>
+                            <span >{</span></p>
+                        <p>
+                            <span >SPRequestManager.Release(<span>this</span>.m_Request);</span></p>
+                        <p>
+                            <span >}</span></p>
+                        <p>
+                            <span >this.m_Request = <span>null</span>;</span></p>
+                        <p>
+                            <span >}</span></p>
+                        <p>
+                            <span >this.m_bInited = <span>false</span>;</span></p>
+                        <p>
+                            <span >this.m_bPublicPropertiesInited = <span>false</span>;</span></p>
+                        <p>
+                            <span >this.m_Url = <span>null</span>;</span></p>
+                        <p>
+                            <span >}</span></p>
+                        <p>
+                            <span >So any operation that calls <b>SPWeb.Invalidate()</b> will reset
+                            <b>AllowUnsafeUpdate </b>to its default value. And for code running under 
+                            HTTPContext, i.e. web applications, this default value for a GET request will be 
+                            false. I’ve looked up for you all legitimate cases for which Invalidate() is 
+                            being called by the SharePoint object model. These cases are:</span></p>
+                        <p>
+                            <b><span >1</span></b><span >) When the <b>Name</b> or the <b>
+                            ServerRelativeUrl</b> properties of the <b>SPWeb</b> are changed and then <b>
+                            Update()</b> is called. In this case the AllowUnsafeUpdate is reset because with 
+                            the change of these properties the URL of the web will change and logically the 
+                            request object will change as it will now point to a different URL.</span></p>
+                        <p>
+                            <b><span >2</span></b><span >) When any object that implements
+                            <b>ISecurable </b>(those are SPWeb, SPList and SPListItem) breaks or reverts 
+                            their role definition inheritance. This means every time you call <b>
+                            SPRoleDefinitionCollection.BreakInheritance()</b>, <b>BreakRoleInheritance()</b>,
+                            <b>ResetRoleInheritance()</b> or set the value of <b>HasUniquePerm</b> the <b>
+                            AllowUnsafeUpdates</b> property of the parent web will reset to its default 
+                            value and you may need to set it back to true in order to do further updates to 
+                            the same objects.</span></p>
+                        <p>
+                            <b><span >3</span></b><span >) In many cases when an exception 
+                            is caught by the SharePoint object model when you try to retrieve any sort of 
+                            data the <b>AllowUnsafeUpdates </b>of the parent web will be reset to false as a 
+                            precaution to protect against potential exploits. In those cases however the 
+                            objects will be in unknown state anyway after the request has been reset and the 
+                            exception is re-thrown so they are of no practical interest.</span></p>
+                        <p>
+                            <span >And finally it is also good to mention that you may get another 
+                            related exception when trying to update your SharePoint objects and that is:</span></p>
+                        <p>
+                            <i><span >System.Exception: Microsoft.SharePoint.SPException: Cannot 
+                            complete this action.Please try again. —&gt; 
+                            System.Runtime.InteropServices.COMException (0×80004005): Cannot complete this 
+                            action.</span></i><span ></span></p>
+                        <p>
+                            <span >This usually happens when some updates have been made to an 
+                            object (usually SPSite, SPWeb or SPList) that may be clashing with your changes 
+                            and SharePoint refuses to do the update. To recover from this situation you 
+                            simply need to create fresh copies of the SPSite and the SPWeb objects and do 
+                            the updates on the objects retrieved from the fresh copies. And of course don’t 
+                            forget to set the <b>AllowUnsafeUpdates </b>to true for the freshly created 
+                            SPWeb if required.</span></p>
+                        <p>
+                        
+                        </p>
+                       
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

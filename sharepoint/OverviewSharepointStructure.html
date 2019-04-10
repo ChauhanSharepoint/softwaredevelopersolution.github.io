@@ -1,0 +1,335 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Overview Sharepoint Structure</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A single site collection cannot span multiple content databases. Microsoft recommends that a 
+                            single content database should not grow beyond 200 Gigabytes. This isn’t a hard 
+                            limit, and with expensive hardware you can go up 4 TB however 200GB is the best practice for 
+                            optimal performance and reasonable backup procedures." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Overview Sharepoint Structure</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Overview Sharepoint Structure</h3>
+						</header>
+						
+                        <p >
+                            <b><i><span>Sites</span></i></b></p>
+                        
+                        <p >
+                        <b><span>Size</span></b>
+                        <br />
+                            <span>The biggest factor in choosing to go with sites is size. A single site 
+                            collection cannot span multiple content databases. Microsoft recommends that a 
+                            single content database should not grow beyond 200 Gigabytes. This isn’t a hard 
+                            limit, and with expensive hardware (Disk sub-system performance of 0.25 IOPs per 
+                            GB. 2 IIOPs per GB) you can go up 4 TB however 200GB is the best practice for 
+                            optimal performance and reasonable backup procedures. That being said, it really 
+                            depends on the type of site that you are designing. For an internet facing site, 
+                            a single site collection can work great. However for an enterprise portal and 
+                            document management system that will service thousands of users and multiple 
+                            departments, multiple site collections is usually the better approach since 
+                            200GB is a drop in the bucket these days.</span></p>
+                        <p >
+                            <b><span>Master Pages</span></b>
+                            <br />
+                            <span>When making the decision to do multiple site collections, there are some 
+                            tradeoffs to be aware of. Without the use of custom code, a master page cannot 
+                            span multiple site collections. Any highly branded site would usually have a 
+                            custom Master page. Master pages are like the skin of the site and define its 
+                            look and feel as well as layout. That being said, by developing a custom feature 
+                            you can have a unified master page across multiple site collections however 
+                            making changes to that Master page cannot be deployed from SharePoint designer. 
+                            You will have to deploy it via custom code as well.</span></p>
+                        <p >
+                            <b><span>Security Groups</span></b>
+                            <br />
+                            <span>Another drawback is security groups. Site collections don’t share security 
+                            groups, and if you have very granular security, there may potentially be a lot 
+                            of maintenance in replicating the same groups in each site collection. If you 
+                            need to have multiple site collections, one way of mitigating this is by using 
+                            active directory groups inside of SharePoint groups. That way you can make the 
+                            change in one place and have it reflected in each site collection as long as 
+                            they all reference the same AD Group.</span></p>
+                        <p >
+                            <b><span>Lookup Lists</span></b>
+                            <br />
+                            <span>Lookup lists are another reason to use a single site collection. Site 
+                            columns which use lookup lists only work in the same site collection. Though you 
+                            can use the content type hub to replicate content types across site collections, 
+                            lookup lists can’t be replicated.</span></p>
+                        <p >
+                            <b><span>Consistent Navigation</span></b>
+                            <br />
+                            <span>For the best user experience, global navigation (also called the top menu) 
+                            should be the same across your entire portal whether you are using single or 
+                            multiple site collections.&nbsp; Global navigation is limited to a single site 
+                            collection, so again unless you use a custom control or code, you will be doing 
+                            a lot of manual updates to keep every site collections navigation in sync.</span></p>
+                        <p >
+                            <b><i><span>Site Collections</span></i></b></p>
+                        <p >
+                            <b><span>Size</span></b>
+                            <br />
+                            <span>The biggest advantage of going to site collections is that your content 
+                            databases will scale much better beyond the recommended limit of 200GB. What 
+                            this means is that you can use multiple databases to power your portal, which 
+                            also means potentially multiple database servers. This allows your SharePoint 
+                            server to scale much better along the data tier with additional servers.</span></p>
+                        <p >
+                            <span>Also of advantage is the ability to place database servers in separate geo 
+                            distributed locations to increase the performance of farms that are accessed 
+                            across multiple offices around the world.</span></p>
+                        <p >
+                            <b><span>Security Groups</span></b>
+                            <br />
+                            <span>This was listed as a positive for sites, however if your requirements need 
+                            certain sites to be highly secured and have very different and separate security 
+                            groups (for example multiple domains) then splitting out a site as a site 
+                            collection is a better choice.</span></p>
+                        <p >
+                            <b><span>Backup and Performance</span></b>
+                            <br />
+                            <span>Since using multiple site collections allows you to use multiple content 
+                            databases, it also makes backing up your databases much more practical since 
+                            each one will be a manageable size. Another advantage, though not as apparent, 
+                            is when you go to do an update of a service pack or hotfix or even an upgrade of 
+                            the whole server, this also means updating your content database. If you have a 
+                            database that is terabytes in size the update could take an extremely long time 
+                            which means more downtime for your users.</span></p>
+                       
+                        <h3>
+                            <span>Web Application</span></h3>
+                        <p >
+                            <span>In the SharePoint hierarchy, a web application is the top tier.&nbsp; It 
+                            is nothing but an IIS (Internet Information Services) website which is 
+                            specifically configured to run as a SharePoint site and contains at least one or 
+                            more site collections. While creating a web application you can either associate 
+                            it with an existing application pool or you can create a new application to be 
+                            associated with it. While creating your SharePoint web application you also need 
+                            to specify a content database and details like authentication method used to 
+                            connect to the content database.&nbsp; It is possible to have multiple content 
+                            databases for different site collections for the web application. Using multiple 
+                            databases makes it easier for content database management, backup, restore, 
+                            etc...</span></p>
+                        <p >
+                            <span>(1) A container in a configuration database that stores administrative 
+                            settings and entry-point URLs for site collections. (2) A software application 
+                            that uses HTTP as its core communication protocol and delivers information to 
+                            the user by using Web-based languages such as HTML and XML.</span></p>
+                        <h3>
+                            <span>Site Collections</span></h3>
+                        <p >
+                            <span>As I mentioned above, a web application needs to have one or more site 
+                            collections. A site collection is a logical container for grouping sites and 
+                            allows hierarchical arrangement of sites within it. A site collection has 
+                            exactly one default top level site and may have many child sites. By default all 
+                            sites of a site collection share navigation, security/permissions, templates and 
+                            content types so you should plan to include all sites in single site collection 
+                            if they all need to share these things.&nbsp; If needed, you can specifically 
+                            change settings for a particular site if required.</span></p>
+                        <p>
+                            <span>A set of Web sites that are in the same content database, have the same 
+                            owner, and share administration settings. A site collection can be identified by 
+                            a GUID or the URL of the top-level site for the site collection. Each site 
+                            collection contains a top-level site, can contain one or more subsites, and can 
+                            have a shared navigation structure.</span></p>
+                        <p >
+                            </p>
+                        <h3>
+                            <span>Sites</span></h3>
+                        <p >
+                            <span>A site collection has at least one parent site which is created by default 
+                            when you create a site collection and may have many other sites within its 
+                            hierarchy. A site allows us to organize and store all content in SharePoint, the 
+                            content can be Lists, Libraries (Document Library, Picture Library, Report 
+                            Library, Form Library etc...) Web pages, Web parts, Sites and Workspaces. 
+                            Further a site can have child sites in its hierarchy.<span 
+                                class="apple-converted-space">&nbsp;</span></span></p>
+                        <p >
+                            <span class="apple-converted-space"></span></p>
+                        <h2>
+                            <span>Problem</span></h2>
+                        <p>
+                            <span>I have been asked all too often by clients, &quot;When should we use a Site 
+                            Collection and when should we use a Sub Site?” What&#39;s the best option and how do 
+                            I choose?</span></p>
+                        <h2>
+                            <span>Solution</span></h2>
+                        <p>
+                            <span>The good thing to remember is that there is no definitive answer to this 
+                            question, however, there are more technical factors that can help you decide on 
+                            whether you should chose a site collection over a sub site or vice versa.</span></p>
+                        <h3>
+                            <span>Some of the reasons that I might pick a Site Collection</span></h3>
+                        <ol start="1" type="1">
+                            <li ><span>I have a branded new site and I want it created with no 
+                                relation to any other site. If you are creating a new site and it&#39;s not related 
+                                to any other sites that you have in your existing site hierarchy or SharePoint 
+                                farm then you chose a site collection.</span></li>
+                            <li ><span>If you require a dedicated URL to your site. You want 
+                                your client to access and upload documents so you want to create a URL for your 
+                                partner at<span class="apple-converted-space">&nbsp;</span><a 
+                                    href="http://partner.mycompany.com/">http://partner.mycompany.com</a>&nbsp;. You 
+                                can bind this URL to a site collection. This URL cannot be bound to a sub site 
+                                of an existing site collection.</span></li>
+                            <li ><span>You want to create a managed path called&nbsp;<b>divisions</b>&nbsp;and 
+                                you want to create a site for each division you your organization. Each division 
+                                wants complete control over their site and sub sites and want to be found at 
+                                URL&nbsp;<b>divisions/divisionName.</b></span></li>
+                            <li ><span>Where you require to have a quota set on a site created 
+                                you will need to use a site collection as only site collections can have quotas 
+                                assigned to them.</span></li>
+                            <li ><span>If you need a dedicated Content Database for your site 
+                                as you expect to have vast amounts of data and documents and you require it to 
+                                be more secure than normal, you can can configure a dedicated site collection 
+                                with a dedicated content database attached to it.</span></li>
+                            <li ><span>If you were purchasing hosted environments from a 
+                                hosting provider then you would also see the difference in a site collection and 
+                                a sub site in the cost model offered by the hosting company. You will notice 
+                                that getting a site collection provisioned with have a higher admin cost than 
+                                just creating a sub site. Sub site creation can be carried out by a member of 
+                                the owners group of any site or site collection. Whereas site collection 
+                                creation has to be completed by Farm Administrators unless there is a mechanism 
+                                provided though web wizards.</span></li>
+                            <li ><span>As part of a backup and recovery policy you want your 
+                                data to be very quickly restored if there are any problems or if there has been 
+                                content that has gotten deleted that you need to retrieve. A site collection is 
+                                better in this case because you can restore the site collection more easily than 
+                                you can restore a site or a sub site of a site.</span></li>
+                        </ol>
+                        <h3>
+                            <span>Some of the reasons why you should select a sub site:</span></h3>
+                        <ol start="1" type="1">
+                            <li ><span>You want to inherit the same security for the new sub 
+                                site as its parent site &amp; the security model for your organization already 
+                                exists. You want to create a new site but you don&#39;t want to change or move away 
+                                from the existing security model implemented already.</span></li>
+                            <li ><span>There has been a team in your organization unit that 
+                                created many new site columns and site content types that you would like to use 
+                                throughout your site and its sub sites -- as parent sites can contain site 
+                                content types, these can be used in all subs sites of the site hierarchy -- Site 
+                                Collections break this functionality.</span></li>
+                            <li ><span>You want to allow the Site Owners and Designers to 
+                                manage all sites that get created without any overhead of having to log a 
+                                support call for a new site collection.</span></li>
+                            <li ><span>You want to aggregate data throughout your site 
+                                hierarchy using Web Parts like the Content Query Web Part, Data View Web Part 
+                                and other data aggregation Web Parts.</span></li>
+                            <li ><span>You have a site template that you want to apply to the 
+                                new site that creates a couple of lists and libraries as part of the template -- 
+                                an example may be you want a Tasks Manager Site Template where a site can 
+                                maintain and manage all your tasks using tasks lists and to have them integrate 
+                                with Outlook.</span></li>
+                            <li ><span>If your site is going to be a short lived site and it&#39;s 
+                                only going to be used in the process of creating some other content. An example 
+                                might be a meeting site where you create a site that is created from a Meetings 
+                                Templates. You can record and schedule meetings regarding the production of a 
+                                catalog of products for your organization. This site is short lived and won&#39;t be 
+                                in existence after the production of the catalog is completed.</span></li>
+                        </ol>
+						
+                        <p>
+                           
+                            </p>
+                       
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

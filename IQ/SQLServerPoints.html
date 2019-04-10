@@ -1,0 +1,3258 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>SQL Server Points</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="What is a dead lock?A Dead Lock happens when two or more transaction is locked from a common resource. In this case each must have to wait for the other to unlock that resource." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>SQL Server Points</strong></a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						
+                        <p>
+                            <b><span>
+                            Difference 
+                            between Database Migration and Upgradation ?</span></b></p>
+                        <p>
+                            <span><b>&nbsp;What is Migration ?</b>
+                            <br />
+                            Migrating from one Product type to another Product type.
+                            <br />
+                            <b>ie: &nbsp;MSAccess to SQL Server, Oracle to SQL Server</b>
+                            <br />
+                            <b>What is Upgradation ?</b>
+                            <br />
+                            Upgrading from one Edition/Version to another Edition/Version within the same 
+                            Product type.
+                            <br />
+                            <b>ie: SQL Server 2005 to SQL Server 2008</b></span></p>
+                        <p>
+                            <b><span>
+                             What is &quot;Locking&quot; 
+                            concept in DBMS?</span></b></p>
+                        <p>
+                            <span>&nbsp;Locking is the most common type of concurrency control mechanism. In this 
+                            approach, any data is retrieved by an active user for updating, must be locked 
+                            or denied to other users until updating is not complete.
+                            <br />
+                            <br />
+                            Locking is of three types,
+                            <br />
+                            1&gt; Shared Lock(S)
+                            <br />
+                            2&gt; Exclusive Lock(X)
+                            <br />
+                            3&gt; Dead Lock(D)</span></p>
+                         
+                        
+                        <p>
+                            <b><span>
+                             What is a &quot;dead lock&quot;?</span></b></p>
+                        <p>
+                            <span>&nbsp;A &quot;Dead Lock&quot; happens when two or more transaction is locked from a 
+                            common resource. In this case each must have to wait for the other to unlock 
+                            that resource.</span></p>
+                         
+                        <p>
+                            <b><span>
+                            What is &quot;Functional 
+                            Dependency&quot;?</span></b></p>
+                        <p>
+                            <span>&nbsp;Suppose there are two sets of attributes, X and Y. Then Y is said to be 
+                            functionally dependent to X if a given value for each attribute in X uniquely 
+                            determines the value of the attributes in Y.
+                            <br />
+                            <br />
+                            Here X is called the determinant of the functional dependency and the functional 
+                            dependency is denoted as X---&gt;Y</span></p>
+                         
+                        
+                        <p>
+                            <b><span>
+                             What is Instance-aware and Instance-unaware Services in SQL Server ?</span></b></p>
+                        <p>
+                            <span><b>&nbsp;Instance-aware</b> services are associated with a specific instance of 
+                            SQL Server, and have their own registry hives. We can install multiple copies of 
+                            instance-aware services by running SQL Server Setup for each component or 
+                            service.
+                            <br />
+                            ie:
+                            <br />
+                            1.SQL Server
+                            <br />
+                            2.SQL Server Agent
+                            <br />
+                            3.Analysis Services
+                            <br />
+                            4.Reporting Services
+                            <br />
+                            5.Full-text search
+                            <br />
+                            <br />
+                            <b>Instance-unaware</b> services are shared among all installed SQL Server 
+                            instances. They are not associated with a specific instance, are installed only 
+                            once, and cannot be installed side-by-side.
+                            <br />
+                            ie:
+                            <br />
+                            1.Integration Services
+                            <br />
+                            2.SQL Server Browser
+                            <br />
+                            3.SQL Server Active Directory Helper
+                            <br />
+                            4.SQL Writer</span></p>
+                         
+                        
+                        <p>
+                            <b><span>
+                             What is the difference between following two statements ? 1. SELECT 
+                            &#39;DotnetFunda&#39; &#39;SQL Server&#39; 2. SELECT &#39;DotnetFunda&#39; = &#39;SQL Server&#39;</span></b></p>
+                        <p>
+                            <span>&nbsp;Difference between the two statements given below
+                            <br />
+                            <br />
+                            1. SELECT &#39;DotnetFunda&#39; &#39;SQL Server&#39;
+                            <br />
+                            <br />
+                            2. SELECT &#39;DotnetFunda&#39; = &#39;SQL Server&#39;
+                            <br />
+                            <br />
+                            The value &#39;DotnetFunda&#39; uses &#39;SQL Server&#39; as an Alias name. Alias will be the 
+                            column Name.</span></p>
+                        <p>
+                            <span>SELECT &#39;DotnetFunda&#39; &#39;SQL Server&#39;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            Go</span></p>
+                        <p>
+                            <span>SQL Server
+                            <br />
+                            DotnetFunda
+                            <br />
+                            <br />
+                            The value &#39;SQL Server&#39; assignes to &#39;DotnetFunda&#39;. Target will be the column 
+                            Name.</span></p>
+                        <p>
+                            <span>SELECT &#39;DotnetFunda&#39; = &#39;SQL Server&#39;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            Go</span></p>
+                        <p>
+                            <span>DotnetFunda
+                            <br />
+                            SQL Server</span></p>
+                         
+                        <p>
+                            <b><span>
+                             
+                            When will SQL Server throw an Error: &quot;MSSQLSERVER ERROR 576&quot; ?</span></b></p>
+                        <p>
+                            <span>&nbsp;The record-size limit for tables that use SPARSE columns is 8018 bytes. 
+                            When the converted data plus existing record data exceeds 8,018 bytes, The Error 
+                            will be thrown &quot;MSSQLSERVER ERROR 576&quot;.
+                            <br /> 
+                            When columns are converted between SPARSE and NONSPARSE types, Database Engine 
+                            keeps a copy of the current record data. This temporarily doubles the storage 
+                            that is required for the record, So the Error triggered.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How will you calculate maximum range of &quot;INT&quot; Data Type ?</span></b></p>
+                        <p>
+                            <span>&nbsp;The Formula Is:
+                            <br />
+                            <b>2 ^ (N-1)</b>
+                            <br />
+                            <br />
+                            here, &quot;<b>N</b> &quot; is nothing but size of the Data type.&quot;<b>^</b> &quot; means Power 
+                            of the value.
+                            <br />
+                            <br />
+                            <b>1. We just want to get the Maximum length of the Data type &quot;INT&quot;.</b></span></p>
+                        <p>
+                            <span>Select (max_length * 8) &#39;Bit(s)&#39; from sys.types Where [name] = &#39;Int&#39;</span></p>
+                        <p>
+                            <span>The answer is : <b>32 Bit(s)</b>
+                            <br />
+                            <br />
+                            <b>2. Now, we can apply the formula for Range</b></span></p>
+                        <p>
+                            <span>Select Power(Cast(2 as Varchar),(max_length * 8) -1) from sys.types Where 
+                            [name] = &#39;Int&#39;</span></p>
+                        <p>
+                            <span>The Result is: <b>2147483648</b>
+                            <br />
+                            <br />
+                            the maximum range of &quot;INT&quot; data type is <b>-2147483648 to 2147483647</b></span></p>
+                         
+                        <p>
+                            <b><span>
+                             When will you go for SQL Server Authentication instead of Windows Authentication 
+                            ?</span></b></p>
+                        <p>
+                            <span>&nbsp;If the server is in <b>different domain</b> from our users. So, The two 
+                            domains don&#39;t trust each other. So, We have to use SQL Server authentication.</span></p>
+                        <p>
+                            <b><span>
+                             What is the use of &quot;SET NOCOUNT ON;&quot; in SQL Server?</span></b></p>
+                        <p>
+                            <span>&nbsp;This statement is used to stop the message that shows the count of the 
+                            number of rows affected by the SQL statement written in the stored procedure or 
+                            directly SQL Statement. You can view this message in the Management Studio in 
+                            the Message tab of the result pan.
+                            <br />
+                            <br />
+                            When it is ON - the number of affected rows will not be returned
+                            <br />
+                            When it is OFF - the number of affected rows will be returned
+                            <br />
+                            <br />
+                            More on this ....
+                            <br />
+                            <br />
+                            @@ROWCOUNT is used to get the number of rows affected. Note that either the SET 
+                            NONCOUNT is ON or OFF, @@ROWCOUNT is always updated with the number of rows 
+                            affected. </p>
+                         
+                        <p>
+                            <b><span>
+                             What is the difference between Host_Name() and ServerProperty(&#39;MachineName&#39;) 
+                            Functions ?</span></b></p>
+                        <p>
+                            <span>&nbsp;The <b>Host_Name()</b> and <b>ServerProperty(&#39;MachineName&#39;)</b> Function 
+                            will return the System Name(Machine Name).
+                             <br />
+                            But the difference is ...
+                            <br />
+                            <br />
+                            <b>Host_Name()</b> will return the Client Machine name.
+                            <br />
+                            <br />
+                            <b>ServerProperty(&#39;MachineName&#39;)</b> will return Server Machine name.
+                            <br />
+                            <br />
+                            ie: CLIENT SQL Server tools only installed on &quot;Computer1&quot; (SQL Server Management 
+                            Studio) - Connectivity tools only
+                            <br />
+                            <br />
+                            SERVER SQL Server tools installed on &quot;Computer2&quot; (Databases, SQL Server 
+                            Services, SQL Server Management Studio, Profiler,...Etc.,)
+                            <br />
+                            <br />
+                            Now You are the &quot;Client machine (Computer1)&quot;, You want to access the Database 
+                            from the &quot;Server Machine (Computer2)&quot;.
+                            <br />
+                            <br />
+                            <br />
+                            <b>Client Machine (Computer1):</b>
+                            <br />
+                            <br />
+                            Select Host_Name(), ServerProperty(&#39;MachineName&#39;)
+                            <br />
+                            <br />
+                            Result:
+                            <br />
+                            Computer1, Computer2
+                            <br />
+                            <br />
+                            <b>Server Machine (Computer2):</b>
+                            <br />
+                            <br />
+                            Select Host_Name(), ServerProperty(&#39;MachineName&#39;)
+                            <br />
+                            <br />
+                            Result:
+                            <br />
+                            Computer2, Computer2</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Tabular Value Function ?</span></b></p>
+                        <p>
+                            <span>&nbsp;A Tabular Value function is one which provides a table like structure as 
+                            an output from the function, it is like a view which is non updateable </span></p>
+                        <p>
+                            <b><span>
+                             How to get the value 
+                            of first day of the week?</span></b></p>
+                        <p>
+                            <span>&nbsp;using SELECT @@DATEFIRST we can get the value of first day of the week.
+                            <br />
+                            if it will return 1 then it means Monday is the first day but if it returns 7 
+                            then that means Sunday is the first day.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How we can specify the 
+                            first day of the week?</span></b></p>
+                        <p>
+                            <span>Using Set DateFirst we can specify the first day of week. synatx for this 
+                            is as: </span>
+                        </p>
+                        <p>
+                            <span>SET DATEFIRST 1</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            it means monday is the first day of the week.
+                             </span>
+                        </p>
+                        <p>
+                            <b><span>
+                             Is it possible to find out .mdf and .ldf file name from the backup(.bak) file? 
+                            If yes, then how?</span></b></p>
+                        <p>
+                            <span>YES. It is possible to find out the name of .ldf and .mdf file from the 
+                            backup file.
+                            <br />
+                            <br />
+                            Use below script to find out the details: </span>
+                        </p>
+                        <p>
+                            <span>RESTORE FILELISTONLY FROM DISK=&#39;D:\virendra.bak&#39;</span></p>
+                        
+                        <p>
+                            <b><span>
+                             Can we restore the database forcefully when it is in use via SQL script?</span></b></p>
+                        <p>
+                            <span>When you try to restore the database (<b>RESTORE DATABASE</b>) through 
+                            command and if it&#39;s in use then SQL SERVER will not allow you to do so. It will 
+                            throw an error.
+                            <br />
+                            <br />
+                            But there is a way to restore database forcefully. But there are chances of data 
+                            loss.
+                            <br />
+                            <br />
+                            To restore database forcefully, one need to bring it in SINGLE USER mode. and 
+                            then restore it and again put the database in MULTI USER mode. Make sure, you 
+                            are always using MASTER database for this operation.
+                            <br />
+                            <br />
+                            See below script. </span>
+                        </p>
+                        <p>
+                            <span>--To Restore forcefully to an existing database which is in use.</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            Use Master;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            ALTER DATABASE virendra SET SINGLE_USER WITH ROLLBACK IMMEDIATE&nbsp; 
+                            </span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            RESTORE DATABASE virendra FROM DISK=&#39;D:\virendra.bak&#39; WITH REPLACE 
+                            </span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            ALTER DATABASE virendra SET MULTI_USER&nbsp; </span>
+                        </p>
+                          
+                        <p>
+                            <b><span>
+                             Can we execute &quot;BCP&quot; command directly in the SQL Server Management studio?</span></b></p>
+                        <p>
+                            <span>No, we can&#39;t not. BCP utility is a command line utility. To execute it 
+                            within SQL Server Management studio, one has to enable the xp_cmdshell. We can 
+                            execute bcp command through xp_cmdshell only. xp_cmdshell by default is false. 
+                            We need to enable it.
+                            <br />
+                            <br />
+                            Use below script to enable BCP
+                             </span>
+                        </p>
+                        <p>
+                            <span>EXEC sp_configure &#39;show advanced options&#39;, 1</span></p>
+                        <p>
+                            <span> 
+                            GO</span></p>
+                        <p>
+                            <span> 
+                            -- To update the currently configured value for advanced options.</span></p>
+                        <p>
+                            <span> 
+                            RECONFIGURE</span></p>
+                        <p>
+                            <span> 
+                            GO</span></p>
+                        <p>
+                            <span> 
+                            EXEC sp_configure &#39;xp_cmdshell&#39;, 1</span></p>
+                        <p>
+                            <span> 
+                            GO</span></p>
+                        <p>
+                            <span> 
+                            RECONFIGURE</span></p>
+                        <p>
+                            <span> 
+                            GO</span></p>
+                         
+                         
+                        <p>
+                            <b><span>
+                             Difference between Table Variable (@tbl) and temporary table (#temp or ##temp )</span></b></p>
+                        <p>
+                            <span><b>1.</b> Transaction logs are not recorded for the table variables.
+                            <br />
+                            <br />
+                            <b>2.</b> A procedure having temporary table is not pre-compiled, while an 
+                            execution plan of procedures with table variables can be statically compiled in 
+                            advance.
+                            <br />
+                            <br />
+                            <b>3.</b> Table variables exist only in the same scope as variables.
+                            <br />
+                            Differencing to the temporary tables, they are not visible in inner stored 
+                            procedures and in exec(string) statements. Also, they cannot be used in an 
+                            insert/exec statement.</span></p>
+                          
+                        <p>
+                            <b><span>
+                             How we can 
+                            check the database permission for any user?</span></b></p>
+                        <p>
+                            <span>&nbsp;SELECT * FROM fn_my_permissions (null, &#39;DATABASE&#39;);</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Name the table 
+                            where the Index information is saved</span></b></p>
+                        <p>
+                            <span>&nbsp;the table name is sys.indexes</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the page size of Index 
+                            Page ?</span></b></p>
+                        <p>
+                            <span>&nbsp;8 kb</span></p>
+                         
+                        <p>
+                            <b><span>
+                             will the increase in the size of view state will affect the performance of the 
+                            page?</span></b></p>
+                        <p>
+                            <span>&nbsp;Yes, it will decrease the performance of the page.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Can we create Web 
+                            service in SQL Server 2005?</span></b></p>
+                        <p>
+                            <span>&nbsp;Yes, we can create web service in SQL Server 2005 using an HTTP EndPoint</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the use of APP_NAME()?</span></b></p>
+                        <p>
+                            <span>APP_NAME() returns the name of the application for the current section. It 
+                            returns the application name that is set by the application by default. 
+                            </span>
+                        </p>
+                        <p>
+                            <span>SELECT APP_NAME()</span></p>
+                        <p>
+                            <span>It outputs &quot;SQL Enterprise Manager&quot; if you are currently working on it.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the use of CHAR function?</span></b></p>
+                        <p>
+                            <span>CHAR function is used to convert the numeric ASCII code to a character. 
+                            </span>
+                        </p>
+                        <p>
+                            <span>SELECT CHAR(90)</span></p>
+                        <p>
+                            <span>---&gt;D</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How can we check the 
+                            locks defined in a DB ?</span></b></p>
+                        <p>
+                            <span>&nbsp;using inbuilt stored proceduce
+                            <br />
+                            <b>sp_lock</b></span></p>
+                         
+                        <p>
+                            <b><span>
+                             What are the variuos lock types ?</span></b></p>
+                        <p>
+                            <span>&nbsp;SHARED
+                            <br />
+                            UPDATE
+                            <br />
+                            EXCLUSIVE</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the use of MOD function?</span></b></p>
+                        <p>
+                            <span>&nbsp;MOD function is used to get the remainder of a division. It takes the 
+                            dividend and divider as its arguments. </span>
+                        </p>
+                        <p>
+                            <span>MOD(dividend,divider)</span></p>
+                        <p>
+                            <span> 
+                            Example:- </span>
+                        </p>
+                        <p>
+                            <span>SELECT MOD(12,5) </span>
+                        </p>
+                        <p>
+                            <span>it will output 2.
+                            <br />
+                            <br />
+                            It will return the dividend if the divider will 0.</span></p>
+                         
+                        <p>
+                            <b><span>
+                              Which function is used to know the current active user within the host Operating 
+                            System?</span></b></p>
+                        <p>
+                            <span>SYSTEM_USER function is used to know the current active user within the 
+                            host Operating System. </span>
+                        </p>
+                        <p>
+                            <span>SELECT SYSTEM_USER</span></p>
+                        <p>
+                            <span>--&gt;Hemendra Chauhan</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Why FLOOR function is used?</span></b></p>
+                        <p>
+                            <span>&nbsp;FLOOR function is used to roundup a non integer number to the next least 
+                            integer.
+                            <br />
+                            Syntax:- </span>
+                        </p>
+                        <p>
+                            <span>FLOOR(expression) </span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            Example:- </span>
+                        </p>
+                        <p>
+                            <span>SELECT FLOOR(355.34) FROM dual;</span></p>
+                        <p>
+                            <span> 
+                            It will output 355. If we will pass a positive no. it will return only the 
+                            integer part. </span>
+                        </p>
+                        <p>
+                            <span>SELECT FLOOR(-355.34) FROM dual;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            It will output -356. When we pass a negative value then it returns an integer 
+                            less than the value passed.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Which function is used to convert the integer value into spaces?</span></b></p>
+                        <p>
+                            <span>The SPACE function convert the specified integer value into spaces. 
+                            </span>
+                        </p>
+                        <p>
+                            <span>SELECT SPACE(4)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            It will output a string of four spaces &quot; &quot;.</span></p>
+                         <p>
+                            <b><span>
+                            What is the use of CEILING 
+                            function?</span></b></p>
+                        <p>
+                            <span>&nbsp;The CEILING function does the opposite of FLOOR function. It returns the 
+                            smallest integer greater than the value you specify.
+                            <br />
+                            <br />
+                            Syntax:- </span>
+                        </p>
+                        <p>
+                            <span>CEILING(expression)[/CODE</span></p>
+                        <p>
+                            <span> 
+                            <b>Example:-</b>&nbsp; </span>
+                        </p>
+                        
+                        <p>
+                            <span>SELECT CEILING(400.45) FROM dual</span></p>
+                         
+                        <p>
+                            <span>
+                            <br />
+                            It will output 401.</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            &nbsp;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            NOTE:- It rounds up the non-integer number to the next highest value. If you 
+                            enter negative value, it will return the lower absolute value.</span></p>
+                        < 
+                        <p>
+                            <span>
+                            <br />
+                            <b>Example:-</b>&nbsp; </span>
+                        </p>
+                         
+                        <p>
+                            <span>SELECT CEILING(-400.45) FROM dual</span></p>
+                         
+                        <p>
+                            <span> 
+                            It will output 400.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How to get the year 
+                            part from the given Date?</span></b></p>
+                        <p>
+                            <span>&nbsp;There are two methods to get the Year part from given date:
+                            <br />
+                            DECLARE @GivenDate datetime
+                            <br />
+                            SET @GivenDate=&#39;2010-02-22 23:06:38.300&#39;
+                            <br />
+                            <br />
+                            (1) Year(GETDATE()) Output: 2010
+                            <br />
+                            (2) DatePart(yy,GETDATE()) Output: 2010</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How to get the Day part 
+                            from the given Date?</span></b></p>
+                        <p>
+                            <span>&nbsp;There are two methods to get the Date part from given date:
+                            <br />
+                            DECLARE @GivenDate datetime
+                            <br />
+                            SET @GivenDate=&#39;2010-02-22 23:06:38.300&#39;
+                            <br /> 
+                            (1) DAY(GETDATE()) Output: 22
+                            <br />
+                            (2) DatePart(d,GETDATE()) Output: 22</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How to 
+                            get the month value/month part from the given Date?</span></b></p>
+                        <p>
+                            <span>&nbsp;There are three methods to get the Month part from given date:
+                            <br />
+                            DECLARE @GivenDate datetime
+                            <br />
+                            SET @GivenDate=&#39;2010-02-22 23:06:38.300&#39;
+                            <br />
+                            (1) MONTH(GETDATE()) OutPut: 2
+                            <br />
+                            (2) SUBSTRING(CONVERT(varchar(30),GETDATE(),107),1,3) Output: Feb
+                            <br />
+                            (3) DatePart(M,GETDATE()) output: 2</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Adding year to a date ??</span></b></p>
+                        <p>
+                            <span>Example below illustrates : </span>
+                        </p>
+                        <p>
+                            <span>Select DATEADD(year,1,getdate())</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Adding minutes to a date ??</span></b></p>
+                        <p>
+                            <span>Example below illustrates : </span>
+                        </p>
+                        <p>
+                            <span>Select DATEADD(minute,1,getdate())</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Adding months to a Date in SQL ??</span></b></p>
+                        <p>
+                            <span>Example below illustrates : </span>
+                        </p>
+                        <p>
+                            <span>Select DATEADD(mm,1,getdate())</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the 
+                            difference between .rdl and .rdlc report.</span></b></p>
+                        <p>
+                            <span>.rdl report is created using SQL Server Reporting service, But the .rdlc 
+                            report is created with the help visual studio&#39;s inbuilt reporting services. in 
+                            rdlc &#39;c&#39; stands for client side.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the use of 
+                            xml datatype in SQL Server?</span></b></p>
+                        <p>
+                            <span>&nbsp;As the name indicates xml data type is used to store XML documents in SQL 
+                            Server.
+                             </span></p>
+                         
+                        <p>
+                            <b><span>
+                             How To 
+                            know your SQL Server Version in SQL command prompt ?</span></b></p>
+                        <p>
+                            <span>&nbsp;SELECT @@VERSION</span></p>
+                        
+                         
+                        <p>
+                            <b><span>
+                             What is the full form of KPI?</span></b></p>
+                        <p>
+                            <span>&nbsp;Key Performance Indicators</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How do you map a column in  SqlBulkCopy?</span></b></p>
+                        <p>
+                            <span>By the object of SqlBulkCopyColumnMapping class.
+                            <br />
+                            Following is a sample </span>
+                        </p>
+                        <p>
+                            <span>SqlBulkCopyColumnMapping mapColumn1 =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            new SqlBulkCopyColumnMapping(&quot;EmpID&quot;, &quot;ID&quot;);</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is SqlBulkCopy in ADO.NET?</span></b></p>
+                        <p>
+                            <span>&nbsp;SqlBulkCopy is the object that helps you to perform a bulk copy.
+                            <br />
+                            You can use a DataReader or DataTable as source data
+                            <br />
+                            store.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is fixed-length &amp; variable-length characters? Tell me their differences??</span></b></p>
+                        <p>
+                            <span>&nbsp;In Sql Server there are two types of character data types. They are
+                            <br />
+                            <br />
+                            1.fixed-length (i.e char)
+                            <br />
+                            2.variable-length (i.e varchar)
+                            <br />
+                            <br />
+                            The main differences are maximum length and in whether trailing spaces are 
+                            retained</span></p>
+                         
+                        <p>
+                            <b><span>
+                             In MSSQL what 
+                            is ISNULL () function? How do we use it?</span></b></p>
+                        <p>
+                            <span>&nbsp;ISNULL() function is used to check the value is null or not in SQL 
+                            Server. This function also provides a way to replace a value with the null if 
+                            the result is true.
+                            <br />
+                            <br />
+                            <br />
+                            Here @Param is a nullable parameter and isnull checks the parameter is a null 
+                            value or not. If it is a null, it replaces it with &#39;&#39; string. </span>
+                        </p>
+                        <p>
+                            <span>ISNULL(@Param, &#39;&#39;)</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Is 
+                            primary key Clustered or Non - Clustered Index in MS SQL</span></b></p>
+                        <p>
+                            <span>&nbsp;Clustered</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the 
+                            default language of SSIS Script Task?</span></b></p>
+                        <p>
+                            <span>&nbsp;VB.NET</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What command is used to get back the privileges offered by the GRANT command?</span></b></p>
+                        <p>
+                            <span>&nbsp;REVOKE</span></p>
+                         
+                        <p>
+                            <b><span>
+                            Which operator performs 
+                            pattern matching?</span></b></p>
+                        <p>
+                            <span>LIKE </span>
+                        </p>
+                        <p>
+                            <span>SELECT * FROM student WHERE name LIKE &#39;%Abhisek%&#39;</span></p>
+                        <p>
+                            <span> 
+                            The above command will retrieve records with name Abhisek in the name column.
+                            <br /> 
+                            We can use different wildcard characters to specify the condition.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Is SQL case sensitive?</span></b></p>
+                        <p>
+                            <span>&nbsp;No.</span></p>
+                        
+                        <p>
+                            <b><span>
+                             Which command displays the SQL command in the SQL buffer, and then executes it?</span></b></p>
+                        <p>
+                            <span>&nbsp;RUN
+                            <br /> 
+                            It lists the commands in the SQL buffer before running and then execute (or 
+                            re-execute) commands.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Which function is used to find the largest integer less than or equal to a 
+                            specific value?</span></b></p>
+                        <p>
+                            <span>&nbsp;FLOOR
+                            <br /> 
+                            Floor is used to round a number down to the last whole number. Any number with 
+                            even the highest decimal is rounded down.
+                            <br />  
+                        </p>
+                        <p>
+                            <span>&nbsp; SELECT FLOOR(-5.12); </span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            This will be round down to -6 </span>
+                        </p>
+                        <p>
+                            <span>&nbsp; SELECT FLOOR(5.14); </span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            This will be round down to 5</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Which system table contains information on constraints on all the tables 
+                            created?</span></b></p>
+                        <p>
+                            <span>&nbsp;USER_CONSTRAINTS</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What are the 
+                            wildcards used for pattern matching?</span></b></p>
+                        <p>
+                            <span>&nbsp;_ is used for single character substitution
+                            <br />
+                            % is used for multi­character substitution</span></p>
+                         
+                        <p>
+                            <b><span> !=, &lt;&gt;, ^= all denote the same operation. It is True of False</span></b></p>
+                        <p>
+                            <span>&nbsp;True</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What are the privileges that can be granted on a table by a user to others?</span></b></p>
+                        <p>
+                            <span>&nbsp;Insert, update, delete, select, references, index, execute, alter, all</span></p>
+                        
+                        <p>
+                            <b><span>
+                             What is 
+                            the difference between TRUNCATE and DELETE commands?</span></b></p>
+                        <p>
+                            <span>&nbsp;1.TRUNCATE is a DDL command whereas DELETE is a DML command.
+                            <br />
+                            2.DELETE operation can be rolled back, but TRUNCATE operation cannot be rolled 
+                            back.
+                            <br />
+                            3.WHERE can be used with DELETE and not with TRUNCATE.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Which command is used to create a table by copying the structure of another 
+                            table?</span></b></p>
+                        <p>
+                            <span>&nbsp;CREATE TABLE .. AS SELECT command
+                            <br />
+                            Example:- </span>
+                        </p>
+                        <p>
+                            <span>CREATE TABLE AS SELECT*FROM WHERE 1=2;</span></p>
+                        
+                        <p>
+                            <b><span>
+                             MONTHS_BETWEEN date function is used for what purpose?</span></b></p>
+                        <p>
+                            <span>&nbsp;MONTHS_BETWEEN is used to find the difference between two dates.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Which option is used to drop constraints specified on the table?</span></b></p>
+                        <p>
+                            <span>&nbsp;DROP option in the ALTER TABLE command is used to drop constraints 
+                            specified on the table.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the use of DESC in SQL?</span></b></p>
+                        <p>
+                            <span>&nbsp;DESC is used to describe a schema as well as to retrieve rows from table 
+                            in descending order.
+                            <br />
+                            <br />
+                            The query SELECT * FROM Student ORDER BY SNAME DESC will display the output 
+                            sorted on SNAME in descending order.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the use of 
+                            DATEPART function in SQL?</span></b></p>
+                        <p>
+                            <span>&nbsp;datepart(parameter,date) will extract the date part according to the 
+                            parameter passed. The parameters can be yy for year, mm for month or dd for 
+                            date.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the use of 
+                            DATEDIFF function in SQL?</span></b></p>
+                        <p>
+                            <span>&nbsp;It will extract the difference between two given dates as per the 
+                            parameter passed.
+                            <br />
+                            <br />
+                            datediff(parameter,date1,date2)</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the error in the following command? DROP TABLE &amp;TABLE_NAME;</span></b></p>
+                        <p>
+                            <span>&nbsp;Variable names should start with an alphabet. Here the table name starts 
+                            with an &#39;&amp;&#39; symbol. So it will give a compilation error.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What are the three 
+                            levels of data abstraction?</span></b></p>
+                        <p>
+                            <span>&nbsp;The are three levels of abstraction are as follows:
+                            <br /> 
+                            <b>Physical level:</b> The lowest level of abstraction describes how data are 
+                            stored.
+                            <br /> 
+                            <b>Logical level:</b> The next higher level of abstraction, describes what data 
+                            are stored in database and what relationship among those data.
+                            <br /> 
+                            <b>View level:</b> The highest level of abstraction describes only part of 
+                            entire database.</span></p>
+                         
+                        <p>
+                            <b><span>
+                            Efficiency comparison of 
+                            EXISTS and IN</span></b></p>
+                        <p>
+                            <span>&nbsp;EXISTS is efficient as if any row returned, Search stops.
+                            <br />
+                            IN is looking for a specific match which takes longer.
+                            <br />
+                            <br />
+                            However they may not always replace each other but wherever they can, above is 
+                            their efficiency comparison !!</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How can u pick random 
+                            records from SQL table ?</span></b></p>
+                        <p>
+                            <span>&nbsp;SELECT colName FROM tblSource
+                            <br />
+                            ORDER BY NEWID()</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is an execution plan? When would you use it? How would you view the 
+                            execution plan?</span></b></p>
+                        <p>
+                            <span>&nbsp;An execution plan is basically a road map that graphically or textually 
+                            shows the data retrieval methods chosen by the SQL Server query optimizer for a 
+                            stored procedure or ad-hoc query and is a very useful tool for a developer to 
+                            understand the performance characteristics of a query or stored procedure since 
+                            the plan is the one that SQL Server will place in its cache and use to execute 
+                            the stored procedure or query. From within Query Analyzer is an option called 
+                            &quot;Show Execution Plan&quot; (located on the Query drop-down menu). If this option is 
+                            turned on it will display query execution plan in separate window when query is 
+                            ran again.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How to implement one-to-one, one-to-many and many-to-many relationships while 
+                            designing tables?</span></b></p>
+                        <p>
+                            <span>&nbsp;One-to-One relationship can be implemented as a single table and rarely 
+                            as two tables with primary and foreign key relationships. One-to-Many 
+                            relationships are implemented by splitting the data into two tables with primary 
+                            key and foreign key relationships.
+                            <br />
+                            Many-to-Many relationships are implemented using a junction table with the keys 
+                            from both the tables forming the composite primary key of the junction table.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is BCP? When does it used?</span></b></p>
+                        <p>
+                            <span>&nbsp;BulkCopy is a tool used to copy huge amount of data from tables and 
+                            views. BCP does not copy the structures same as source to destination. BULK 
+                            INSERT command helps to import a data file into a database table or view in a 
+                            user-specified format.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Can SQL Servers 
+                            linked to other servers like Oracle?</span></b></p>
+                        <p>
+                            <span>&nbsp;SQL Server can be linked to any server provided it has OLE-DB provider 
+                            from Microsoft to allow a link. E.g. Oracle has an OLE-DB provider for oracle 
+                            that Microsoft provides to add it as linked server to SQL Server group</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Log Shipping?</span></b></p>
+                        <p>
+                            <span>&nbsp;Log shipping is the process of automating the backup of database and 
+                            transaction log files on a production SQL server, and then restoring them onto a 
+                            standby server. Enterprise Editions only supports log shipping. In log shipping 
+                            the transactional log file from one server is automatically updated into the 
+                            backup database on the other server. If one server fails, the other server will 
+                            have the same db and can be used this as the Disaster Recovery plan. The key 
+                            feature of log shipping is that it will automatically backup transaction logs 
+                            throughout the day and automatically restore them on the standby server at 
+                            defined interval.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is SQL Profiler?</span></b></p>
+                        <p>
+                            <span>&nbsp;SQL Profiler is a graphical tool that allows system administrators to 
+                            monitor events in an instance of Microsoft SQL Server. You can capture and save 
+                            data about each event to a file or SQL Server table to analyze later. For 
+                            example, you can monitor a production environment to see which stored procedures 
+                            are hampering performances by executing too slowly.
+                            <br />
+                            Use SQL Profiler to monitor only the events in which you are interested. If 
+                            traces are becoming too large, you can filter them based on the information you 
+                            want, so that only a subset of the event data is collected. Monitoring too many 
+                            events adds overhead to the server and the monitoring process and can cause the 
+                            trace file or trace table to grow very large, especially when the monitoring 
+                            process takes place over a long period of time.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             When is the use of 
+                            UPDATE_STATISTICS command?</span></b></p>
+                        <p>
+                            <span>&nbsp;This command is basically used when a large processing of data has 
+                            occurred. If a large amount of deletions any modification or Bulk Copy into the 
+                            tables has occurred, it has to update the indexes to take these changes into 
+                            account. UPDATE_STATISTICS updates the indexes on these tables accordingly.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is OLTP (Online 
+                            Transaction Processing)?</span></b></p>
+                        <p>
+                            <span>&nbsp;In OLTP - online transaction processing systems relational database 
+                            design use the discipline of data modeling and generally follow the Codd rules 
+                            of data normalization in order to ensure absolute data integrity. Using these 
+                            rules complex information is broken down into its most simple structures (a 
+                            table) where all of the individual atomic level elements relate to each other 
+                            and satisfy the normalization rules.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Replication and 
+                            Database Mirroring?</span></b></p>
+                        <p>
+                            <span>&nbsp;Database mirroring can be used with replication to provide availability 
+                            for the publication database. Database mirroring involves two copies of a single 
+                            database that typically reside on different computers. At any given time, only 
+                            one copy of the database is currently available to clients which are known as 
+                            the principal database. Updates made by clients to the principal database are 
+                            applied on the other copy of the database, known as the mirror database. 
+                            Mirroring involves applying the transaction log from every insertion, update, or 
+                            deletion made on the principal database onto the mirror database.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the purpose of 
+                            @@LANGUAGE statement?</span></b></p>
+                        <p>
+                            <span>&nbsp;To know the current language used.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How can we cancel a transaction?</span></b></p>
+                        <p>
+                            <span>&nbsp;Using ROLLBACK TRANSACTION;</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the syntax of try catch?</span></b></p>
+                        <p>
+                            <span>&nbsp;BEGIN TRY
+                            <br />
+                            END TRY
+                            <br />
+                            BEGIN CATCH
+                            <br />
+                            <br />
+                            END CATCH;</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Can we have Try catch in 
+                            Sqlserver?</span></b></p>
+                        <p>
+                            <span>&nbsp;Yes we can have Try catch statements in Sqlserver from SQLServer 2005</span></p>
+                        
+                        <p>
+                            <b><span>
+                             How do we raise the error 
+                            message?</span></b></p>
+                        <p>
+                            <span>&nbsp;Using RAISERROR method.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How do we handle errors in 
+                            SQL Server?</span></b></p>
+                        <p>
+                            <span>&nbsp;Using @@ERROR statement.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             If 
+                            the rows are more than 2 billion, how can I set the row count?</span></b></p>
+                        <p>
+                            <span>&nbsp;Using ROWCOUNT_BIG statement.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What are the maximum number rows can be returned in SqlServer by the @@ROWCOUNT?</span></b></p>
+                        <p>
+                            <span>&nbsp;2 billion rows.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the use of @@ROWCOUNT?</span></b></p>
+                        <p>
+                            <span>&nbsp;Returns the number of rows affected by the last statement.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Which has more provisions for the export/import functionality? Whether we can 
+                            customize the data through BCP?</span></b></p>
+                        <p>
+                            <span>&nbsp;DTS has more provisions than BCP.We can&#39;t customize in BCP.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Which one is faster? BCP or DTS?</span></b></p>
+                        <p>
+                            <span>&nbsp;BCP is faster than DTS.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is DTS?</span></b></p>
+                        <p>
+                            <span>&nbsp;Data Transformation Services (DTS) in SQL Server 2000 provides a set of 
+                            graphical tools and programmable objects to export and import data.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is BCP?</span></b></p>
+                        <p>
+                            <span>&nbsp;The Bulk Copy Program (BCP) is a command-line utility that ships with SQL 
+                            Server. It is used to transform data from one database to another.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the purpose of 
+                            DATENAME fucntion?</span></b></p>
+                        <p>
+                            <span>&nbsp;DATENAME returns the part of the date in a literal form.
+                            <br /> 
+                            Following is the example </span>
+                        </p>
+                        <p>
+                            <span>SELECT DATENAME(mm,GETDATE())</span></p>
+                        
+                        <p>
+                            <b><span>
+                             How do we Unlock 
+                            Particular User in Sql Server</span></b></p>
+                        <p>
+                            <span>First Login with Window Authentication then take Master Database
+                            <br />
+                            Afterwards, execute the below query </span>
+                        </p>
+                        <p>
+                            <span>alter login databaseusername01 with password=&#39;password&#39; unlock</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How to rename a database in 
+                            SQLserver?</span></b></p>
+                        <p>
+                            <span>using the procedure sp_renamedb. Following is the syntax 
+                            </span>
+                        </p>
+                        <p>
+                            <span>Exec sp_renamedb ‘olddbname’,’newdbname’</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How to execute the stored 
+                            procedure?</span></b></p>
+                        <p>
+                            <span>&nbsp;With exec keywork or directly we can execute a stored procedure</span></p>
+                        
+                        <p>
+                            <b><span>
+                             Tell me the difference between temporary table and table variable? Which is better?</span></b></p>
+                        <p>
+                            <span>&nbsp;Better one is table variable.
+                            <br /> 
+                            In most of our real time scenario we are using the temp table which is 
+                            physically created in tempdb. This creates overhead, but when you create a table 
+                            Variable it only resides in the memory which clearly shows that it will be much 
+                            faster than Temp table.
+                            <br />
+                            A table variable goes out of scope immediately after the batch end. If we use 
+                            Table Variable then we no need to explicitly drop it.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is a table variable in 
+                            T-SQL?</span></b></p>
+                        <p>
+                            <span>&nbsp;Table Variables are the special data type to store the values as in a 
+                            table. This is stored inside of heap.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How do we find the 
+                            duplicate records of a table?</span></b></p>
+                        <p>
+                            <span>Using the query </span>
+                        </p>
+                        <p>
+                            <span>SELECT&nbsp; empname, COUNT(*) AS n FROM employee GROUP BY&nbsp; empname 
+                            HAVING COUNT(*)&gt;1</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What are the steps 
+                            to create a stored procedure?</span></b></p>
+                        <p>
+                            <span>&nbsp;The stored procedure is created using keyword Create Proc or Create 
+                            Procedure.The procedure should be paramerized along with data types.
+                            <br />
+                            The required logic should be inserted in begin and end block
+                            <br />
+                            In order to execute the stored procedure use exec</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How do we list all 
+                            column names of a table?</span></b></p>
+                        <p>
+                            <span>Using the query </span>
+                        </p>
+                        <p>
+                            <span>SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.Columns where TABLE_NAME = 
+                            &#39;Emp&#39; ORDER BY COLUMN_NAME</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How do we List all table names?</span></b></p>
+                        <p>
+                            <span>By the query </span>
+                        </p>
+                        <p>
+                            <span>select *&nbsp; from sysobjects where xtype=&#39;U&#39; order by name</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How do we list 
+                            all Databases in a server using query?</span></b></p>
+                        <p>
+                            <span>&nbsp;select * from sysdatabases</span></p>
+                       
+                        <p>
+                            <b><span>
+                             I need to automate some works in SQL Server depending on the time. How can you 
+                            do this</span></b></p>
+                        <p>
+                            <span>&nbsp;We can do this through SQL Job</span></p>
+                        
+                        <p>
+                            <b><span>
+                             What are the 
+                            major new features in SQL Server 2008 ?</span></b></p>
+                        <p>
+                            <span>&nbsp;Transparent Data Encryption. The ability to encrypt an entire database.
+                            <br /> 
+                            Backup Encryption. Executed at backup time to prevent tampering.
+                            <br /> 
+                            External Key Management. Storing Keys separate from the data.
+                            <br /> 
+                            Auditing. Monitoring of data access.
+                            <br /> 
+                            Data Compression. Fact Table size reduction and improved performance.
+                            <br /> 
+                            Resource Governor. Restrict users or groups from consuming high levels or 
+                            resources.
+                            <br /> 
+                            Hot Plug CPU. Add CPUs on the fly.
+                            <br /> 
+                            Performance Studio. Collection of performance monitoring tools.
+                            <br /> 
+                            Installation improvements. Disk images and service pack uninstall options.
+                            <br /> 
+                            Dynamic Development. New ADO and Visual Studio options as well as Dot Net 3.
+                            <br /> 
+                            Entity Data Services. Line Of Business (LOB) framework and Entity Query Language 
+                            (eSQL)
+                            <br /> 
+                            LINQ. Development query language for access multiple types of data such as SQL 
+                            and XML.
+                            <br /> 
+                            Data Synchronizing. Development of frequently disconnected applications.
+                            <br /> 
+                            Large UDT. No size restriction on UDT.
+                            <br /> 
+                            Dates and Times. New data types: Date, Time, Date Time Offset.
+                            <br /> 
+                            File Stream. New data type VarBinary(Max) FileStream for managing binary data.
+                            <br /> 
+                            Table Value Parameters. The ability to pass an entire table to a stored 
+                            procedure.
+                            <br /> 
+                            Spatial Data. Data type for storing Latitude, Longitude, and GPS entries.
+                            <br /> 
+                            Full Text Search. Native Indexes, thesaurus as metadata, and backup ability.
+                            <br /> 
+                            Reporting Server. Improved memory management.
+                            <br />
+                            <br /> 
+                            SQL Server Integration Service. Improved multiprocessor support and faster 
+                            lookups.
+                            <br /> 
+                            MERGE. TSQL command combining Insert, Update, and Delete.
+                            <br /> 
+                            SQL Server Analysis Server. Stack improvements, faster block computations.
+                            <br /> 
+                            SQL Server Reporting Server. Improved memory management and better rendering.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Wildcard 
+                            character in SQL Server ?</span></b></p>
+                        <p>
+                            <span>&nbsp;Wildcard characters Determines whether a given character string matches a 
+                            specified pattern.
+                            <br />
+                            A pattern can include regular characters and wildcard characters.
+                            <br />
+                            During pattern matching, regular characters must match exactly the characters 
+                            specified in the character string. Wildcard characters, however, can be matched 
+                            with arbitrary fragments of the character string.
+                            <br />
+                            Using wildcard characters makes the LIKE operator more flexible than using the = 
+                            and != string comparison operators.
+                            <br /> 
+                            There are 2 Wildcard characters i.e. &#39;%&#39; and &#39;_&#39;
+                            <br />
+                            %
+                            <br />
+                            Any string of zero or more characters.
+                            <br />
+                            WHERE title LIKE &#39;%computer%&#39; finds all book titles with the word &#39;computer&#39; 
+                            anywhere in the book title.
+                            <br />
+                            <br />
+                            _ (underscore)
+                            <br />
+                            Any single character.
+                            <br />
+                            WHERE au_fname LIKE &#39;_ean&#39; finds all four-letter first names that end with ean, 
+                            such as Dean or Sean.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Is “FOR” available with SQL ?</span></b></p>
+                        <p>
+                            <span>&nbsp;Yes, it is. You can use FOR clause with XML or BROWSE options.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             More than one IDENTITY column per table can be exist in SQL Server . (True 
+                            /False)</span></b></p>
+                        <p>
+                            <span>&nbsp;False.
+                            <br />
+                            There can only be one IDENTITY column per table in SQL Server.
+                            <br />
+                            Its auto Incremented Column defined by the user.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the difference between &quot;dynamic SQL&quot; and &quot;stored procedure&quot; ?</span></b></p>
+                        <p>
+                            <span>&nbsp;Dynamic sql is the bunch of statements that dynamically constructed at 
+                            run time and not stored in database.
+                            <br />
+                            Where as Stored procedures are stored in data base in complied form.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What 
+                            type of Authentication does Microsoft SQL Server support?</span></b></p>
+                        <p>
+                            <span>&nbsp;2 Type of Authentication :
+                            <br />
+                            <br />
+                            1. Windows Authentication and
+                            <br />
+                            2. SQL Server authentication</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the use 
+                            of COALESCE function in SQL Server ?</span></b></p>
+                        <p>
+                            <span>&nbsp;Returns the first not null expression among its arguments.
+                            <br />
+                            COALESCE(X,Y,Z)
+                            <br />
+                            <br />
+                            If X is Null then It&#39;ll check for Y,
+                            <br />
+                            If Y is Null It&#39;ll Check for Z.
+                            <br />
+                            <br />
+                            Let X is NULL, Y=&#39;5&#39; and Z=&#39;9&#39;
+                            <br />
+                            Here Output is : Y</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the Magic Tables 
+                            in Sqlserver2000?</span></b></p>
+                        <p>
+                            <span>&nbsp;In Database for any table or view When a trigger is fired for any DML 
+                            command.
+                            <br />
+                            Then 2 tables automatically create on backend.
+                            <br />
+                            One table is for Insert and other one is for Delete.
+                            <br />
+                            These tables are called Magic Tables.
+                            <br />
+                            Number of records in both tables should be same.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is a Join in SQL Server?</span></b></p>
+                        <p>
+                            <span>&nbsp;Join puts data from two or more tables into a single result set.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How 
+                            to get number of Maximum connection can be establish to SQL</span></b></p>
+                        <p>
+                            <span>&nbsp;select @@MAX_Connections</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is 
+                            the difference between UNION ALL Statement and UNION</span></b></p>
+                        <p>
+                            <span>&nbsp;The main difference between UNION ALL statement and UNION is UNION All 
+                            statement is much faster than UNION.
+                            <br />
+                            Reason : Because UNION ALL statement does not look for duplicate rows, but on 
+                            the other hand UNION statement does look for duplicate rows, whether or not they 
+                            exist.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What are the different types 
+                            of Locks</span></b></p>
+                        <p>
+                            <span>&nbsp;Mainly There are three types of locks in SQL Server :
+                            <br /> 
+                            (1)Shared locks are used for operations that does not allow to change or update 
+                            data, such as a SELECT statement.
+                            <br />
+                            (2)Update locks are used when SQL Server intends to modify a page, and later 
+                            promotes the update page lock to an exclusive page lock before actually making 
+                            the changes.
+                            <br />
+                            (3)Exclusive locks are used for the data modification operations, such as 
+                            UPDATE, INSERT, or DELETE.</span></p>
+                         
+                        <p>
+                            <b><span>
+                            What is the difference between a HAVING CLAUSE and a WHERE CLAUSE ?</span></b></p>
+                        <p>
+                            <span>Both Clauses are used to check the Condition at the time of Retrieval of 
+                            records in Database.
+                            <br />
+                            WHERE Clause is applied to each row before they are part of the GROUP BY 
+                            function in a query.
+                            <br />
+                            Having Clause is basically used only with the GROUP BY function in a query.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is COMMIT and 
+                            ROLLBACK statement in SQL</span></b></p>
+                        <p>
+                            <span>&nbsp;Commit statement helps in termination of the current transaction and do 
+                            all the changes that occur in transaction persistent and this also commits all 
+                            the changes to the database.
+                            <br />
+                            ROLLBACK do the same thing just terminate the current transaction but one 
+                            another thing is that the changes made to database are ROLLBACK to the database.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Index?</span></b></p>
+                        <p>
+                            <span>&nbsp;A database index is a data structure which use to improve the speed of 
+                            operations on a database table.
+                            <br /> 
+                            It&#39;s a physical structure containing pointers to the data.
+                            <br /> 
+                            Index can be created using one or more columns of a database table.
+                            <br />
+                            Index are created in an existing table to quickly and efficiently lookups.
+                            <br /> 
+                            It is possible to create an index on one or more columns of a table, and each 
+                            index is given a name.
+                            <br /> 
+                            There are two type of index available.
+                            <br /> 
+                            <b>Clustered index:</b>
+                            <br />
+                            Clustered index are physical form of sorting. Therefore only one clustered index 
+                            can be created on each table because the data rows themselves can only be sorted 
+                            in one order.
+                            <br /> 
+                            <b>Non Clustered index:</b>
+                            <br />
+                            Non clustered indexes are logical form of sorting. Therefore more than one non 
+                            clustered indexes can be created on each table.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Clustered Index vs 
+                            NonClustered Index.</span></b></p>
+                        <p>
+                            <span><b>&nbsp;Clustered Index:</b>
+                            <br />
+                            A Clustered index determines the physical order of data in a table and is 
+                            particularly efficient on columns that are often searched for ranges of values.
+                            <br />
+                            The leaf nodes of a clustered index contain the data pages.
+                            <br />
+                            There can be only one clustered index per table.
+                            <br />
+                            &quot;Primary key&quot; is the ideal column for a clustered index
+                            <br />
+                            Clustered indexes are good for range searches.
+                            <br /> 
+                            <b>Nonclustered Index:</b>
+                            <br />
+                            Nonclustered index is a special type of index in which the logical order of the 
+                            index does not match the physical stored order of the rows on disk.
+                            <br />
+                            The leaf node of a nonclustered index does not consist of the data pages. 
+                            Instead, the leaf nodes contain index rows.
+                            <br />
+                            There can be multiple non-clustered indexes per table.
+                            <br />
+                            &quot;Unique Key&quot; is the ideal column for a nonclustered index
+                            <br />
+                            Non-clustered indexes are good for random searches.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Does Views occupy memory?</span></b></p>
+                        <p>
+                            <span>&nbsp;No.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             In which table, SQL SERVER stores the user name and password used for 
+                            connection?</span></b></p>
+                        <p>
+                            <span>SQL Server stores it in Syslogins table of Master database. See below 
+                            query: </span>
+                        </p>
+                        <p>
+                            <span>select * from syslogins</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is FOR XML clause in SQL?</span></b></p>
+                        <p>
+                            <span>&nbsp;FOR XML Clause is used with SQL Server’s Select statement to convert the 
+                            relational data stored in your database to XML.
+                            <br />
+                            <br />
+                            It has two options
+                            <br />
+                            1. Raw: To display XML element for each row.
+                            <br />
+                            2. Auto : It will automatically parse the structure used in query</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Which are the five 
+                            types of SQL table objects?</span></b></p>
+                        <p>
+                            <span>&nbsp;1. Standard
+                            <br />
+                            2. Temporary
+                            <br />
+                            3. Table type
+                            <br />
+                            4. Derived
+                            <br />
+                            5. View</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How can you declare and initialize variables in a single line with SQL Server ?</span></b></p>
+                        <p>
+                            <span>&nbsp;With SQL Server 2005, we need to declare and initialize variables 
+                            individually. </span>
+                        </p>
+                        <p>
+                            <span>declare @t1 int, </span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            @t2 varchar(10)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            set @t1 = 4</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            set @t2 = &#39;Hello!&#39;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            print @t1</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            print @t2</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            But with SQL 2008, we can do it following way: </span>
+                        </p>
+                        <p>
+                            <span>declare @t1 int = 4, </span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            @t2 varchar(10)= &#39;Hello!&#39;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            print @t1</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            print @t2</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How can you insert multiple rows together in a single insert statement for a 
+                            table?</span></b></p>
+                        <p>
+                            <span>It is not possible to insert multiple rows with a single insert statement. 
+                            If you want to insert multiple rows, one have to write multiple insert 
+                            statements considering that you are working SQL server 2005 or it&#39;s below 
+                            version.
+                            <br /> 
+                            But SQL Server 2008 allows to insert multiple rows with a single insert 
+                            statement.
+                            <br /> 
+                            As for example,
+                            <br /> 
+                            In sql server 2005, if we need to insert multiple row, we used to do something 
+                            like this. </span>
+                        </p>
+                        <p>
+                            <span>CREATE TABLE [State] (</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp; [StateID]&nbsp;&nbsp;&nbsp; int,</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp; [StateName]&nbsp;&nbsp;&nbsp; VARCHAR(20)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            )</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            GO</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <![if !supportLineBreakNewLine]>
+                            <br />
+                            <![endif]></span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            INSERT INTO State</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            VALUES (1, &#39;Gujarat&#39;)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <![if !supportLineBreakNewLine]>
+                            <br />
+                            <![endif]></span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            INSERT INTO State</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            VALUES (2, &#39;Dehli&#39;)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <![if !supportLineBreakNewLine]>
+                            <br />
+                            <![endif]></span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            INSERT INTO State</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            VALUES (3, &#39;Bihar&#39;)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <![if !supportLineBreakNewLine]>
+                            <br />
+                            <![endif]></span>
+                        </p>
+                        <p>
+                            </span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <br />
+                            But with SQL Server 2008 we can combine all the three insert statement in single 
+                            insert statement. See below: </span>
+                        </p>
+                        <p>
+                            <span>CREATE TABLE [State] (</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp; [StateID]&nbsp;&nbsp;&nbsp; int,</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp; [StateName]&nbsp;&nbsp;&nbsp; VARCHAR(20)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            )</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            GO</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <![if !supportLineBreakNewLine]>
+                            <br />
+                            <![endif]></span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            INSERT INTO State</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            VALUES (1, &#39;Gujarat&#39;),</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2, &#39;Dehli&#39;),</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3, &#39;Bihar&#39;)</span></p>
+                           
+                        <p>
+                            <b><span>
+                             What is CHECK Constraint?</span></b></p>
+                        <p>
+                            <span>The CHECK constraint is used to limit the value range that can be placed 
+                            in a column.</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            If you define a CHECK constraint on a single column it allows only certain 
+                            values for this column.</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            If you define a CHECK constraint on a table it can limit the values in certain 
+                            columns based on values in other columns in the row.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How you will create a UNIQUE Constraint when the table is already created?</span></b></p>
+                        <p>
+                            <span>ALTER TABLE Persons ADD UNIQUE (Column_Name)</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is SIGN() ?</span></b></p>
+                        <p>
+                            <span>SIGN() is used to determine whether the specified is positive, negative or 
+                            zero. In case of positive, negative and zero it returns +1,-1 and 0 
+                            consecutively. </span>
+                        </p>
+                        <p>
+                            <span>print sign(0) -- prints 0</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            print sign(10) -- prints 1</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            print sign(-10) -- prints -1</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <br />
+                            Sometimes before using SIGN(), you need to confirm you are passing numeric value 
+                            as argument.
+                            <br />
+                            You can do this using, ISNUMERIC()</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How to get date of 234 days back in SQL?</span></b></p>
+                        <p>
+                            <span><b>&nbsp;SQL : </b>
+                            <br />
+                            SELECT DATEADD(dd,-234,getdate())</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Can you control concatenation of string values with null values? How ?</span></b></p>
+                        <p>
+                            <span>&nbsp;We can control this by setting CONCAT_NULL_YIELDS_NULL on or off.
+                            <br />
+                            When it is set to ON, the concatenation will result null and when it is set to 
+                            OFF, it will result the string.
+                            <br />
+                            <b>Setting it ON, </b></span>
+                        </p>
+                        <p>
+                            <span>SET CONCAT_NULL_YIELDS_NULL on;</span></p>
+                        <p>
+                            <span> 
+                            print &#39;testing&#39; + NULL; --results NULL and prints nothing</span></p>
+                        <p>
+                            <span> 
+                            <b>Setting it OFF, </b></span>
+                        </p>
+                        <p>
+                            <span>SET CONCAT_NULL_YIELDS_NULL off;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            print &#39;testing&#39; + NULL; -- results testing and prints the same</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What will you do if you need to create clustered index on more than one field? 
+                            Is it possible?</span></b></p>
+                        <p>
+                            <span>&nbsp;The answer is yes and no.
+                            <br />
+                            You can create only one clustered index in table.
+                            <br />
+                            Workaround for such scenario can be :
+                            <br />
+                            Either you can create index on entire table or you can create clustered index on 
+                            a view covering entire table.
+                            <br />
+                            <br />
+                            Suppose, you have created table with following: </span>
+                        </p>
+                        <p>
+                            <span>CREATE TABLE [dbo].[Table1](</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [field1] [int] IDENTITY(1,1) NOT NULL,</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [field2] [nchar](10) ,</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [field3] [nchar](10) ,</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [field4] [nchar](10)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            ) ON [PRIMARY]</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <b>Create index on entire table: </b></span>
+                        </p>
+                        <p>
+                            <span>CREATE INDEX idx_coverTable ON Table1(field1, field2) INCLUDE (field3, 
+                            field4)</span></p>
+                        <p>
+                            <span> 
+                            <b>Create clustered index on a view covering entire table:</b> 
+                            </span>
+                        </p>
+                        <p>
+                            <span>CREATE VIEW v1111 with SCHEMABINDING</span></p>
+                        <p>
+                            <span> 
+                            AS </span>
+                        </p>
+                        <p>
+                            <span> 
+                            SELECT field1, field2, field3, field4 FROM dbo.Table1</span></p>
+                        <p>
+                            <span> 
+                            GO</span></p>
+                        <p>
+                            <span> 
+                            CREATE UNIQUE CLUSTERED INDEX idx_viewClustered ON dbo.v1111(field1, field2, 
+                            field3, field4)</span></p>
+                        <p>
+                            <span> 
+                            GO</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is difference 
+                            between RANK and DENSE_RANK.</span></b></p>
+                        <p>
+                            <span>&nbsp;The main difference between RANK and DENSE_RANK comes when they leave gap 
+                            among records while ranking them.
+                            <br /> 
+                            For an example, if you have three records at position one. Both the functions 
+                            will place all three records at same position of one but the difference comes is 
+                            when they rank the next record. RANK() will rank the next record as fourth 
+                            record while DENSE_RANK() will rank it as second.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What are magic tables?</span></b></p>
+                        <p>
+                            <span>&nbsp;Sometimes we need to know about the data which is being inserted/deleted 
+                            by triggers in database. With the insertion and deletion of data, tables named 
+                            “INSERTED” and “DELETED” gets created in SQL Server which contains 
+                            modified/deleted data.
+                            <br />
+                            Here, <b>“INSERTED” and “DELETED” tables are called magic tables.</b></span></p>
+                         
+                        <p>
+                            <b><span>
+                            Name of the command to view the current amount of free (unallocated) space in 
+                            the database in SQL Server?</span></b></p>
+                        <p>
+                            <span>&nbsp;Name of command is :<b>sp_spaceused</b>
+                            <br /> 
+                            This command displays the database_size in MB, and it&#39;s also shows unallocated 
+                            space for the database.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the command name to shrink the data file and log file size in SQL server 
+                            2005?</span></b></p>
+                        <p>
+                            <span>The command name is : <b>DBCC SHRINKDATABASE (Database Name)</b>
+                            <br /> 
+                            This command will shrink the data file and log file size. With this command you 
+                            can specify that how much percentage space you want to free. </span>
+                        </p>
+                        <p>
+                            <span>dbcc shrinkdatabase (TempDAabase,10)</span></p>
+                        <p>
+                            <span> 
+                            This command will free only 10% space.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the name of command in sql server 2005 which is used to kill any 
+                            process?</span></b></p>
+                        <p>
+                            <span>The command name is <b>kill</b>.
+                            <br /> 
+                            Syntax is below: </span>
+                        </p>
+                        <p>
+                            <span>Kill [Process ID]</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How can 
+                            we find the open transactions details in sql server?</span></b></p>
+                        <p>
+                            <span>Yes, it is possible. </span>
+                        </p>
+                        <p>
+                            <span>select * from sysprocesses where open_tran &gt; 0</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <br />
+                            This query will provide list of all the open transaction details.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Which system table holds the details of all the processes running on the 
+                            Microsoft sql server?</span></b></p>
+                        <p>
+                            <span>The name of the system table is <b>sysprocesses</b> . </span>
+                        </p>
+                        <p>
+                            <span>Select * from sysprocesses<br />
+                            <br />
+                            Make sure you run this query in master database.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Write a Query in SQL Server to get the Parameter list of given Store Procedure.</span></b></p>
+                        <p>
+                            <span>Suppose we want to get the name of the parameter for the Store Procedure
+                            <br />
+                            <b>Course_Insert_sp</b> then folllowing needs to be executed. </span>
+                        </p>
+                        <p>
+                            <span>SELECT * FROM sys.parameters D INNER JOIN Sys.Objects O ON 
+                            O.object_id=D.object_id WHERE O.name=&#39;Course_Insert_sp&#39;</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Maximum number of parameters you can pass in a Store procedure in SQL Server 
+                            2005?</span></b></p>
+                         <p>
+                            <b><span>
+                             What is the name of the Store procedure to get the listing of current users?</span></b></p>
+                        <p>
+                            <span>&nbsp;sp_who</span></p>
+                         
+                        <p>
+                            <b><span>
+                            What is the use of 
+                            WAITFOR in SQL SERVER ?</span></b></p>
+                        <p>
+                            <span>Suppose we want to execute one query now one after some time then we need 
+                            to use <b>WAITFOR TIME</b> for this.
+                            <br /> 
+                            <b>Sample Query:</b> </span>
+                        </p>
+                        <p>
+                            <span>BEGIN</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp; SELECT &#39;Lakhan Pal&#39;</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DECLARE @time char(5)</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SET @time=CONVERT(char(5),DateAdd(mi, 1, GetDate()),108)</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp; WAITFOR TIME @time</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp; SELECT &#39; Garg&#39;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            END</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <br />
+                            In the above Code SELECT &#39;Lakhan Pal&#39; will be execute first and then after 1 min 
+                            second select statement SELECT &#39; Garg&#39; will be executed.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Can we use shared lock 
+                            with Update Statement?</span></b></p>
+                        <p>
+                            <span>&nbsp;No We can&#39;t use the shared lock to Update or modifty data. shared lock is 
+                            used for select operation.
+                            <br />
+                            e.g of shared lock is : WITH (HOLDLOCK)</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How we can Create a .SQL File for the Store Procedure in SQL Server 2005?</span></b></p>
+                        <p>
+                            <span>&nbsp;Using sqlcmd utility we can create a .sql file for the StoreProcedure.
+                            <br /> 
+                            Sample Code To Create file:
+                            <br />
+                            <b>Suppose the name of the procedure is: proc_GetUserList_sp
+                            <br />
+                            DB UserName/Password: sa/sa
+                            <br />
+                            Server name=MyServer
+                            <br />
+                            Database Name: UserDB</b>
+                            <br /> 
+                            Command From Above data is: </span>
+                        </p>
+                        <p>
+                            <span>sqlcmd -U sa -P sa -S MyServer -d UserDB -Q &quot;exec sp_helptext 
+                            proc_GetUserList_sp&quot; -h-1 -k 1 &gt;&gt; c:\DB\proc_GetUserList_sp.sql</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How We can get the DB 
+                            name using SQL Command?</span></b></p>
+                        <p>
+                            <span>Following is the Command to get the DB name using Command analyzer 
+                            </span>
+                        </p>
+                        <p>
+                            <span>SELECT DB_NAME()<br /></span>
+                        </p>
+                         
+                        <p>
+                            <b><span>
+                             What is the name of store procedure to send Email using SQL Server 2005/2008?</span></b></p>
+                        <p>
+                            <span>&nbsp;sp_send_dbmail in msdb database can be used to send email using SQL 
+                            Server 2005/2008</span></p>
+                          
+                        <p>
+                            <b><span>
+                             How to get values of identitycolumn when you are not sure about the column name 
+                            which is identity column?</span></b></p>
+                        <p>
+                            <span>SELECT <i>IDENTITYCOL</i>&nbsp; FROM <b>TableName</b></span>
+                        </p>
+                         
+                        <p>
+                            <b><span>
+                             Query to Get List of Views?</span></b></p>
+                        <p>
+                            <span>&nbsp;select * from information_schema.views</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Query To Get The Column Name,DataType, And Length of columns in a Tables?</span></b></p>
+                        <p>
+                            <span>&nbsp;select column_name, data_type, character_maximum_length from 
+                            information_schema.columns
+                            <br />
+                            where table_name ={Table Name}</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How we can Get List of Triggers?</span></b></p>
+                        <p>
+                            <span>&nbsp;select * from Sys.Objects where Type=&#39;tr&#39;</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Query to Get List of 
+                            Table Valued Functions?</span></b></p>
+                        <p>
+                            <span>&nbsp;select * from Sys.Objects where Type=&#39;tf</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How We Can Get List of 
+                            Scalar Functions?</a></span></b><span> </span>
+                        </p>
+                        <p>
+                            <span>select * from Sys.Objects where Type=&#39;fn&#39;</span></p>
+                        
+                        <p>
+                            <b><span>
+                             How We can Get List of 
+                            Store Procedures?</span></b></p>
+                        <p>
+                            <span>&nbsp;select * from Sys.Objects where Type=&#39;p&#39;</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How we can get the list of 
+                            user tables?</span></b></p>
+                        <p>
+                            <span>&nbsp;select * from Sys.Objects where Type=&#39;u&#39;</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How we can get 
+                            the List of System Tables in DataBase?</span></b></p>
+                        <p>
+                            <span>&nbsp;select * from Sys.Objects where Type=&#39;s&#39;</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What type 
+                            of language is the SELECT command in SQL Server?</span></b></p>
+                        <p>
+                            <span>&nbsp;DML.
+                            <br />
+                            <br />
+                            The SELECT statement is a Data Manipulation Language commend, not a Data 
+                            Definition Language command.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Which of the following queries generates an error when executed? DECLARE @x 
+                            VARCHAR(10), @y VARCHAR(10) SET @y = &#39;&#39; SELECT @x/0 -- query 1 SELECT @x/2 -- 
+                            query 2 SELECT @y/0 -- query 3 SELECT @y/2 -- query 4</span></b></p>
+                        <p>
+                            <span>&nbsp;Answer: 3
+                            <br /> 
+                            Explanation: Queries 1 and 2 return NULL since @x is undefined. Query 4 returns 
+                            0 since the string &#39;&#39; is implicitly converted to 0. Query 3 returns a divide by 
+                            0 error.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Can we use NEWID(), or 
+                            RAND() in function?</span></b></p>
+                        <p>
+                            <span>&nbsp;No</span></p>
+                        
+                        <p>
+                            <b><span>
+                             Can we use 
+                            &quot;Print&quot; statement in function?</span></b></p>
+                        <p>
+                            <span>&nbsp;No</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Can we use Truncate command on a table which is referenced by FOREIGN KEY?</span></b></p>
+                        <p>
+                            <span>&nbsp;No. We cannot use Truncate command on a table with Foreign Key because of 
+                            referential integrity.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is a table 
+                            called, if it has no Cluster Index?</span></b></p>
+                        <p>
+                            <span>&nbsp;Unindexed table or Heap.</span></p>
+                        
+                        <p>
+                            <b><span>
+                             What is the difference between a Local and a Global temporary table?</span></b></p>
+                        <p>
+                            <span>&nbsp;A local temporary table exists only for the duration of a connection or, 
+                            if defined inside a compound statement, for the duration of the compound 
+                            statement.
+                            <br /> 
+                            Global temporary tables (created with a double “##”) are visible to all 
+                            sessions. You should always check for existence of the global temporary table 
+                            before creating it… if it already exists, then you will get a duplicate object 
+                            error.
+                            <br /> 
+                            Global temporary tables are dropped when the session that created it ends, and 
+                            all other sessions have stopped referencing it.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Row_Number ()?</span></b></p>
+                        <p>
+                            <span>&nbsp;ROW_NUMBER() returns a column as an expression that conation’s the row 
+                            number within the result set. This is only a number used in the context of the 
+                            result set, if the result changes, the ROW_NUMBER () will change.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How to Get nth Record in a Table?</span></b></p>
+                        <p>
+                            <span>&nbsp;First Get the n records from the table using
+                            <br /> 
+                            Select Top n FROM UserTable
+                            <br />
+                            Now Reverse the Order using identity Column like:
+                            <br />
+                            Select Top n FROM UserTable Order By 1 DESC
+                            <br /> 
+                            Now we need nth record that can be get as
+                            <br />
+                            SELECT TOP 1 * FROM (Select Top n FROM UserTable Order By 1 DESC)AC
+                            <br /> 
+                            For Example i need to get 5th record From userTable then quey will be like this: 
+                            </span>
+                        </p>
+                        <p>
+                            <span>SELECT TOP 1 * FROM (SELECT TOP 5 * FROM UserTable Order By 1 DESC)AC</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How to get a 
+                            row was inserted most recently in a table?</span></b></p>
+                        <p>
+                            <span>select top 1 * from tablename order by ColumnName desc</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Is it 
+                            possible to create Cluster Index on Unique Key Column?</span></b></p>
+                        <p>
+                            <span>&nbsp;Unique key column by default creates a non-cluster index on the column. 
+                            Primary key creates cluster index on the column. The only difference is Unique 
+                            key column allows only one null value. So is it possible to have cluster index 
+                            on unique key column?
+                            <br /> 
+                            The answer is YES. Though unique key allows null value but it still maintains 
+                            the uniqueness of the column.</span></p>
+                         
+                        <p>
+                            <b><span>
+                            How do you determine the maximum nested-level of Stored Procedure ?</span></b></p>
+                        <p>
+                            <span>&nbsp;The current nested level can be determine by : @@NESTLEVEL, The maximum 
+                            nested level is <b>32</b> .
+                            <br /> 
+                            ie:
+                            <br />
+                            <b>1. Creating stored procedure :</b> </span>
+                        </p>
+                        <p>
+                            <span>CREATE PROC PROC_SAMPLE1</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AS</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            BEGIN</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT @@NESTLEVEL</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EXEC PROC_SAMPLE1</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            END</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <b>2. Executing stored procedure :</b> </span>
+                        </p>
+                        <p>
+                            <span>EXEC PROC_SAMPLE1</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <b>3. Result :</b>
+                            <br />
+                            1
+                            <br />
+                            2
+                            <br />
+                            3
+                            <br />
+                            ..
+                            <br />
+                            ..
+                            <br />
+                            32
+                            <br />
+                            Msg 217, Level 16, State 1, Procedure PROC_SAMPLE1, Line 5
+                            <br />
+                            Maximum stored procedure, function, trigger, or view nesting level exceeded (<b>limit 
+                            32</b>).</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Difference Between Truncate Table and Delete Table Command in SQL Server?</span></b></p>
+                        <p>
+                            <span>&nbsp;In case of Delete Statement Log is maintained. while in case of truncate 
+                            command log is not maintained for each row, so we can&#39;t rollback the data in 
+                            case of truncate table command.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             How Can we 
+                            Write the Transaction Block in SQL Server?</span></b></p>
+                        <p>
+                            <span>&nbsp;BEGIN TRANSACTION
+                            <br />
+                            <br />
+                            Statement 1
+                            <br />
+                            Statement 2
+                            <br />
+                            ..................
+                            <br />
+                            ...............
+                            <br />
+                            IF(@ERROR&gt;0)
+                            <br />
+                            ROLLBACK TRANSACTION
+                            <br />
+                            ELSE
+                            <br />
+                            COMMIT TRANSACTION</span></p>
+                         
+                        <p>
+                            <b><span>
+                            How can we Rollback 
+                            the Transaction in DataBase?</span></b></p>
+                        <p>
+                            <span>&nbsp;We can Rollback the Transaction using &quot;ROLLBACK TRANSACTION&quot; Command</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What’s 
+                            the difference between a primary key and a unique key?</span></b></p>
+                        <p>
+                            <span>&nbsp;Both primary key and unique enforce uniqueness of the column on which 
+                            they are defined. But by default primary key creates a clustered index on the 
+                            column, where are unique creates a nonclustered index by default. Another major 
+                            difference is that, primary key doesn’t allow NULLs, but unique key allows one 
+                            NULL only.</span></p>
+                       
+                        <p>
+                            <b><span>
+                            Use of Bulk Copying ?</span></b></p>
+                        <p>
+                            <span>&nbsp;Bulk copying is used to transfer large amount of data.</span></p>
+                        
+                        <p>
+                            <b><span>
+                            What are the 
+                            disadvantages/limitation of the cursor?</span></b></p>
+                        <p>
+                            <span>&nbsp;Cursor requires a network roundtrip each time it fetches a record, thus 
+                            consume network resources.
+                            <br />
+                            While data processing, it issues locks on part of the table, or on the whole 
+                            table.</span></p>
+                        
+                        <p>
+                            <b><span>
+                            What is Typed vs. Untyped XML in SQL Server ? Explain with an example</span></b></p>
+                        
+                        <p>
+                            <b><span>Untyped XML</span></b><span> :
+                            <br />
+                            I have created one Table named : <i>Table1</i> </span>
+                        </p>
+                        <p>
+                            <span>CREATE TABLE TABLE2</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (XMLSample&nbsp;&nbsp;&nbsp;&nbsp; XML)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            GO</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            INSERT TABLE2 VALUES(&#39;TEST&#39;)&nbsp;&nbsp; </span>
+                        </p>
+                        <p>
+                            <span>
+                            <br />
+                            INSERT TABLE2 VALUES(&#39;123&#39;)&nbsp;&nbsp;&nbsp; </span>
+                        </p>
+                        <p>
+                            </span></p>
+                        <p>
+                            <span>
+                            <br />
+                            - The table should not allow any TYPE of data other than XML format with 
+                            specific element. But it allows. This is called &#39;<b>UnTyped XML</b> &#39;.
+                            <br />
+                            <br />
+                            <b>Typed XML</b> :
+                            <br />
+                            I create one Table with one column as XML datatype. It should allow only <i>
+                            INTEGER</i> type of data along with some specific XML Element. This is called &#39;<b>Typed 
+                            XML</b> &#39;
+                            <br />
+                            <br />
+                            <b>1.</b> I have to define one XML SCHEMA ( Type of the XML Element and Name of 
+                            the Element, Etc., ) </span>
+                        </p>
+                        <p>
+                            <span>CREATE XML SCHEMA COLLECTION PandianXMLSchema AS &#39;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            &lt;schema xmlns=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;element name=&quot;Dotnetfunda&quot; type=&quot;int&quot;/&gt;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            &lt;/schema&gt;&#39;</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            GO</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            I have created one XML SCHEMA named &#39;<b>PandianXMLSchema</b> &#39; ( It will say 
+                            what is the name of the &#39;<b>Element</b> &#39; - and Type of the Element ).
+                            <br />
+                            <br />
+                            <b>2.</b> I create one Table with one column as XML datatype along with XML 
+                            SCHEMA which we created above. It should allow only <b>INTEGER</b> type of data 
+                            along with <b>Dotnetfunda</b> XML Element alone. </span>
+                        </p>
+                        <p>
+                            <span>CREATE TABLE TABLE2</span></p>
+                        <p>
+                            <span>
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (XMLSample&nbsp;&nbsp;&nbsp;&nbsp; XML(PandianXMLSchema))</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            GO</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <b>3.</b> Inserting data into the TABLE2 </span>
+                        </p>
+                        <p>
+                            <span>INSERT TABLE2 VALUES(&#39;TEST&#39;)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            - It will throw an Err
+                            <br />
+                            Msg 6909, Level 16, State 1, Line 1
+                            <br />
+                            XML Validation: Text node is not allowed at this location, the type was defined 
+                            with element only content or with simple content. Location: /
+                            <br />
+                            <br />
+                            Because, the data &#39;<b>TEST</b>&#39; is not an <b>INTEGER</b> and Its not encloused 
+                            with &#39;<b>Dotnetfunda</b> &#39; element. </span>
+                        </p>
+                        <p>
+                            <span>INSERT TABLE2 VALUES(&#39;123&#39;)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            - It will throw an Err
+                            <br />
+                            Msg 6909, Level 16, State 1, Line 1
+                            <br />
+                            XML Validation: Text node is not allowed at this location, the type was defined 
+                            with element only content or with simple content. Location: /
+                            <br />
+                            <br />
+                            Because, the data &#39;<b>123</b>&#39; is an <b>INTEGER</b>. But Its not encloused with 
+                            &#39;<b>Dotnetfunda</b> &#39; element. </span>
+                        </p>
+                        <p>
+                            <span>INSERT TABLE2 VALUES(&#39;&lt;Dotnetfunda&gt;TEST&lt;/Dotnetfunda&gt;&#39;)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            - It will also throw an Err </span>
+                        </p>
+                        <p>
+                            <span>Msg 6926, Level 16, State 1, Line 1</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            XML Validation: Invalid simple type value: &#39;TEST&#39;. Location: /*:Dotnetfunda[1]</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            The data &#39;TEST&#39; encloused with proper element, But Its not an <b>INTEGER</b> 
+                            type. </span>
+                        </p>
+                        <p>
+                            <span>INSERT TABLE2 VALUES(&#39;&lt;Dotnetfunda&gt;123&lt;/Dotnetfunda&gt;&#39;)</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            (1 row(s) affected)
+                            <br />
+                            <br />
+                            <b>XMLSample</b>
+                            <br />
+                            &lt;Dotnetfunda&gt;123&lt;/Dotnetfunda&gt;
+                            </span></p>
+                        
+                         
+                        <p>
+                            <b><span>
+                             What is Fragmentation ?</span></b></p>
+                         
+                        <p>
+                            <span>A difference between the <b>physical</b> and <b>logical</b> ordering of 
+                            index data that can occur when data modifications are made. We can reduce 
+                            fragmentation and improve read-ahead performance by dropping and re-creating a 
+                            clustered index (or) DBCC DBREINDEX.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is ETL ?</span></b></p>
+                        
+                        <p>
+                            <b><span>E</span></b><span>xtraction, <b>T</b>ransformation, and <b>L</b>oading.
+                            <br />
+                            The complex process of copying and cleaning data from heterogeneous sources. 
+                            Important part of development projects for data warehousing and business 
+                            intelligence(<b>BI</b>).</span></p>
+                        
+                        <p>
+                            <b><span>
+                             What is DRI ?</span></b></p>
+                        
+                        <p>
+                            <b>D</b>eclarative <b>R</b>eferential <b>I</b>ntegrity  :
+                            <br />
+                            The DRI actions enforced by FOREIGN KEY constraints can be supplemented with 
+                            additional referential integrity logic defined in triggers on a table.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Dirty pages ?</span></b></p>
+                         
+                        <p>
+                            <span>Buffer pages that contain modifications that have not been written to 
+                            disk.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Deferred transaction ?</span></b></p>
+                        
+                        <p>
+                            <span>A transaction that is not committed when the roll forward phase of 
+                            recovery finishes, and that cannot be rolled back during database startup 
+                            because the data required by rollback is offline. This data can reside in either 
+                            a page or a file.</span></p>
+                        
+                        <p>
+                            <b><span>
+                             What is Database snapshot ?</span></b></p>
+                        
+                        <p>
+                            <span>A read-only, static view of a database at the moment of snapshot creation.</span></p>
+                       
+                        <p>
+                            <b><span>
+                             What is Two-Phase Commit ?</span></b></p>
+                         
+                        <p>
+                            <span>Two-phased commits are the way to keep multiple servers synchronized.
+                            <br />
+                            (Replication also can achieve this)
+                            <br />
+                            Two-phased commits are considered to be “Tight Consistency.”
+                            <br />
+                            In SQL Server 6.0, We must use the API functions and write some fairly advanced 
+                            code.
+                            <br />
+                            In SQL Server 6.5, The DTC (Distributed Transaction Coordinator) makes the 
+                            two-phase commit easy to implement.</span></p>
+                         
+                         
+                         
+                        <p>
+                            <b><span>
+                             Root Cause for 
+                            Increasing the Transaction Log.</span></b></p>
+                         
+                        <p>
+                            <b><span>1.</span></b><span>Uncommitted Transactions.
+                            <br />
+                            <b>2.</b>Extremely Large Transactions.
+                            <br />
+                            <b>3.</b>Operations : DBCC DBREINDEX / CREATE INDEX.
+                            <br />
+                            <b>4.</b>Client Applications do not process all results.
+                            <br />
+                            <b>5.</b>While Restoring from Transaction Log Backups.
+                            <br />
+                            <b>6.</b>Queries Time-Out before a transaction log completes the expansion and 
+                            you receive false &#39;Log Full&#39; error message.</span></p>
+                         
+                          
+                        <p>
+                            <b><span>
+                             What are 
+                            the restrictions of using Subquery in SQL Server?</span></b></p>
+                        
+                        <p>
+                            <span>Subquery can be used where an expression is possible. There are certain 
+                            limitation of using Subquery, they are
+                            <br /> 
+                            A subquery is subject to the following restrictions:
+                            <br /> 
+                            #. The select list of a subquery introduced with a comparison operator can 
+                            include only one expression or column name (except that EXISTS and IN operate on 
+                            SELECT * or a list, respectively).
+                            <br /> 
+                            #. If the WHERE clause of an outer query includes a column name, it must be 
+                            join-compatible with the column in the subquery select list.
+                            <br /> 
+                            <b>#. The ntext, text, and image data types cannot be used in the select list of 
+                            subqueries.</b>
+                            <br /> 
+                            #. Because they must return a single value, subqueries introduced by an 
+                            unmodified comparison operator (one not followed by the keyword ANY or ALL) 
+                            cannot include GROUP BY and HAVING clauses.
+                            <br /> 
+                            #. The DISTINCT keyword cannot be used with subqueries that include GROUP BY.
+                            <br /> 
+                            #. The COMPUTE and INTO clauses cannot be specified.
+                            <br /> 
+                            #. ORDER BY can only be specified when TOP is also specified.
+                            <br />
+                            <br />
+                            #. A view created by using a subquery cannot be updated.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Subquery in SQL Server?</span></b></p>
+                        
+                        <p>
+                            <span>A subquery is a query that is nested inside a SELECT, INSERT, UPDATE, or 
+                            DELETE statement, or inside another subquery. Subquery is an inner query or 
+                            inner select, while the statement containing a subquery is also called an outer 
+                            query or outer select.
+                            <br />
+                            For example </span>
+                        </p>
+                        <p>
+                            <span>SELECT CustName, CustOrderDate, (SELECT DateTimeOrdered FROM OrderDetails 
+                            as ODetails WHERE Ord.SalesOrderID = ODetails.SalesOrderID) AS OrderedDateTime 
+                            FROM Orders AS Ord</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Distributed 
+                            Queries in SQL Server?</span></b></p>
+                        
+                        <p>
+                            <span>Distributed queries access data from multiple heterogeneous data sources. 
+                            These data sources can be stored on either the same or different computers. 
+                            Microsoft SQL Server supports distributed queries by using OLE DB.
+                            <br /> 
+                            SQL Server users can use distributed queries to access the following:
+                            <br /> 
+                            #. Distributed data stored in multiple instances of SQL Server.
+                            <br />
+                            #. Heterogeneous data stored in various relational and nonrelational data 
+                            sources accessed by using an OLE DB provider.
+                             </span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the use of Keyword WITH ENCRYPTION keyword in SQL Server?</span></b></p>
+                         
+                        <p>
+                            <span>WITH ENCRYPTION keyword is used to encrypt the text of the Stored 
+                            Procedure.
+                            <br />
+                            <br />
+                            Once SPs are encrypted, the original text of the SP are not visible. User who 
+                            has created the SP will need to save the text to be used to create SP somewhere 
+                            safe to reuse it again or Users that have access to system tables or database 
+                            files can retrieve the encrypted text.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is user-defined 
+                            functions in SQL Server?</span></b></p>
+                        
+                        <p>
+                            <span>User-Defined Functions allows to define custom T-SQL functions that can 
+                            accept zero or more parameters and return a single scalar data value or a table 
+                            data type.
+                            <br /> 
+                            In terms of functionality it is similar to C# or VB.NET functions except the 
+                            fact that code is written in T-SQL :)</span></p>
+                        
+                        <p>
+                            <b><span>
+                            What is user-defined 
+                            data type in SQL Server?</span></b></p>
+                        
+                        <p>
+                            <span>User-defined data types can be used when several tables must store the 
+                            same type of data in a column and you must ensure that these columns have 
+                            exactly the same data type, length, and nullability.</span></p>
+                        
+                        <p>
+                            <b><span>
+                            What is the use of bit data type and what kind of data is stored into it?</span></b></p>
+                        
+                        <p>
+                            <span>Bit datatype is used to store boolean information like 1 or 0 where 1 is 
+                            considered as true and 0 is considered as false.
+                            <br />
+                            <br />
+                            While querying the database we need to use 1 or 0 in the select statement to 
+                            filter out the data instead of true and false.</span></p>
+                        
+                        <p>
+                            <b><span>
+                            What is blocking in SQL Server?</span></b></p>
+                        
+                        <p>
+                            <span>Blocking in SQL Server is a scenario where one connection to SQL Server 
+                            locks one or more records, and a second connection to SQL Server requires a 
+                            conflicting lock type on the record or records locked by the first connection. 
+                            This causes the second connection to wait until the first connection releases 
+                            its locks. By default, a connection will wait an unlimited amount of time for 
+                            the blocking lock to go away.
+                           </span></p>
+                        
+                        <p>
+                            <b><span>
+                            Difference between varchar and char:</span></b></p>                        
+                        <p>
+                            <b><span>varchar </span></b><span>are variable length strings with a maximum 
+                            length specified. If a string is less than the maximum length, then it is stored 
+                            verbatim without any extra characters.
+                            <br />
+                            <b>char</b> are fixed length strings with a set length specified. If a string is 
+                            less than the set length, then it is padded with extra characters so that it&#39;s 
+                            length is the set length.
+                            <br /> 
+                            Use <b>varchar </b>when your strings do not have a fixed length (e.g. names, 
+                            cities, etc.)
+                            <br /> 
+                            Use<b> char</b> when your strings are always going to be the same length (e.g. 
+                            phone numbers, zip codes, etc).</span></p>
+                         
+                        <p>
+                            <b><span>
+                             Can we create a 
+                            Foreign Key with out Primary Key?</span></b></p>
+                         
+                        <p>
+                            <b><span>Yes. If the table has Unique Key then it is posible to create a Foreign 
+                            key constraint</span></b><span> </span>
+                        </p>
+                         
+                        <p>
+                            <b><span>
+                             What is Check Constraint?</span></b></p>
+                         
+                        <p>
+                            <b><span>Check constraint specifies a condition that is enforced for each row of 
+                            the table on which the constraint is defined. Once constraint is defined, insert 
+                            or update to the data within the tables is checked against the defined 
+                            constraint.</span></b></p>
+                         
+                        <p>
+                            <b><span>
+                             How to get GUID in sql server?</span></b></p>
+                         
+                        <p>
+                            <span>select newid().
+                            <br />
+                            This will return you GUID</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is DTC?</span></b></p>
+                         
+                        <p>
+                            <span>The Microsoft Distributed Transaction Coordinator (MS DTC) is a 
+                            transaction manager that allows client applications to include several different 
+                            sources of data in one transaction. MS DTC coordinates committing the 
+                            distributed transaction across all the servers enlisted in the transaction</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What are three SQL keywords used to change or set someone’s permissions?</span></b></p>
+                         
+                        <p>
+                            <span>Grant, Deny and Revoke</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is RAID and what are different types of RAID configurations?</span></b></p>
+                        
+                        <p>
+                            <span>RAID stands for Redundant Array of Inexpensive Disks, used to provide 
+                            fault tolerance to database servers. There are six RAID levels 0 through 5 
+                            offering different levels of performance, fault tolerance</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is the purpose of UPDATE STATISTICS?</span></b></p>
+                        
+                        <p>
+                            <span>Updates information about the distribution of key values for one or more 
+                            statistics groups (collections) in the specified table or indexed view.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is a tuple?</span></b></p>
+                         
+                        <p>
+                            <span>A tuple is an instance of data within a relational database.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What are sequence diagrams? What you will get out of this sequence diagrams?</span></b></p>
+                         
+                        <p>
+                            <span>Sequence diagrams document the interactions between classes to achieve a 
+                            result, such as a use case. Because UML is designed for object-oriented 
+                            programming, these communications between classes are known as messages. The 
+                            sequence diagram lists objects horizontally, and time vertically, and models 
+                            these messages over time.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What is Log Shipping?</span></b></p>
+                         
+                        <p>
+                            <span>In Microsoft SQL Server, you can use log shipping to feed transaction logs 
+                            from one database to another on a constant basis. Continually backing up the 
+                            transaction logs from a source database and then copying and restoring the logs 
+                            to a destination database keeps the destination database synchronized with the 
+                            source database. This allows you to have a backup server and also provides a way 
+                            to offload query processing from the main computer (the source server) to 
+                            read-only destination servers.</span></p>
+                         
+                        <p>
+                            <b><span>
+                             What Is DTS?</span></b></p>
+                        
+                        <p>
+                            <span>DTS is a set of tools you can use to import, export, and transform 
+                            heterogeneous data between one or more data sources, such as Microsoft SQL 
+                            Server, Microsoft Excel, or Microsoft Access. Connectivity is provided through 
+                            OLE DB, an open-standard for data access. ODBC (Open Database Connectivity) data 
+                            sources are supported through the OLE DB Provider for ODBC.</span></p>
+                         
+                        <p>
+                            <b><span>
+                            what is ACID?</span></b></p>
+                         
+                        <p>
+                            <span>ACID (an acronymn for Atomicity Consistency Isolation Durability) is a 
+                            concept that Database Professionals generally look for when evaluating databases 
+                            and application architectures. For a reliable database all this four attributes 
+                            should be achieved.
+                            <br /> 
+                            Atomicity is an all-or-none proposition.
+                            <br /> 
+                            Consistency guarantees that a transaction never leaves your database in a 
+                            half-finished state.
+                            <br /> 
+                            Isolation keeps transactions separated from each other until they’re finished.
+                            <br /> 
+                            Durability guarantees that the database will keep track of pending changes in 
+                            such a way that the server can recover from an abnormal termination.
+                            <br /> 
+                            Above four rules are very important for any developers dealing with databases</span></p>
+                         
+                        <p>
+                            <b><span>
+                            What is a deadlock?</span></b></p>
+                         
+                        <p>
+                            <span>Deadlock is a situation when two processes, each having a lock on one 
+                            piece of data, attempt to acquire a lock on the other’s piece. Each process 
+                            would wait indefinitely for the other to release the lock, unless one of the 
+                            user processes is terminated.
+                            <br />
+                            SQL Server detects deadlocks and terminates one user’s process</span></p>                         
+                        
+                        <p>
+                            <b><span>
+                            What is the Maximum number of input and output parameters in Stored procedure in 
+                            SQL Server 2000 ?</span></b></p>
+                        
+                        <p>
+                            <span>1024</span></p>
+                        
+                        <p>
+                            <b><span>
+                            Difference between Primary key Constraint and Unique key Constraint in SQL 
+                            Server.</span></b></p>
+                        <p>
+                            <span><b>Unique Key Constraint:</b>
+                            <br />
+                            The column values should retain uniqueness.
+                            <br />
+                            It allows null values in the column.
+                            <br />
+                            It will create non-clustered index by default.
+                            <br />
+                            Any number of unique constraints can be added to a table.
+                            <br />
+                            <br />
+                            <b>Primary Key Constraint:</b>
+                            <br />
+                            Primary key will create column data uniqueness in the table.
+                            <br />
+                            It Wont allow Null values.
+                            <br />
+                            By default Primary key will create clustered index.
+                            <br />
+                            Only one Primary key can be created for a table.
+                            <br />
+                            Multiple columns can be consolidated to form a single primary key</span></p>
+                        <p>
+                            <b><span>
+                            What&#39;s the difference between DELETE TABLE and TRUNCATE TABLE commands?</span></b></p>
+                        <p>
+                            <span>DELETE TABLE is a logged operation, so the deletion of each row gets 
+                            logged in the transaction log, which makes it slow. TRUNCATE TABLE also deletes 
+                            all the rows in a table, but it won&#39;t log the deletion of each row, instead it 
+                            logs the deallocation of the data pages of the table, which makes it faster. Of 
+                            course.</span></p>
+                        
+                        <p>
+                            <b><span>
+                            How to change Database 
+                            name in SQL Server?</span></b></p>
+                        <p>
+                            <span>Use following code
+                            <br />
+                            <br />
+                            Supported in SQL Server 2000 and 2005
+                            <br />
+                            exec sp_renamedb &quot;test&quot;, &quot;test1&quot;
+                            <br />
+                            <br />
+                            Supported in SQL Server 2005 and later version
+                            <br />
+                            ALTER Database &quot;test1&quot; Modify Name=&quot;test&quot;</span></p>
+                        
+                        <p>
+                            <b><span>
+                            the diff between a HAVING CLAUSE and a WHERE CLAUSE?</span></b></p>
+                        <p>
+                            <span>You can use Having Clause with the GROUP BY function in query and WHERE 
+                            Clause is applied to each row before they are part of the GROUP BY function in a 
+                            query.</span></p>
+                        
+                        <p>
+                            <b><span>
+                            What is Clustered &amp; 
+                            Non-Clustered Index?</span></b></p>
+                        <p>
+                            <span><b>Clustered Index:</b> Clustered index physically rearrange the data that 
+                            users inserts in your tables. It is nothing but a dictionary type data where 
+                            actual data remains.
+                            <br />
+                            <b>Non-Clustered Index:</b> It Non-Clustered Index contains pointers to the data 
+                            that is stored in the data page. It is a kind of index backside of the book 
+                            where you see only the reference of a kind of data.</span></p>
+						
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+                        <li>
+							<span class="opener active">Interview Question</span>
+							<ul>
+								<li><a href="/IQ/index.html">Interview Question</a></li>
+                                <li><a href="/IQ/InterviewTips.html">Interview Tips</a></li>
+                                <li><a href="/IQ/SkillsAndExperience.html">Skills and Experience</a></li>
+                                <li><a href="/IQ/ProjectManagementPoints.html">Project Management Points</a></li>
+                                <li><a href="/IQ/ADONETPoints.html">ADONET Points</a></li>
+                                <li><a href="/IQ/AJAXPoints.html">AJAX Points</a></li>
+                                <li><a href="/IQ/HtmlPoints.html">HTML Points</a></li>
+                                <li><a href="/IQ/jQueryPoints.html">jQuery Points</a></li>
+                                <li><a href="/IQ/HTMLDHTMLPoints.html">HTML DHTML Points</a></li>
+                                <li><a href="/IQ/WebServicesPoints.html">Web Services, XML, XSLT</a></li>
+                                <li><a href="/IQ/CSSPoints.html">CSS Points</a></li>
+                                <li><a href="/IQ/OOPSPoints.html">OOPS Points</a></li>
+                                <li><a href="/IQ/SharepointPoints.html">Sharepoint Points</a></li>
+                                <li><a href="/IQ/SQLServerPoints.html">SQL Server Points</a></li>
+                                <li><a href="/IQ/ASPNETPoints.html">ASPNET Points</a></li>
+                                <li><a href="/IQ/WWFPoints.html">WWF Points</a></li>
+                                <li><a href="/IQ/WPFPoints.html">WPF Points</a></li>
+                                <li><a href="/IQ/WCFPoints.html">WCF Points</a></li>
+                                <li><a href="/IQ/Sharepoint.html">Sharepoint</a></li>
+							</ul>
+						</li>
+						<li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/Powershell/index.html">Powershell</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>                        
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>language-neutral solution package </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Error occurred in deployment step 'Retract Solution': The language-neutral solution package was not found." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo">Language-Neutral Solution Package</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h1>The language-neutral solution package was not found</h1>
+						</header>
+						<p>
+                        The language-neutral solution package was not found Error occurred in deployment step 'Retract Solution': The language-neutral solution package was not found
+                        So today I was working on a Workflow in SharePoint2010 with VS2010. I had deployed and retracted several times while debugging this workflow. When all of a sudden I get this error that makes no sense at all. "The language-neutral solution package was not found" I got this if I was either deploying or retracting the solution. After some digging and playing with power shell I got it to work.
+                        <br />
+                        Steps:<br />
+                        1.	Right Click the solution and select Package<br />
+                        2.	Open SharePoint Power Management Shell<br />
+                        3.	Use the following Command: Add-PSSnapin Microsoft.SharePoint.PowerShell -ErrorAction "SilentlyContinue"<br />
+                        4.	Then use : Add-SPSolution -LiteralPath "[PATH and FileName].wsp" -Confirm:$false<br />
+                        5.	Now go back to VS2101 and you will be able to retract the solution since you have added a solution back into SharePoint.<br />
+                        </p>
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/Powershell/index.html">Powershell</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

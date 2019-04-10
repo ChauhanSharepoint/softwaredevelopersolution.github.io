@@ -1,0 +1,222 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>FBA User Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Many of our customers have use cases where by they would like to take a specific custom action when an FBA (forms based authentication) user logs in to their SharePoint Extranet. Some examples may be to update a back-end CRM system, or redirect the user to a specific page. " />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>FBA User Login</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Take Custom Action upon SharePoint FBA User Login</h3>
+						</header>
+                        <p>
+                            Many of our customers have use cases where by they would like to take a 
+                            specific custom action when an FBA (forms based authentication) user logs in to their SharePoint 
+                            Extranet. Some examples may be to update a back-end CRM system, or redirect the 
+                            user to a specific page. It is actually fairly simple to implement this logic. 
+                            The Visual Studio project and source code for this article can be downloaded by 
+                            clicking the download link at the bottom of this page.</p>
+                        <p>
+                            First under the 12 hive, open the C:\Program Files\Common Files\Microsoft 
+                            Shared\web server extensions\12\TEMPLATE\LAYOUTS folder. Find the login.aspx 
+                            file, and make a copy of it called CustomLogin.aspx. This will be our new user 
+                            login page.</p>
+                        <p>
+                            Next, open the web.config for your SharePoint application, find the 
+                            &lt;authentication/&gt; element, and change it from: 
+                        </p>
+                        <p>
+                            &lt;authentication mode=&quot;Forms&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;forms loginUrl=&quot;/_layouts/login.aspx&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;/authentication&gt;</p>
+                        <p>
+                            to:</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; &lt;authentication mode=&quot;Forms&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;forms loginUrl=&quot;/_layouts/CustomLogin.aspx&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;/authentication&gt;</p>
+                        <p>
+                            Now, create a new Class Library project in Visual Studio, or alternatively 
+                            download my sample project from the link below. Your project will need 
+                            references to Microsoft.SharePoint.dll, 
+                            Microsoft.SharePoint.ApplicationPages.dll, and System.Web.</p>
+                        <p>
+                            Rename the automatically created Class1.cs to CustomLoginPage.cs. To save 
+                            time and effort, the CustomLoginPage class will derive from 
+                            Microsoft.SharePoint.ApplicationPages.LoginPage. Here&#39;s what the class should 
+                            look like:</p>
+                        <p>
+                            using System;<br />
+                            using System.Collections.Generic;<br />
+                            using System.Text;<br />
+                            using System.Web;<br />
+                            using System.Web.Security;<br />
+                            <br />
+                            namespace SPSolutions.Custom<br />
+                            {<br />
+&nbsp;&nbsp;&nbsp; public class CustomLoginPage : Microsoft.SharePoint.ApplicationPages.LoginPage<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; protected override void OnLoad(EventArgs e)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; base.OnLoad(e);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.login.LoggedIn += new 
+                            EventHandler(OnLoggedIn);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Fires after user has sucessfully logged in<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; void OnLoggedIn(object sender, EventArgs e)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get the user<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;MembershipUser user = 
+                            Membership.GetUser(this.login.UserName);<br />
+                            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (user != null)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Do something 
+                            interesting such as redirect or update CRM<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; }<br />
+                            }</p>
+                        <p>
+                            As you can see, it is a simple matter of subscribing to the base page&#39;slogin control&#39;s
+                            LoggedIn event, and then taking action when that event 
+                            fires. Inside the event handler, you can instantiate a 
+                            MembershipUser object for the newly logged in user, and 
+                            then do something interesting. 
+                        </p>
+                        <p>
+                            It should also be noted that the login control has three other events which may be salient 
+                            to your particular use case.</p>
+                        <ul type="disc">
+                            <li>
+                                LoggingIn - Occurs when a user submits login information, but before 
+                                authentication takes place.</li>
+                            <li>
+                                 Authenticate - Occurs when a user is authentication takes place.</li>
+                            <li>
+                                 LoggedIn - Occurs when a user logs in to the web site, and has been 
+                                authenticated.</li>
+                            <li>
+                                 LoginError - Occurs when a login error is detected.</li>
+                        </ul>
+                        <p>
+                            Next, open the CustomLogin.aspx page created in the first step, and modify 
+                            its Assembly and Page declarations to point towards the new custom code behind 
+                            assembly. If you&#39;re using my sample project, your declaration will look exactly 
+                            like this:</p>
+                        <p>
+                            &lt;%@ Assembly Name=&quot;SPSolutions.Custom, Version=1.0.0.0, Culture=neutral, 
+                            PublicKeyToken=e9db3057acd9c0f6&quot;%&gt;
+
+                        </p>
+                        <p>
+                            &lt;%@ Page Language=&quot;C#&quot; Inherits=&quot;SPSolutions.Custom.CustomLoginPage&quot; 
+                            MasterPageFile=&quot;~/_layouts/simple.master&quot;%&gt;</p>
+                        <p>
+                            Finally, place the compiled assembly into the _app_bin folder of your 
+                            SharePoint web application (e.g. 
+                            C:\Inetpub\wwwroot\wss\VirtualDirectories\adventureworks.local.dev\_app_bin). 
+                            Optionally, you could also place the assembly into the GAC .</p>
+                        <p>
+                        
+                        </p>                       
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

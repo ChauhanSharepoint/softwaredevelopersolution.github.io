@@ -1,0 +1,133 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    <title>Varchar and NVarchar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="The only difference is that NVARCHAR can handle Unicode characters 
+                            allowing you to use multiple languages in the database. NVARCHAR takes twice as 
+                            much space to store to allow for the extended character set required by some 
+                            other languages. So if you are not using other languages then definitely use 
+                            VARCHAR for character data" />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Varchar and NVarchar</strong></a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Differences between varchar and nvarchar in SQL Server</h3>
+						</header>
+						<p>
+                            <span>In principle they are the same and are handled the same by your 
+                            application. The only difference is that NVARCHAR can handle Unicode characters 
+                            allowing you to use multiple languages in the database. NVARCHAR takes twice as 
+                            much space to store to allow for the extended character set required by some 
+                            other languages. So if you are not using other languages then definitely use 
+                            VARCHAR for character data.</span></p>
+                        <p>
+                            <span>The broad range of data types in SQL Server can sometimes throw people 
+                            through a loop, especially when the data types seem to be highly 
+                            interchangeable. Two in particular that constantly spark questions are <b>
+                            VARCHAR</b> and <b>NVARCHAR</b>: what&#39;s the difference between the two, and how 
+                            important is the difference?</span></p>
+                        <p>
+                            <span>VARCHAR is an abbreviation for <b>variable-length character string</b>. 
+                            It&#39;s a string of text characters that can be as large as the page size for the 
+                            database table holding the column in question. The size for a table page is 
+                            8,196 bytes, and no one row in a table can be more than 8,060 characters. This 
+                            in turn limits the maximum size of a VARCHAR to 8,000 bytes.</span></p>
+                        <span>The key difference between the two data types is how they&#39;re stored. 
+                        VARCHAR is stored as regular 8-bit data. But NVARCHAR strings are stored in the 
+                        database as UTF-16 — 16 bits or two bytes per character, all the time — and 
+                        converted to whatever code page is being used by the database connection on 
+                        output (typically UTF-8). That said, NVARCHAR strings have the same length 
+                        restrictions as their VARCHAR cousins — 8,000 bytes. However, since NVARCHARs 
+                        use two bytes for each character, that means a given NVARCHAR can only hold 
+                        4,000 characters (<i>not</i> bytes) maximum. So, the amount of storage needed 
+                        for NVARCHAR entities is going to be twice whatever you&#39;d allocate for a plain 
+                        old VARCHAR.</span>
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+                        <li>
+							<span class="opener active">SQL</span>
+							<ul>
+								<li><a href="/sql/index.html">sql</a></li>
+                                <li><a href="/sql/SelfJoins.html">Self-Joins</a></li>
+                                <li><a href="/sql/ClusteredIndex.html">Clustered Index</a></li>
+                                <li><a href="/sql/VarcharAndNVarchar.html">Varchar And NVarchar</a></li>
+                                <li><a href="/sql/TableUserDefinedFunction.html">Table Valued User Defined Function</a></li>
+                                <li><a href="/sql/TriggersSQLSERVER.html">Triggers in SQL SERVER</a></li>
+							</ul>
+						</li>
+						<li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>                        
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>                
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

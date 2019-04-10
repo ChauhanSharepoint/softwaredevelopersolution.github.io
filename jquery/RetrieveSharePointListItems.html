@@ -1,0 +1,361 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Retrieve SharePoint List Items Using AngularJS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Retrieve SharePoint List Items Using AngularJS With single App & Multiple Controllers." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo">Retrieve SharePoint List Items Using AngularJS</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h1>Retrieve SharePoint List Items Using AngularJS With single App & Multiple Controllers</h1>
+						</header>
+						<p style="box-sizing: border-box; font-size: 14px; margin: 1em 0px; line-height: 1.5; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            <strong style="box-sizing: border-box;">Introduction:</strong></p>
+                        <div style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            In this article you will learn how to retrieve<span>&nbsp;</span><span 
+                                style="box-sizing: border-box; color: rgb(0, 0, 255);">SharePoint&nbsp;</span>list items using AngularJS with single 
+                            app directive and multiple controllers. In this scenario, we will see how we can 
+                            retrieve data from multiple lists using REST API and display it on multiple 
+                            components in a SharePoint page. In our case, we will consider how we can show 
+                            the values of 2 SharePoint list items on two different components within 
+                            &nbsp;asingle page.</div>
+                        <p style="box-sizing: border-box; font-size: 14px; margin: 1em 0px; line-height: 1.5; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            AngularJS will help SharePoint developers to bind the data easily on SharePoint 
+                            pages. With respect to angular context, the components will have the respective 
+                            controllers defined. We will consider single app directives which will be 
+                            initialized at the root level of the component.</p>
+                        <p style="box-sizing: border-box; font-size: 14px; margin: 1em 0px; line-height: 1.5; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            Declare the html like below. Here, “listApp” is ng-app directive, which defines 
+                            the application. Controller1 and controller2 are ng-controller directives which 
+                            defines the controllers. Ng-repeat directive will instantiate template for item 
+                            in the item collections. The template will hold the $scope object which will be 
+                            referred in the script code.<br style="box-sizing: border-box;" />
+                        </p>
+                        <div class="dp-highlighter" 
+                            style="box-sizing: border-box; font-family: Consolas, &quot;Courier New&quot;, Courier, mono, serif; font-size: 12px; background-color: rgb(231, 229, 220); width: 665.922px; overflow: auto; padding-top: 1px; margin: 18px 0px !important; color: rgb(33, 33, 33); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+                            <div class="bar" style="box-sizing: border-box; padding-left: 45px;">
+                            </div>
+                            <ol class="dp-c" start="1" 
+                                style="box-sizing: border-box; margin: 0px 0px 1px 45px !important; padding: 0px; border: none; list-style: decimal; background-color: rgb(255, 255, 255); color: rgb(92, 92, 92);">
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &lt;div&nbsp;ng-app=<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;listApp&quot;</span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;App1&quot;</span>&nbsp;ng-controller=<span 
+                                        class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;controller1&quot;</span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;First&nbsp;List&nbsp;Items&lt;/h1&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;ng-repeat=<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;item&nbsp;in&nbsp;items&quot;</span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;{{item.Title}}&lt;/p&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id=<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;App2&quot;</span>&nbsp;ng-controller=<span 
+                                        class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;controller2&quot;</span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Second&nbsp;List&nbsp;Items&lt;/h1&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;ng-repeat=<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;item&nbsp;in&nbsp;items&quot;</span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;{{item.Title}}&lt;/p&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &lt;/div&gt; &nbsp;&nbsp;</span><span 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit; font-family: calibri;">&nbsp;</span></li>
+                            </ol>
+                        </div>
+                        <p style="box-sizing: border-box; font-size: 14px; margin: 1em 0px; line-height: 1.5; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            Then initialize the module. The below snippet helps you understand how app can 
+                            be initialized using the module.<br style="box-sizing: border-box;" />
+                        </p>
+                        <div class="dp-highlighter" 
+                            style="box-sizing: border-box; font-family: Consolas, &quot;Courier New&quot;, Courier, mono, serif; font-size: 12px; background-color: rgb(231, 229, 220); width: 665.922px; overflow: auto; padding-top: 1px; margin: 18px 0px !important; color: rgb(33, 33, 33); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+                            <div class="bar" style="box-sizing: border-box; padding-left: 45px;">
+                            </div>
+                            <ol class="dp-c" start="1" 
+                                style="box-sizing: border-box; margin: 0px 0px 1px 45px !important; padding: 0px; border: none; list-style: decimal; background-color: rgb(255, 255, 255); color: rgb(92, 92, 92);">
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    var&nbsp;appVar&nbsp;=&nbsp;angular.module(<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&#39;listApp&#39;</span>,&nbsp;[]);&nbsp;&nbsp;</span></li>
+                            </ol>
+                        </div>
+                        <p style="box-sizing: border-box; font-size: 14px; margin: 1em 0px; line-height: 1.5; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            &nbsp;Then initialize both controllers using the respective controller names 
+                            controller1 and controller2. The below code snippet helps you understand how the 
+                            controller can be initialized with controller name and also calls the respective 
+                            functions to retrieve the SharePoint list items. GetListItems is the function 
+                            name with parameters $scope and list name. $scope holds the necessary properties 
+                            for binding the list values.</p>
+                        <div class="dp-highlighter" 
+                            style="box-sizing: border-box; font-family: Consolas, &quot;Courier New&quot;, Courier, mono, serif; font-size: 12px; background-color: rgb(231, 229, 220); width: 665.922px; overflow: auto; padding-top: 1px; margin: 18px 0px !important; color: rgb(33, 33, 33); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+                            <div class="bar" style="box-sizing: border-box; padding-left: 45px;">
+                            </div>
+                            <ol class="dp-c" start="1" 
+                                style="box-sizing: border-box; margin: 0px 0px 1px 45px !important; padding: 0px; border: none; list-style: decimal; background-color: rgb(255, 255, 255); color: rgb(92, 92, 92);">
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    appVar.controller(<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;controller1&quot;</span>,&nbsp;function($scope){&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;GetListItems($scope,&nbsp;<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;List1&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    });&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    appVar.controller(<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;controller2&quot;</span>,&nbsp;function($scope){&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;GetListItems($scope,&nbsp;<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;List2&quot;</span>);&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    }); &nbsp;</span><span 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit; font-family: calibri;">&nbsp;</span></li>
+                            </ol>
+                        </div>
+                        <p style="box-sizing: border-box; font-size: 14px; margin: 1em 0px; line-height: 1.5; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            Then we will use ajax calls to retrieve the items from SharePoint list using 
+                            REST API. In this example, we are going to just retrieve the list item titles 
+                            without any filters and bind it to the html elements. Remember to set headers to 
+                            retrieve the list item values as JSON object. The retrieved JSON can directly 
+                            bind to the html using $scope using<span>&nbsp;</span><em 
+                                style="box-sizing: border-box;">$scope.items = data.d.results</em>. The 
+                            below code helps you understand in detail.<br style="box-sizing: border-box;" />
+                        </p>
+                        <div class="dp-highlighter" 
+                            style="box-sizing: border-box; font-family: Consolas, &quot;Courier New&quot;, Courier, mono, serif; font-size: 12px; background-color: rgb(231, 229, 220); width: 665.922px; overflow: auto; padding-top: 1px; margin: 18px 0px !important; color: rgb(33, 33, 33); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+                            <div class="bar" style="box-sizing: border-box; padding-left: 45px;">
+                            </div>
+                            <ol class="dp-c" start="1" 
+                                style="box-sizing: border-box; margin: 0px 0px 1px 45px !important; padding: 0px; border: none; list-style: decimal; background-color: rgb(255, 255, 255); color: rgb(92, 92, 92);">
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    function&nbsp;GetListItems($scope,&nbsp;listName){&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;$.ajax({&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url:&nbsp;<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;/_api/web/lists/GetByTitle(&#39;&quot;</span>+listName+<span 
+                                        class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;&#39;)/items&quot;</span>,&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method:&nbsp;<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;GET&quot;</span>,&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;async:&nbsp;<span class="keyword" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 102, 153); background-color: inherit; font-weight: bold;">false</span>,&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers:&nbsp;{&nbsp;<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;Accept&quot;</span>:&nbsp;<span 
+                                        class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;application/json;odata=verbose&quot;</span>&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;success:&nbsp;function(data){&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.items&nbsp;=&nbsp;data.d.results;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error:&nbsp;function(sender,args){&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(args.get_message());&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    } &nbsp;&nbsp;</span><span 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit; font-family: calibri;">&nbsp;</span></li>
+                            </ol>
+                        </div>
+                        <p style="box-sizing: border-box; font-size: 14px; margin: 1em 0px; line-height: 1.5; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            The below snapshot show the data from SharePoint list.<br 
+                                style="box-sizing: border-box;" />
+                            <img alt="" 
+                                src="https://csharpcorner-mindcrackerinc.netdna-ssl.com/article/handling-multiple/Images/ListItems.png" 
+                                style="box-sizing: border-box; max-width: 100%;" /></p>
+                        <p style="box-sizing: border-box; font-size: 14px; margin: 1em 0px; line-height: 1.5; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            <strong style="box-sizing: border-box;">Summary:</strong></p>
+                        <p style="box-sizing: border-box; font-size: 14px; margin: 1em 0px; line-height: 1.5; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            Thus you have seen how to retrieve and bind the values to a SharePoint page from 
+                            SharePoint list using AngularJS with single app and multiple controller 
+                            directives</p>
+						<p>
+                        
+                        </p>
+                        
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">JQUERY</span>
+							<ul>
+								<li><a href="/jquery/index.html">jquery</a></li>
+                                <li><a href="/jquery/HideMenuItems.html">Hide Menu Items</a></li>
+                                <li><a href="/jquery/DisplaySharePointListData.html">Display SharePoint List Data</a></li>
+                                <li><a href="/jquery/RetrieveSharePointListItems.html">Retrieve SharePoint List Items</a></li>
+                                <li><a href="/jquery/AllItemsFromSharePointList.html">All Items From SharePoint List</a></li>
+							</ul>
+						</li>
+                        <li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/Powershell/index.html">Powershell</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <section>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Clustered index in VARCHAR column</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Clustered index would be narrow, static and unique. CI key presents 
+                            in every non-clustered index leaf (and for non-unique index also in intermediate 
+                            and root levels). So wider CI is, wider non-clustered indexes are - which leads 
+                            to less efficient NCI and overhead on maintenance." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Clustered index in VARCHAR column</strong></a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Clustered index in VARCHAR column</h3>
+						</header>						
+                        <p>Yes, you can create a clustered index on non-unique 
+                            nullable varchar column. Is it good idea? It depends.</span></p>
+                        <p>
+                            <span>Ideal clustered index would be narrow, static and unique. CI key presents 
+                            in every non-clustered index leaf (and for non-unique index also in intermediate 
+                            and root levels). So wider CI is, wider non-clustered indexes are - which leads 
+                            to less efficient NCI and overhead on maintenance. When you modify the value of 
+                            CI (static part), SQL Server physically moves the data in the CI as well as 
+                            updates all NCI which could be quite expensive. Lastly, if you don&#39;t define CI 
+                            as unique, SQL Server adds internal nullable integer called uniquifier to CI.</span></p>
+                        <p>
+                            <span>As you can see, CI on varchar non-unique column violates criteria for 
+                            &quot;ideal CI&quot;. It does not mean though that it&#39;s the bad choice in your case - you 
+                            just need to compare benefits you get with downsides it introduces. I personally 
+                            would try to optimize the query with (covering) non-clustered indexes first. 
+                            </span>
+                        </p>
+                        <h2>
+                            <span>SQL SERVER – Index Optimization Checklist</span></h2>
+                        <p>
+                            <span>Index optimization is always interesting subject to me. Every 
+                            time I receive request to help optimize query or query on any specific table. I 
+                            always ask Jr. DBA to go over following list first before I take a look at it. 
+                            Most of the time the Query Speed is optimized just following basic rules 
+                            mentioned below. Once following checklist applied interesting optimization part 
+                            begins which only experiment and experience can resolve.</span></p>
+                        <ul type="disc">
+                            <li><span>Create Index on frequently used columns in 
+                                T-SQL Code. Columns used in WHERE, ORDER BY and GROUP BY are good candidate for 
+                                Indexes. Create Index on column which are used in JOIN Condition.</span></li>
+                            <li><span>Remove any un-necessary Indexes. As Index 
+                                occupies hard drive space as well as it decreases performance of all the insert, 
+                                updates, deletes to the table.</span></li>
+                            <li><span>Smaller Index Key gives better performance 
+                                than Index key which covers large data or many columns</span></li>
+                            <li><span>Index on Integer Columns performs better than 
+                                varchar columns.</span></li>
+                            <li><span>Clustered Index must exist before creating 
+                                Non-Clustered Index.</span></li>
+                            <li><span>Clustered Index must be created on Single 
+                                Column which is not changing and narrow in size. Best candidate is primary key.</span></li>
+                            <li><span>Non-clustered Indexes increases performance of 
+                                the query that returns fewer rows and rows has wide selectivity spectrum.</span></li>
+                            <li><span>Each table must have one Clustered Index.</span></li>
+                            <li><span>If column have low selectivity avoid creating 
+                                Index on that column as it slow down the rows modification and system will not 
+                                get benefit from Index.</span></li>
+                            <li><span>Multiple Columns Index or Covered Index should 
+                                be ordered as Most Selective column on left and gradually decreasing selectivity 
+                                as they go right.</span></li>
+                            <li><span>Use SORT_IN_TEMPDB option when table is 
+                                created if temp Database is on different disk. This will increase the 
+                                performance to create Index.</span></li>
+                            <li><span>Rebuild Index frequently using ALTER INDEX and 
+                                De-fragment Index to keep performance optimal for Indexes.</span></li>
+                        </ul>
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+                        <li>
+							<span class="opener active">SQL</span>
+							<ul>
+								<li><a href="/sql/index.html">sql</a></li>
+                                <li><a href="/sql/SelfJoins.html">Self-Joins</a></li>
+                                <li><a href="/sql/ClusteredIndex.html">Clustered Index</a></li>
+                                <li><a href="/sql/VarcharAndNVarchar.html">Varchar And NVarchar</a></li>
+                                <li><a href="/sql/TableUserDefinedFunction.html">Table Valued User Defined Function</a></li>
+                                <li><a href="/sql/TriggersSQLSERVER.html">Triggers in SQL SERVER</a></li>
+							</ul>
+						</li>
+						<li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>                        
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

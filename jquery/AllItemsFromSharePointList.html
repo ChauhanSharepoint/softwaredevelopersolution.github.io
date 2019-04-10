@@ -1,0 +1,677 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Get All Items From SharePoint List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="How To Get All Items From SharePoint List And Display It In Custom HTML Table With Sorting Using AngularJS." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+
+ table.MsoNormalTable
+	{line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	}
+    </style>
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo">Get All Items From SharePoint List</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h1>All Items From SharePoint List And Display It In Custom HTML Table</h1>
+						</header>
+                        <p>
+                            <span>Hello everyone, in this article we will look into the approach on how to 
+                            get all the SharePoint List Items and showing that in a Custom page using HTML 
+                            table. Here we’re using two important things from AngularJS, one is $scope 
+                            object and another one is $http service. To know more about $scope object and 
+                            other basic stuffs in AngularJS, please refer my previous article -&nbsp;Basics 
+                            of AngularJS in SharePoint</span></p>
+                        <p>
+                            <b><span>About $http service:&nbsp;</span></b><span>HTTP is a service that Angular 
+                            provides, and it is an object with methods we can use to make HTTP calls. The 
+                            methods are named after the HTTP methods, so the methods on this object are GET, 
+                            POST, PUT, and DELETE.</span></p>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <p>
+                                        <span>1</span></p>
+                                    <p>
+                                        <span>2</span></p>
+                                    <p>
+                                        <span>3</span></p>
+                                    <p>
+                                        <span>4</span></p>
+                                    <p>
+                                        <span>5</span></p>
+                                </td>
+                                <td width="1185">
+                                    <p>
+                                        <span>&nbsp;var MainController = function ($scope, $http) {</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.user = $http.get(&#39;url/users/547226&#39;); //wrong way, bcz its 
+                                        async so we won’t get the result immediately.</span></p>
+                                    <p>
+                                        <span>&nbsp;};</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        </p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <b><span>Making use of Promise</span></b></p>
+                        <p>
+                            <span>As the name implies, the promise object is an object that promises to give 
+                            us some result in the future, and that output might be the data that we need, or 
+                            the result might be an error if the server was unreachable or unavailable or 
+                            some issue. We need to call a&nbsp;<b>then</b>&nbsp;method on my promise and pass the&nbsp;<b>then</b>&nbsp;method 
+                            a function that will be called in the future.</span></p>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <p>
+                                        <span>1</span></p>
+                                    <p>
+                                        <span>2</span></p>
+                                    <p>
+                                        <span>3</span></p>
+                                    <p>
+                                        <span>4</span></p>
+                                    <p>
+                                        <span>5</span></p>
+                                    <p>
+                                        <span>6</span></p>
+                                    <p>
+                                        <span>7</span></p>
+                                    <p>
+                                        <span>8</span></p>
+                                    <p>
+                                        <span>9</span></p>
+                                    <p>
+                                        <span>10</span></p>
+                                    <p>
+                                        <span>11</span></p>
+                                    <p>
+                                        <span>12</span></p>
+                                    <p>
+                                        <span>13</span></p>
+                                    <p>
+                                        <span>14</span></p>
+                                    <p>
+                                        <span>15</span></p>
+                                    <p>
+                                        <span>16</span></p>
+                                    <p>
+                                        <span>17</span></p>
+                                    <p>
+                                        <span>18</span></p>
+                                    <p>
+                                        <span>19</span></p>
+                                </td>
+                                <td width="694">
+                                    <p>
+                                        <span>&nbsp;var MainController = function ($scope, $http) {</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var promise = $http.get(&#39;/users/547226&#39;); </span>
+                                    </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;promise.then(function(response){</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.user = response.data;</span></p>
+                                    <p>
+                                        <span>&nbsp;});</span></p>
+                                    <p>
+                                        <span>&nbsp;};</span></p>
+                                    <p>
+                                        <span>&nbsp;OR</span></p>
+                                    <p>
+                                        <span>&nbsp;var MainController = function ($scope, $http) {</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var onSuccess = function(response) {</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.user = response.data;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var onError = function(reason) {</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.error = “Something went wrong”;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$http.get(&#39;/users/547226&#39;)</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(onSuccess, onError); </span>
+                                    </p>
+                                    <p>
+                                        <span>&nbsp;};</span></p>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <span>.then – This method is called when the function is ready. Let’s explain 
+                            the $http service with an example. Consider that we have a SharePoint list as 
+                            shown below,</span></p>
+                        <p>
+                            <img alt="clip_image002" border="0" height="355" 
+                                src="image/1.jpg" 
+                                v:shapes="Picture_x0020_2" width="527" /></p>
+                        <p>
+                            <span>Here, I’ve created custom page and added this below HTML element in it.</span></p>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <p>
+                                        <span>1</span></p>
+                                    <p>
+                                        <span>2</span></p>
+                                    <p>
+                                        <span>3</span></p>
+                                    <p>
+                                        <span>4</span></p>
+                                    <p>
+                                        <span>5</span></p>
+                                    <p>
+                                        <span>6</span></p>
+                                    <p>
+                                        <span>7</span></p>
+                                    <p>
+                                        <span>8</span></p>
+                                    <p>
+                                        <span>9</span></p>
+                                    <p>
+                                        <span>10</span></p>
+                                    <p>
+                                        <span>11</span></p>
+                                    <p>
+                                        <span>12</span></p>
+                                    <p>
+                                        <span>13</span></p>
+                                    <p>
+                                        <span>14</span></p>
+                                    <p>
+                                        <span>15</span></p>
+                                    <p>
+                                        <span>16</span></p>
+                                    <p>
+                                        <span>17</span></p>
+                                    <p>
+                                        <span>18</span></p>
+                                    <p>
+                                        <span>19</span></p>
+                                    <p>
+                                        <span>20</span></p>
+                                    <p>
+                                        <span>21</span></p>
+                                    <p>
+                                        <span>22</span></p>
+                                    <p>
+                                        <span>23</span></p>
+                                    <p>
+                                        <span>24</span></p>
+                                    <p>
+                                        <span>25</span></p>
+                                    <p>
+                                        <span>26</span></p>
+                                    <p>
+                                        <span>27</span></p>
+                                    <p>
+                                        <span>28</span></p>
+                                </td>
+                                <td width="769">
+                                    <p>
+                                        <span>&nbsp;&lt;div id=&quot;appDiv&quot; ng-app=&quot;myapp&quot;&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=&quot;controllerDiv&quot; ng-controller=&quot;MyController&quot;&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{error}}</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Order By:</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;select ng-model=&quot;customOrderBy&quot;&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value=&quot;Title&quot;&gt;Asc - Title&lt;/option&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value=&quot;-Title&quot;&gt;Desc - Title&lt;/option&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value=&quot;People_x0020_using&quot;&gt;Asc - Ppl using&lt;/option&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value=&quot;-People_x0020_using&quot;&gt;Desc - Ppl using&lt;/option&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br /&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table id=&quot;userDetails&quot; border=&quot;1px solid&quot;&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;thead&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Phone Title&lt;/th&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;No. of ppl using&lt;/th&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/thead&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tbody&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr ng-repeat=&quot;ppl in people | orderBy:customOrderBy&quot;&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;{{ppl.Title}}&lt;/td&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;{{ppl.People_x0020_using | number}}&lt;/td&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tbody&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span></p>
+                                    <p>
+                                        <span>&nbsp;&lt;/div&gt;</span></p>
+                                    <p>
+                                        </p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <span>In my previous article I’ve explained about some very common directives 
+                            like ng-app, ng-controller, ng-model in AngularJS. Here we’ve another useful 
+                            directives ng-repeat and filter.</span></p>
+                        <p>
+                            <b><span>ng-repeat:&nbsp;</span></b><span>ng-repeat=&quot;ppl in people&quot; , ng-repeat is a 
+                            lot like foreach loop in C#.</span></p>
+                        <p>
+                            <b><span>filters:&nbsp;</span></b><span>In addition to directives, Angular also has 
+                            the concept of&nbsp;<b>filters.&nbsp;</b>A filter is something that we invoke and pipe 
+                            data through, by using the symbol | and then the name of the filter (number, 
+                            currency, lowercase, uppercase etc.)</span></p>
+                        <p>
+                            <span>Basic format: expression | filterName:parameter</span></p>
+                        <table border="1" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td valign="top" width="245">
+                                    <p>
+                                        <span>Name</span></p>
+                                </td>
+                                <td valign="top" width="553">
+                                    <p>
+                                        </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="245">
+                                    <p>
+                                        <span>currency</span></p>
+                                </td>
+                                <td valign="top" width="553">
+                                    <p>
+                                        <span>{{amount | currency:”USD$”}}</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="245">
+                                    <p>
+                                        <span>date</span></p>
+                                </td>
+                                <td valign="top" width="553">
+                                    <p>
+                                        <span>{{startDate | date:’short’}}</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="245">
+                                    <p>
+                                        <span>filter</span></p>
+                                </td>
+                                <td valign="top" width="553">
+                                    <p>
+                                        <span>ppl in people | filter:Title</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="245">
+                                    <p>
+                                        <span>json</span></p>
+                                </td>
+                                <td valign="top" width="553">
+                                    <p>
+                                        <span>{{ ppl | json }}</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="245">
+                                    <p>
+                                        <span>limitTo</span></p>
+                                </td>
+                                <td valign="top" width="553">
+                                    <p>
+                                        <span>ppl in people | limitTo:10</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="245">
+                                    <p>
+                                        <span>lowercase, uppercase</span></p>
+                                </td>
+                                <td valign="top" width="553">
+                                    <p>
+                                        <span>{{ ppl.name || uppercase }}</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="245">
+                                    <p>
+                                        <span>number</span></p>
+                                </td>
+                                <td valign="top" width="553">
+                                    <p>
+                                        <span>{{ count | number }}</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="245">
+                                    <p>
+                                        <span>orderBy</span></p>
+                                </td>
+                                <td valign="top" width="553">
+                                    <p>
+                                        <span>ppl in people | filter: searchTerm| orderBy: ‘Title’</span></p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <span>Added the below script in my JS file,</span></p>
+                        <table border="0" cellpadding="0" cellspacing="0" >
+                            <tr>
+                                <td>
+                                    <p>
+                                        <span>1</span></p>
+                                    <p>
+                                        <span>2</span></p>
+                                    <p>
+                                        <span>3</span></p>
+                                    <p>
+                                        <span>4</span></p>
+                                    <p>
+                                        <span>5</span></p>
+                                    <p>
+                                        <span>6</span></p>
+                                    <p>
+                                        <span>7</span></p>
+                                    <p>
+                                        <span>8</span></p>
+                                    <p>
+                                        <span>9</span></p>
+                                    <p>
+                                        <span>10</span></p>
+                                    <p>
+                                        <span>11</span></p>
+                                    <p>
+                                        <span>12</span></p>
+                                    <p>
+                                        <span>13</span></p>
+                                    <p>
+                                        <span>14</span></p>
+                                    <p>
+                                        <span>15</span></p>
+                                    <p>
+                                        <span>16</span></p>
+                                    <p>
+                                        <span>17</span></p>
+                                    <p>
+                                        <span>18</span></p>
+                                    <p>
+                                        <span>19</span></p>
+                                    <p>
+                                        <span>20</span></p>
+                                    <p>
+                                        <span>21</span></p>
+                                    <p>
+                                        <span>22</span></p>
+                                    <p>
+                                        <span>23</span></p>
+                                    <p>
+                                        <span>24</span></p>
+                                    <p>
+                                        <span>25</span></p>
+                                    <p>
+                                        <span>26</span></p>
+                                    <p>
+                                        <span>27</span></p>
+                                    <p>
+                                        <span>28</span></p>
+                                    <p>
+                                        <span>29</span></p>
+                                    <p>
+                                        <span>30</span></p>
+                                    <p>
+                                        <span>31</span></p>
+                                    <p>
+                                        <span>32</span></p>
+                                    <p>
+                                        <span>33</span></p>
+                                    <p>
+                                        <span>34</span></p>
+                                    <p>
+                                        <span>35</span></p>
+                                    <p>
+                                        <span>36</span></p>
+                                    
+                                </td>
+                                <td >
+                                    <p>
+                                        <span>&nbsp;(function () { //IIFE </span>
+                                    </p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Creating a Module</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var app = angular.module(&quot;myapp&quot;, []);</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var MyController = function ($scope, $http) {</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var json_listdata = {};</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var onSuccess = function (response) {</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//this result will be in json format, so we are getting the 
+                                        &#39;value&#39; from the &#39;response.data&#39;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var json_values = response.data.value;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//we assign it simply like shown below</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.people = json_values;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/*or we can iterate through all the items and assign it to 
+                                        our own jsom obj</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$.each(json_values, function (key, val) {</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var jsonObj_Values = {};</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonObj_Values[&quot;Title&quot;] = val.Title;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonObj_Values[&quot;People Using&quot;] = val.People_x0020_using;</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;json_listdata[val.ID] = jsonObj_Values;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//assigning the value into angular $scope element 
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.people = json_listdata;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var onError = function (reason) {</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.error = &quot;Could not fetch, something went wrong&quot;;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function getSPListItems() {</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var getURLVal = _spPageContextInfo.webAbsoluteUrl + &quot;/_api&quot; + 
+                                        &quot;/web/lists/getbytitle(&#39;Phone&#39;)/Items?$select=*&quot;;</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//getURLVal, this only tells from which list and what items 
+                                        under what condition it should be fetched</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//$http.get</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$http.get(getURLVal)</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(onSuccess, onError);</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getSPListItems();</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Registering the controller in the module</span></p>
+                                    <p>
+                                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app.controller(&quot;MyController&quot;, MyController);</span></p>
+                                    <p>
+                                        </p>
+                                    <p>
+                                        <span>&nbsp;}());</span></p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <span>And the output will be shown as below,</span></p>
+                        <p>
+                            <img alt="clip_image004" border="0" height="335" 
+                                src="image/2.jpg" 
+                                v:shapes="Picture_x0020_1" width="743" /></p>
+                        <p>
+                            <span>Based upon the Order By: dropdown value, the ordering in the table will 
+                            differ. I hope, you got some idea about $http service and ng-repeat from this 
+                            article.</span></p>
+                        <p>
+                        
+                        </p>
+                        </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">JQUERY</span>
+							<ul>
+								<li><a href="/jquery/index.html">jquery</a></li>
+                                <li><a href="/jquery/HideMenuItems.html">Hide Menu Items</a></li>
+                                <li><a href="/jquery/DisplaySharePointListData.html">Display SharePoint List Data</a></li>
+                                <li><a href="/jquery/RetrieveSharePointListItems.html">Retrieve SharePoint List Items</a></li>
+                                <li><a href="/jquery/AllItemsFromSharePointList.html">All Items From SharePoint List</a></li>
+							</ul>
+						</li>
+                        <li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/Powershell/index.html">Powershell</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <section>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

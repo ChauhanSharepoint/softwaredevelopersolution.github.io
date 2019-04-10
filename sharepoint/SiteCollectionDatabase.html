@@ -1,0 +1,197 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Site Collection in specified database</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Site Collection in specified database Scenario: Small function to create a new site collection in specified database." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Site Collection in specified database</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Site Collection in specified database</h3>
+						</header>
+                        <p>
+                            <b><span>Scenario:</span></b><span><br />
+                            Small function to create a new site collection in specified database.<br />
+                            <br />
+                            <b>Code:</b></span></p>
+                        <p>
+                            <span>function bool CreateSiteCollectionInDB(string mainSiteUrl , string databaseName )</span>
+
+                        <br />
+                        {
+                        <br />
+                            <span>bool siteCollectionCreated = false; </span>
+                        <br />
+                            <span>SPSecurity.RunWithElevatedPrivileges(delegate()</span>
+                        <br />
+                            <span>{</span><br />
+                            <span>SPSite siteCol = new SPSite(mainSiteUrl);</span><br />
+                            <span>foreach (SPContentDatabase contentDB in siteCol.WebApplication.ContentDatabases)</span>
+                        <br />
+                            <span>{</span>
+                            <br />
+                            if (string.Equals(contentDB .Name, databaseName ,  StringComparison.InvariantCultureIgnoreCase)
+                        <br />
+                            <span>&nbsp; {</span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp; if (contentDB.MaximumSiteCount &lt;=contentDB.CurrentSiteCount)</span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp; {</span>
+                            <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp; throw new Exception(&quot;The maximum site count for 
+                            the specified database has been exceeded.&nbsp; Increase the maximum site count 
+                            or specify another database.&quot;);</span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp; }</span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp; else</span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp; {</span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using (SPSite newSiteCollection = contentDB.Sites.Add(&quot;Test&quot;, &quot;Test Site&quot;, &quot;&quot;, 1033, &quot;STS#0&quot;, &quot;1&quot;, 
+                            &quot;Administrator&quot;, &quot;password&quot;))</span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            System.Threading.Thread.Sleep(20000);</span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp; }</span>
+                        
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp; siteCollectionCreated = true; </span>
+                        <br />
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp; break ;</span>
+                        <br />
+                            <span>&nbsp;&nbsp; }</span>
+                        <br />
+                            <span>&nbsp;}</span>
+                        <br />
+                            <span>}</span>
+                        <br />
+                            
+                            <span>if ( ! siteCollectionCreated )</span>
+                        <br />
+                            <span>{</span>
+                        <br />
+                            <span>&nbsp;&nbsp; throw new Exception(&quot;Content database not found.&quot;);</span>
+                        <br />
+                            <span>&nbsp;&nbsp;}</span>
+                        <br />
+                            <span>return true ; </span>
+                        <br />
+                            <span>&nbsp;}</span>
+                        <br />
+                            <span>}</span>
+                        <span>
+                        </p>
+
+                        <p>
+                        <b>Usage:</b><br />
+                        1. You can call it from a console application
+                        <br />
+                        2. You can call it from an application page<br />
+                        3. You can call it from within a Timer Job also</span>
+                        </p>
+                        </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>FILTER and SORT records in the client side</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="DataTable.Select() Vs DataTable.Rows.Find Vs DataView. Asp.Net provides many options to FILTER and SORT records in the client side, the available options are as follows." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>FILTER and SORT records in the client side</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>DataTable.Select() Vs DataTable.Rows.Find Vs DataView</h3>
+						</header>
+						<p>
+                            <span>Asp.Net provides many options to FILTER and SORT records in the client 
+                            side, the available options are as follows.</span></p>
+                        <p>
+                            <b><span>DataTable.Rows.Find<br />
+                            DataTable.Select<br />
+                            DataView. RowFilter</span></b></p>
+                        <p>
+                            <span>Each of these options have their own advantages and disadvantages, we will 
+                            have to use the right options at the right place to maximize performance.<br />
+                            <br />
+                            Let us not see the Best Practices for using these options.</span></p>
+                        <p>
+                            <b><u><span>DataTable.Rows.Find<br />
+                            </span></u></b><span>the DataTable.Rows.Find options is best suited while 
+                            filtering specific rows, based on the PrimaryKey of the Table. This option gives 
+                            the best performance for filtering limited rows with straight forward filter 
+                            Option on the <b>PrimaryKey</b>.<br />
+                            <br />
+                            ADO.Net builds an index based on the <b>PrimaryKey</b> column, and this option 
+                            works like an <b>Index Seek</b> to reach out the exact row using the Index, this 
+                            is the fastest option to select rows based on <b>PrimaryKey</b>.</span></p>
+                        <p>
+                            <b><span>Recommended</span></b><span> while filtering a single/very few rows 
+                            based on the PrimaryKey<br />
+                            <b>Not Recommended</b> for complex filters and filter returning more number of 
+                            rows</span></p>
+                        <p>
+                            <b><span>Example<br />
+                            </span></b><span>// Set the PrimaryKey of the DataTable<br />
+                            DataColumn[] arrPrimaryKey = new DataColumn[1];<br />
+                            arrPrimaryKey[0] = dsEmpInfo.Tables[&quot;dtEmpInfo&quot;].Columns[&quot;KEY_ID&quot;];<br />
+                            dsEmpInfo.Tables[&quot;dtEmpInfo&quot;].PrimaryKey = arrPrimaryKey;<br />
+                            //<br />
+                            //Filter rows based on the PrimaryKey<br />
+                            DataRow dr1 = dsEmpInfo.Tables[&quot;dtEmpInfo&quot;].Rows.Find(&quot;1&quot;);</span></p>
+                        <p>
+                            <span>The above experssion will return a single DataRow, whoose PrimaryKey value 
+                            (KEY_ID) is 1. </span>
+                        </p>
+                        <p>
+                            <b><u><span>DataTable.Select<br />
+                            </span></u></b><span>The Datable.Select method is a good options when you want 
+                            to perform only a single or very few filters on a large DataTable, this methods 
+                            scans through the entire table and retrieves the rows based on the filter 
+                            condition.<br />
+                            <br />
+                            The <b>DataTable.Select</b> method can be used to perform multiple and complex 
+                            filters on a DataTable </span>
+                        </p>
+                        <p>
+                            <b><span>Example</span></b><span><br />
+                            dsEmpInfo.Tables[&quot;dtEmpInfo&quot;].Select(&quot;KEY_ID = &#39;1&#39;&quot;);<br />
+                            The above expression will return the employee details whose ID is 1.</span></p>
+                        <p>
+                            <span>dsEmpInfo.Tables[&quot;dtEmpInfo&quot;].Select(&quot;Name Like &#39;A%&#39;&quot;);<br />
+                            The above expression will return a list of employees whose name starts with A.</span></p>
+                        <p>
+                            <span>This option works much like a <b>Table Scan</b>, best suited when the 
+                            filter is expected to return a large number of rows.</span></p>
+                        <p>
+                            <b><span>Recommended</span></b><span> when performing a single (or very few) 
+                            filter from a DataTable, which is expected to return more number of rows.<br />
+                            <b>Not recommended</b> to filter based on PrimaryKey &amp; for performing multiple 
+                            filters on the same DataTable</span></p>
+                        <p>
+                            <span>
+                            <br />
+                            <b><u>DataView.</u></b></span><b><u><span>RowFilter<br />
+                            </span></u></b><span>This option is similar to the DataTable.Select method, the 
+                            differences is that the view first creates and index of the data based on the 
+                            SORT order, and reuses the view to filter out the data. The Index creating is a 
+                            one time activity, this will take time, but the subsequent filters will be 
+                            quick.<br />
+                            <b>
+                            <br />
+                            Recommended</b> when we need to perform multiple filters on the same DataTable.<br />
+                            <b>Not Recommended</b> for just a single filter, as there is an overhead in 
+                            creating the Index</span></p>
+                        <p>
+                            <b><span>Example</span></b><span><br />
+                            DataView dvEmpInfo = new DataView(dsEmpInfo.Tables[&quot;dtEmpInfo&quot;]);<br />
+                            dvEmpInfo.RowFilter = &quot;KEY_ID = 1&quot;;<br />
+                            dvEmpInfo.Sort = &quot;KEY_ID ASC&quot;;</span></p>
+                        <span>That&#39;s it, we have compared the Pros and Cons of the various options 
+                        available for filtering and sorting data from a Data Table in ADO.Net </span>
+						<p>
+
+                        </p>
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">ASP.NET</span>
+							<ul>
+								<li><a href="/aspnet/index.html">asp.net</a></li>
+                                <li><a href="/aspnet/OOPSPoints.html">OOPS Points</a></li>
+                                <li><a href="/aspnet/ADONETPoints.html">ADO NET Points</a></li>
+                                <li><a href="/aspnet/AJAXPoints.html">AJAX Points</a></li>
+                                <li><a href="/aspnet/FILTERandSORTrecords.html">FILTER and SORT records</a></li>
+							</ul>
+						</li>
+                        <li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/Powershell/index.html">Powershell</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

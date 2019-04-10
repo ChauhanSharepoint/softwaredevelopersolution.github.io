@@ -1,0 +1,807 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Data Sources in Infopath</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Learn how you can in InfoPath add a secondary data source, what the difference is between a Main and secondary InfoPath data source, and how to programmatically retrieve a reference to the Main data source or to an InfoPath secondary data source." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Data Sources in Infopath</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>InfoPath Basics: Main vs. secondary data sources</h3>
+						</header>
+                        <p>
+                            <b>InfoPath Basics: Main vs. secondary data sources</b></p>
+                        <p>
+                            <i>Learn how you can in InfoPath add a secondary data source, what the 
+                            difference is between a Main and secondary InfoPath data source, and how to 
+                            programmatically retrieve a reference to the Main data source or to an InfoPath 
+                            secondary data source.</i></p>
+                        <p>
+                            <b>Introduction 
+                            to data sources</b></p>
+                        <p>
+                            There are two 
+                            types of&nbsp;<b>InfoPath data sources</b>:&nbsp;<i>Main</i>&nbsp;and<i>secondary</i>&nbsp;data 
+                            source. An InfoPath form template always contains one Main data source and can 
+                            contain zero or more secondary data sources.</p>
+                        <p>
+                            <b>The 
+                            difference between the Main and secondary data sources</b></p>
+                        <p>
+                            The Main 
+                            InfoPath data source of a form contains the data that you want to permanently 
+                            store when you save the form. An InfoPath secondary data source on the other 
+                            hand, is a temporary storage location for data that is external to the form. 
+                            Such data typically lives outside the form in databases, XML files, SharePoint 
+                            lists or libraries, or can be retrieved from web services.</p>
+                        <p>
+                            When you save a 
+                            form, the data in the secondary data sources of the form is never saved in the 
+                            form. This is an important fact to remember when you design InfoPath form 
+                            templates. Therefore, if you want data to be present in a form after you save, 
+                            close, and re-open the form, you have to store this data in the&nbsp;<i>Main data 
+                            source of the InfoPath form</i>.</p>
+                        <p>
+                            <b>How to create 
+                            data sources</b></p>
+                        <p>
+                            A Main data 
+                            source is automatically added to an InfoPath form when you create a form 
+                            template. You can create or add a secondary data source to InfoPath by adding a&nbsp;<i>Receive</i>&nbsp;or&nbsp;<i>Submit</i>&nbsp;data 
+                            connection to a form template. You can add an InfoPath data connection to a form 
+                            template by going to the&nbsp;<b>Tools</b>&nbsp;menu and selecting&nbsp;<b>Data Connections</b>.</p>
+                        <p>
+                            <b>How to view 
+                            data sources</b></p>
+                        <p>
+                            You can use the&nbsp;<b>Data 
+                            Source</b>&nbsp;task pane to view InfoPath Main and secondary data sources in a form 
+                            template. If the&nbsp;<b>Data Source</b>&nbsp;task pane is not visible, click&nbsp;<b>Data 
+                            Source</b>&nbsp;on the&nbsp;<b>View</b>&nbsp;menu to bring it up. The Data Source drop-down 
+                            list box will contain the text&nbsp;<b>Main</b>&nbsp;for the Main InfoPath data source and 
+                            an InfoPath data connection name followed by the text&nbsp;<b>(Secondary)</b>&nbsp;for a 
+                            secondary data source (see Figure 1).</p>
+                        <p>
+                            <b>Figure 1. Data source task pane in 
+                            InfoPath.</b></p>
+                        <p>
+                            <b>
+                            Programmatically get a reference to the Main InfoPath data source</b></p>
+                        <p>
+                            If you are 
+                            writing code and want to programmatically get a reference to the Main InfoPath 
+                            data source of your form template, you can use the following&nbsp;<b>C#</b>&nbsp;code:</p>
+                        <p>
+                            XPathNavigator 
+                            mainDS = MainDataSource.CreateNavigator();</p>
+                        <p>
+                            Or the 
+                            following&nbsp;<b>Visual Basic</b>&nbsp;code:</p>
+                        <p>
+                            Dim mainDS As 
+                            XPathNavigator = MainDataSource.CreateNavigator()</p>
+                        <p>
+                            You can then use 
+                            the&nbsp;<b>XPathNavigator</b>&nbsp;object to get or set values of fields (= nodes in the 
+                            XML) on the form.</p>
+                        <p>
+                            <b>
+                            Programmatically get a reference to an InfoPath secondary data source</b></p>
+                        <p>
+                            If you are 
+                            writing code and want to programmatically get a reference to an InfoPath 
+                            secondary data source that receives data in your form template, you can use the 
+                            following&nbsp;<b>C#</b>&nbsp;code:</p>
+                        <p>
+                            XPathNavigator 
+                            secDS = DataSources[&quot;your_receive_data_connection_name&quot;].CreateNavigator();</p>
+                        <p>
+                            Or the 
+                            following&nbsp;<b>Visual Basic</b>&nbsp;code:</p>
+                        <p>
+                            Dim secDS As 
+                            XPathNavigator = 
+                            DataSources(&quot;your_receive_data_connection_name&quot;).CreateNavigator()</p>
+                        <p>
+                            You can then use 
+                            the&nbsp;<b>XPathNavigator</b>&nbsp;object to get or set values of fields (= nodes in the 
+                            XML) of the secondary data source.</p>
+                        <p>
+                            </p>
+                        <p>
+                            </p>
+                        <p>
+                            A data connection is a dynamic link between a Microsoft Office InfoPath 
+                            form and an external data source that stores or provides data for that form. A 
+                            data source is a collection of fields and groups that define and store the data 
+                            for a form. Controls are bound to fields and groups in the data source and 
+                            display the data to users.</p>
+                        <p>
+                            A form can have one primary data connection, called the main data 
+                            connection, and it can optionally have one or more secondary data connections. 
+                            Depending on your goals for the form, a data connection might query or submit 
+                            form data to an external data source, such as a Microsoft SQL Server database or 
+                            a Web service.</p>
+                        <p>
+                            In this article</p>
+                        <div align="center">
+                            
+                            <hr align="center" noshade size="1" width="100%" />
+                            
+                        </div>
+                        <p>
+                            Overview of data connections</p>
+                        <p>
+                            Working with the main data connection </p>
+                        <p>
+                             Working with secondary data connections </p>
+                        <p>
+                            Storing data for offline use </p>
+                        <p>
+                             Considerations for connecting to external data sources </p>
+                         
+                        <p>
+                            <a name="BM1"></a><b>Overview of data connections</b></p>
+                        <p>
+                            A data connection is a dynamic link between a form and a data source that 
+                            stores or provides data for that form. A form can have one primary data 
+                            connection, called the main data connection, and it can optionally have one or 
+                            more secondary data connections. The main data connection defines the main data 
+                            source of the form. An 
+                            XML Schema (XML 
+                            Schema: A formal specification, written in XML, that defines the structure of an 
+                            XML document, including element names and rich data types, which elements can 
+                            appear in combination, and which attributes are available for each element.) 
+                            describes how data is stored in the form&#39;s main data source. There can be only 
+                            one main data connection for a form, and it is created automatically when you 
+                            create a form template that is based on an external data source. You can create 
+                            as many secondary data connections as you want when you design a form template.</p>
+                        <p>
+                            Depending on your goals for the form, you can create a main or secondary 
+                            data connection to an external data source, such as a Microsoft SQL Server 
+                            database or a Web service. An external data source is a data store that sends 
+                            data to or can receive data from a form that is based on your form template. 
+                            InfoPath works with the following external data sources:</p>
+                        <p>
+                             Microsoft Office Access database</p>
+                        <p>
+                             Microsoft SQL Server database</p>
+                        <p>
+                             Web service</p>
+                        <p>
+                            Document library or list on a server running Microsoft 
+                            Windows SharePoint Services</p>
+                        <p>
+                            XML file</p>
+                        <p>
+                            You can create three types of data connections to an external data source: 
+                            query data only, submit data only, or both query and submit data. A query data 
+                            connection receives data from a data source and stores that data in the form. A 
+                            submit data connection sends data from the form to a data source, to an 
+                            application on a Web server, to a document library on a server running Microsoft 
+                            Windows SharePoint Services, or in an e-mail message. Query and submit data 
+                            connections both receive data from and send data to a data source. When you 
+                            create a data connection, you specify the type of data connection that you want. 
+                            For example, you can create a data connection that does any of the following:</p>
+                        <p>
+                             Queries data from a database</p>
+                        <p>
+                             Submits form data in an e-mail message</p>
+                        <p>
+                             Submits form data to an application on a Web server</p>
+                        <p>
+                             Submits form data to a custom application that uses the 
+                            XmlFormView control</p>
+                        <p>
+                            Queries or submits data through custom programming code, 
+                            such as C#, Microsoft Visual Basic .NET, or Microsoft JScript.</p>
+                        <p>
+                             Uses connection settings stored in a data connection 
+                            library on a server running Microsoft Office SharePoint Server 2007</p>
+                        <p>
+                             Queries or submits data to Human Workflow Services on 
+                            Microsoft BizTalk Server 2004 or BizTalk Server 2006</p>
+                        <p>
+                            The type of connection that you use depends on your goals for the form and 
+                            the type of external data source that you want to connect the form to.</p>
+                        <p>
+                            <b>Query data connections</b></p>
+                        <p>
+                            A query data connection gets data from an external data source and stores 
+                            that data in  
+                            fields (field: An element or attribute in the data source that can contain data. 
+                            If the field is an element, it can contain attribute fields. Fields store the 
+                            data that is entered into controls.) in the main or secondary 
+                            data source of a form. You can then bind (bind: To 
+                            connect a control to a field or group in the data source so that data entered 
+                            into the control is saved. When a control is unbound, it is not connected to a 
+                            field or group, and so data entered into the control will not be saved.) 
+                            controls to those fields to display that data in the form. You can create a 
+                            query data connection in the following ways: 
+                        </p>
+                        <p>
+                            Design a form template that is based on a database, Web 
+                            service, or settings stored in a connection library. The structure of the 
+                            external data source then defines the main data source for the form.</p>
+                        <p>
+                             Modify an existing form template by adding a secondary 
+                            data connection that queries a database, Web service, SharePoint list or 
+                            library, or XML file.</p>
+                        <p>
+                            When you design a new form template that is based on a database, Web 
+                            service, or settings in a connection library, you create a query data connection 
+                            that becomes the main data connection for forms that are based on that form 
+                            template. You can define only one query data connection as the main data 
+                            connection for a form template. If you need to query data from additional data 
+                            sources, you can create secondary data connections that query data from those 
+                            data sources. You will learn more about secondary data connections later in this 
+                            article.</p>
+                        <p>
+                            When you add a secondary data connection that queries data to your form 
+                            template, you can specify whether InfoPath should use the data connection each 
+                            time that the user opens the form or after specific events occur when the user 
+                            fills out the form, such as clicking a button to display a list of options. To 
+                            use the data connection after specific events occur, use one of the following 
+                            methods:</p>
+                        <p>
+                             Insert a button control that refreshes data in the form.</p>
+                        <p>
+                             Add a rule to use the data connection when a condition on 
+                            the form exists.</p>
+                        <p>
+                            <![if !supportLists]>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <![endif]>Write custom code for specific events.</p>
+                        <p>
+                            <b>Submit data connections</b></p>
+                        <p>
+                            When users submit a form, data from that form is sent through a submit 
+                            data connection to an external data source. You can configure that form template 
+                            to allow users to send data to the following types of external data sources: 
+                            
+                        </p>
+                        <p>
+                             Microsoft Office Access database</p>
+                        <p>
+                             Microsoft SQL Server database</p>
+                        <p>
+                             Web service</p>
+                        <p>
+                            You can also add secondary data connections that submit data in the 
+                            following ways:</p>
+                        <p>
+                             Submit form data to a document library on a server 
+                            running Microsoft Windows SharePoint Services.</p>
+                        <p>
+                             Submit form data in an e-mail message.</p>
+                        <p>
+                             Submit form data to an application on a Web server.</p>
+                        <p>
+                            You create a submit data connection in the following ways: 
+                            
+                        </p>
+                        <p>
+                             Design a new form template that is based on a database, 
+                            Web service, or settings stored in a connection library on a server running 
+                            Office SharePoint Server 2007. The structure of the external data source then 
+                            defines the main data source for the form.</p>
+                        <p>
+                             Modify an existing form template by adding a secondary 
+                            data connection, and then configure the form template to allow users to submit 
+                            their forms through this secondary data connection.</p>
+                        <p>
+                            Tip When you design a form template that is based on an Office Access or 
+                            SQL Server database, InfoPath automatically configures a submit data connection 
+                            if the database meets certain requirements. Find links to more information about 
+                            those requirements in the <b>See Also</b> section. You can choose to disable the 
+                            Submit feature if you want your users to submit their completed forms by using 
+                            another type of submit data connection.</p>
+                        <p>
+                            In most cases, you will configure one submit data connection as the main 
+                            submit action for your form template. However, you can design your form template 
+                            so that your users can submit their completed forms to multiple locations by 
+                            using  rules 
+                            (rule: A condition or action, or a set of conditions or actions, that 
+                            automatically performs tasks based on events and values in the form.) 
+                            or custom code. For example, you can configure your form template to allow your 
+                            users to submit their completed forms to a Web service as well as through an 
+                            e-mail message. Typically, you configure the form template to submit all of the 
+                            data in the form. However, if you use custom code to submit the form data or you 
+                            are configuring the form template to allow the form to submit data to a Web 
+                            service, you can submit a portion of the form&#39;s data.</p>
+                        <p>
+                            <b>Query and submit data connections</b></p>
+                        <p>
+                            When you design a form template that is based on a database or a Web 
+                            service, you can create a data connection that can get data from and submit data 
+                            to the database or Web service. If you are designing a form template that is 
+                            based on a database, the data connection can get or submit data. However, in 
+                            order for forms based on this form template to submit data to the database, the 
+                            following requirements must be met: 
+                        </p>
+                        <p>
+                             You are not designing a browser-compatible form template.</p>
+                        <p>
+                             All of the tables in the main data connection must 
+                            contain a primary key, unique constraint, or unique index.</p>
+                        <p>
+                             All of the tables in the query must have a simple, 
+                            hierarchical relationship.</p>
+                        <p>
+                             None of the data fields in the main data source of the 
+                            form can store a large binary data type.</p>
+                        <p>
+                            You can learn more about these requirements in 
+                             Considerations for connecting to external data sources</a> 
+                            later in this article. 
+                        </p>
+                        <p>
+                            A data connection that can get data from or submit data to a Web service 
+                            is just like a query data connection and a submit data connection combined into 
+                            a single data connection.</p>
+                        
+                        <p>
+                            <a name="BM2"></a><b>Working with the main data connection</b></p>
+                        <p>
+                            The main data connection establishes a connection to the main data source 
+                            of the form. An XML Schema describes the structure for storing data in the main 
+                            data source of the form. You can design the data source by using the <b>Data 
+                            Source</b> task pane, or you can let InfoPath create the data source 
+                            automatically as you add controls to your form template. You can also design a 
+                            form template based on an external data source, which in turn defines the 
+                            structure of the main data source. A form template can have only one main data 
+                            connection.</p>
+                        <p>
+                            If the main data connection connects to an external data source, how you 
+                            work with the main data connection depends on the type of data source that it 
+                            connects to.</p>
+                        <p>
+                            <b>Database</b> When you design a form template based on a 
+                            database, InfoPath creates a main data connection that queries and optionally 
+                            submits data to that database. If the form will be filled out only by using 
+                            InfoPath and the database meets the requirements listed in the                            
+                            Considerations for connecting to external data sources
+                            section, InfoPath automatically creates a submit data connection and configures 
+                            the form template to allow users to submit their forms. If the form will be 
+                            filled out by using a browser, InfoPath does not create a submit data connection 
+                            to the database. Data connections that submit data to a database are not 
+                            supported in 
+                            browser-compatible form templates (browser-compatible form template: A form 
+                            template that is designed in InfoPath by using a specific compatibility mode. A 
+                            browser-compatible form template can be browser-enabled when it is published to 
+                            a server running InfoPath Forms Services.). 
+                        </p>
+                        <p>
+                            Tip If the form will be filled out by using a browser and you want to 
+                            submit data to a database, you can do so by connecting the form to a Web service 
+                            that submits data to the database.</p>
+                        <p>
+                            <b>Web service</b> When you design a form template based on a 
+                            Web service, you can create a main data connection that both queries and submits 
+                            data, only queries data, or only submits data. If you choose to submit data, 
+                            InfoPath automatically configures the form template to allow users to submit 
+                            their forms. You can specify whether to submit some of the form data or all of 
+                            the form data. If only some of the data is submitted, you can specify which 
+                            fields in a particular >group (group: An 
+                            element in the data source that can contain fields and other groups. Controls 
+                            that contain other controls, such as repeating tables and sections, are bound to 
+                            groups.) contain the data that should be submitted, depending 
+                            on the requirements of the Web service.</p>
+                        <p>
+                            When you design a form template based on a database or Web service, 
+                            InfoPath creates a main data source with query fields, data fields, and groups 
+                            that correspond to the way that data is stored in the database or Web service. A 
+                            query field contains the value that is used in a query to retrieve data from a 
+                            database by using the query data connection. The results of the query are put 
+                            into data fields, which can be edited when the user opens the form. When the 
+                            user submits the form, the data in the data fields is sent by using the submit 
+                            data connection. Because the fields and groups in the main data source must 
+                            match the way that the data is stored in the external data source, you cannot 
+                            modify these fields and groups. You can, however, add fields or groups to the 
+                            root field in the main data source.</p>
+                        <p>
+                            To enable users to view, select, edit, or submit data in data fields, you 
+                            can bind controls, such as text boxes and check boxes, to the fields in the 
+                            form. If you want to query and display additional values that users can select 
+                            as a choice, you can bind a control such as a list box to the query fields. If 
+                            you want users to select a value from a list, you can bind a control such as a 
+                            list box to a data field and then set the properties of the control to display 
+                            values from a secondary data source or a repeating field in the main data 
+                            source.</p>
+                        
+                        <p>
+                            <b>Working with secondary data connections</b></p>
+                        <p>
+                            A secondary data connection connects a form to an external data source. 
+                            Secondary data connections are useful when you need to query or submit form data 
+                            to an external data source other than the external data source in the main data 
+                            connection, or when you want users to submit data to multiple external data 
+                            sources. You can create as many secondary data connections as you want.</p>
+                        <p>
+                            A secondary data connection can query or submit data to the following 
+                            types of external data sources:</p>
+                        <p>
+                            Office Access database</p>
+                        <p>
+                           SQL Server database</p>
+                        <p>
+                            Web service</p>
+                        <p>
+                            Document library or list on a server running Windows 
+                            SharePoint Services</p>
+                        <p>
+                            XML file</p>
+                        <p>
+                            By using a secondary data connection, you can also enable users to submit 
+                            form data to an application on a Web server, to a document library on a server 
+                            running Windows SharePoint Services, or through an e-mail message.</p>
+                        <p>
+                            If you create a secondary data connection that queries data, by default 
+                            the form uses this data connection when the form opens. You can also use this 
+                            data connection by configuring the form template in the following ways: 
+                            
+                        </p>
+                        <p>
+                            Add a refresh button to the form template that the user 
+                            can click to send the query.</p>
+                        <p>
+                            Add a rule to the form template to query the data source 
+                            by using this data connection.</p>
+                        <p>
+                           Add custom code to the form template that sends the 
+                            query.</p>
+                        <p>
+                            When you add a secondary data connection to a form, InfoPath automatically 
+                            creates a secondary data source with data fields and groups that match the way 
+                            that data is stored in the external data source. This helps ensure the integrity 
+                            of the data. You cannot modify the fields and groups in a secondary data source.</p>
+                        
+                        <p>
+                            Storing data for offline use</p>
+                        <p>
+                            When you add a secondary data connection that queries data from an 
+                            external data source, you can configure the connection to store the results of 
+                            the query on the user&#39;s computer. This ensures that users can fill out the form 
+                            if their computers are not connected to a network. This is called working 
+                            offline.</p>
+                        <p>
+                            If you configure a secondary data connection in this way, the query is 
+                            sent to the external data source while the user&#39;s computer is connected to the 
+                            network. The results of the query are then stored in the secondary data source 
+                            of the form, and they appear in the form when the user fills out the form. Data 
+                            is cached each time the user performs a new query, so that the data is kept up 
+                            to date as much as possible.</p>
+                        <p>
+                            InfoPath considers query parameters when deciding whether stored data is 
+                            appropriate for a given query. When you create the data connection, you can 
+                            choose whether to display a default set of stored data in the form, in case the 
+                            data source is not available. You should consider whether the data from the 
+                            query is appropriate for all of your users or whether the form should display 
+                            data that is specific to each user. For example, if the data returned by the 
+                            query is based on the user&#39;s identity or role, using a default set of data that 
+                            was configured at design time instead of using query results may result in 
+                            incorrect data for that user.</p>
+                        
+                        <p>
+                            <b>Considerations for connecting to external data 
+                            sources</b></p>
+                        <p>
+                            InfoPath supports data connections to the following types of external data 
+                            sources:</p>
+                        <p>
+                            Office Access database</p>
+                        <p>
+                           SQL Server database</p>
+                        <p>
+                            Web service</p>
+                        <p>
+                            Document library or list on a server running Microsoft 
+                            Windows SharePoint Services</p>
+                        <p>
+                            XML file</p>
+                        <p>
+                            The following sections provide information and considerations for 
+                            connection to each of these external data sources.</p>
+                        <p>
+                            <b>Microsoft Office Access or SQL Server database</b></p>
+                        <p>
+                            InfoPath supports data connections to Access databases and SQL Server 
+                            databases. To connect to another kind of database, you can use a Web service 
+                            that works with that database.</p>
+                        <p>
+                            A form can query data from a database through either a main or a secondary 
+                            data connection, and you can select any number of database tables for a 
+                            connection. The first table that you select is the primary table. Any table that 
+                            you subsequently select must contain a field that is related to the primary 
+                            table. InfoPath attempts to set this relationship by matching the field names in 
+                            the two tables. You can choose to use this relationship or add your own table 
+                            relationship when you create the data connection.</p>
+                        <p>
+                            A form can submit data to a database through the form&#39;s main data 
+                            connection if the form template that the form is based on and the database meet 
+                            the following requirements:</p>
+                        <p>
+                            <b>The form template is not a browser-compatible form 
+                            template</b> InfoPath will not create a submit data connection in 
+                            the main data connection if you are designing a browser-compatible form 
+                            template. To allow users to submit data in a form that is based on a 
+                            browser-compatible form template, use a Web service that works with the 
+                            database.</p>
+                        <p>
+                            <b>The left table in each pair of related tables in the 
+                            main data source contains a primary key</b> At least one of the 
+                            relationships for every pair of related tables must include a primary key from 
+                            the left table.</p>
+                        <p>
+                            <b>None of the data fields in the main data source of the 
+                            form store a large binary data type</b> InfoPath will disable the 
+                            submit data connection if the query includes fields that can store a large 
+                            binary data type, such as pictures, images, OLE objects, file attachments, the 
+                            Office Access memo data type, or the SQL Text data type.</p>
+                        <p>
+                            If the form template and the database meet all of these requirements, 
+                            InfoPath creates the submit data connection and configures the form template to 
+                            allow users to submit their forms. You can disable the submit data connection in 
+                            the main data connection if you want users to submit their form data through a 
+                            different data connection.</p>
+                        <p>
+                            When you design a form template that is based on a database, InfoPath 
+                            creates a main data source that contains query fields and data fields that match 
+                            the way that data is stored in the database. InfoPath also adds <b>Run Query</b> 
+                            and <b>New Record</b> buttons to the default view of the form template. When a 
+                            user clicks the <b>Run Query</b> button, InfoPath sends a query with the data in 
+                            the query field to the database. The <b>New Record</b> button clears any data 
+                            currently in the form and sets controls that are bound to the data fields to the 
+                            default value of the data field. When a user submits data to the database, any 
+                            changes to the data in the data fields change the corresponding records in the 
+                            database. If a user deletes data from a data field, the corresponding record is 
+                            deleted from the database. Finally, any data that has been added to the data 
+                            fields updates the corresponding fields or adds the corresponding records to the 
+                            database.</p>
+                        <p>
+                            If you want to connect a form to a database, and the main data connection 
+                            has already been created for the form, you can add a secondary data connection 
+                            that queries the database. When you add a secondary data connection, InfoPath 
+                            creates a secondary data source with query fields, data fields, and groups that 
+                            match fields in the database tables. You can select multiple database tables and 
+                            establish table relationships just as you would for the main data connection.</p>
+                        <p>
+                            When you create a secondary data connection that queries data, you can 
+                            configure the connection to send a query each time the user opens the form, or 
+                            you can do one of the following to send the query:</p>
+                        <p>
+                            Add a button that users can click to refresh the data 
+                            from the data connection.</p>
+                        <p>
+                            Create a rule that sends the query by using the data 
+                            connection.</p>
+                        <p>
+                            Write custom code that sends the query when it is run.</p>
+                        <p>
+                            <b>Web service</b></p>
+                        <p>
+                            A form can query or submit data to a Web service through either a main or 
+                            a secondary data connection. InfoPath adheres to the following standards for 
+                            connections to Web services:</p>
+                        <p>
+                            <b>Simple Object Access Protocol (SOAP)</b> 
+                            SOAP is the communication protocol that defines the XML messages that are used 
+                            to communicate with the Web service.</p>
+                        <p>
+                            <b>Web Services Description Language (WSDL)</b> 
+                            WSDL is the XML Schema standard that is used to describe the location, 
+                            communication protocols, and interfaces to the Web service. InfoPath can consume 
+                            only document-literal style Web services.</p>
+                        <p>
+                            <b>Universal Description Discovery and Integration (UDDI)</b> 
+                            UDDI is the directory service that describes the Web services offered by a 
+                            business.</p>
+                        <p>
+                            When you design a new form template that is based on a Web service, 
+                            InfoPath creates a main data connection to the Web service and then creates a 
+                            main data source that contains query fields, data fields, and groups that match 
+                            the XML Schema of the Web service.</p>
+                        <p>
+                            If you configure the form template to use another operation in the same 
+                            Web service or you want to use a different Web service altogether, you can add 
+                            secondary data connections to the form template. When you add a secondary data 
+                            connection that queries data, InfoPath creates a secondary data source with 
+                            fields and groups that match the schema of the Web service. If you add a 
+                            secondary data connection that submits data, you can configure the connection to 
+                            send all or only some of the data in the form, depending on the parameters in 
+                            the Web service.</p>
+                        <p>
+                            When you create either a main or secondary data connection to a Web 
+                            service, you can specify whether the connection queries data only, submits data 
+                            only, or both queries and submits data. If the connection queries data, InfoPath 
+                            adds the <b>Run Query</b> button to the form template. When a user clicks the <b>
+                            Run Query</b> button, InfoPath sends a query with the data in the query fields 
+                            to the Web service. If the connection submits data, InfoPath enables the Submit 
+                            feature for the form. When you configure a submit data connection, InfoPath 
+                            determines what data is required by the Web service. Based on that information, 
+                            you can specify what fields in the form template should submit their data to the 
+                            Web service.</p>
+                        <p>
+                            <b>Document library or a list on a SharePoint site</b></p>
+                        <p>
+                            A form can query data through a secondary data connection to a document 
+                            library or a list on a server running Windows SharePoint Services. A form can 
+                            also submit data to a document library on a server. You cannot connect to a 
+                            library or list through a main data connection.</p>
+                        <p>
+                            If you create a secondary data connection that queries data from a 
+                            document library or list, InfoPath creates a secondary data source for the form 
+                            that matches the columns in the document library or list.</p>
+                        <p>
+                            If you create a secondary data connection that submits data to a document 
+                            library and you want this submit data connection to be the main submit action 
+                            for the form template, you must enable the Submit feature for the form template 
+                            and associate it with the data connection by using the <b>Submit Options</b> 
+                            dialog box (<b>Tools</b> menu, <b>Submit Options</b> command). By default, all 
+                            of the data in the form is submitted through the submit data connection. If you 
+                            want to submit only some of the data, you can do so by writing custom code for 
+                            the form template.</p>
+                        <p>
+                            <b>XML file</b></p>
+                        <p>
+                            A form can query data through a secondary data connection to an XML file. 
+                            For example, you can save a Microsoft Office Excel worksheet as an XML file and 
+                            then use a secondary data connection to query and display the data from that 
+                            file in the form. You can also use a secondary data connection to query data 
+                            from an XML file in order to retrieve data from an application on a Web server 
+                            that returns XML, such as a Microsoft ASP.NET application, a Common Gateway 
+                            Interface (CGI) script, or an application that uses the Internet Server 
+                            Application Programming Interface (ISAPI).</p>
+                        <p>
+                            <b>Application on a Web server</b></p>
+                        <p>
+                            You can create a secondary data connection that submits data to an 
+                            application on a Web server, such as an ASP.NET application, a CGI script, or an 
+                            application that uses ISAPI. To submit data to an application on a Web server, 
+                            you must configure the form template to allow users to submit their form data 
+                            and configure the submit options for the data connection by selecting <b>Web 
+                            server (HTTP)</b> in the <b>Submit Options</b> dialog box (<b>Tools</b> menu, <b>
+                            Submit Options</b> command).</p>
+                        <p>
+                            Note A form can have only one data connection that submits data to an 
+                            application on a Web server. You cannot configure a form template to allow forms 
+                            to use a rule to submit data to an application on a Web server.</p>
+                        <p>
+                            <b>Connection settings in a data connection library</b></p>
+                        <p>
+                            If several forms use the same or similar data connections, consider 
+                            storing the settings for each data connection in a data connection file in a 
+                            data connection library on a server running Office SharePoint Server 2007. A 
+                            data connection file is an XML file that contains connection information for a 
+                            single external data source and has an .xml or .udcx file name extension. When a 
+                            user opens a form that connects to a data connection file, InfoPath uses the 
+                            settings in that file to connect to the external data source. Advantages of 
+                            using data connection files include the following: 
+                        </p>
+                        <p>
+                            Multiple forms can use the same data connection file, so 
+                            there is no need to create the same data connection from scratch for each form.</p>
+                        <p>
+                            If the location or connection settings for an external 
+                            data source change, you need to update only the data connection file, not each 
+                            form template.</p>
+                        <p>
+                            The data connection file can contain alternative 
+                            authentication information that can be used by the server when a user fills out 
+                            a form by using a browser. 
+                        </p>
+                        <p>
+                            Forms that are filled out in a browser without a full 
+                            trust security level can connect to a computer in another domain if all of the 
+                            data connections in the form use data connection files.</p>
+                        <p>
+                            To connect a form to a data connection file, the file must be stored in a 
+                            data connection library on a server running Office SharePoint Server 2007 and it 
+                            must follow the Universal Data Connection (UDC) version 2.0 file format. 
+                            
+                        </p>
+                        Note The UDC 2.0 file format is a superset of the version 1.0 format used 
+                        by Microsoft Office FrontPage. InfoPath cannot use a data connection file in the 
+                        version 1.0 format. Find links to more information about data connection 
+                        libraries and data connection files in the <b>See Also</b> section.<p>
+                        
+                        </p>                       
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

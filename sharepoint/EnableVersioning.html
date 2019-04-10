@@ -1,0 +1,181 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Programmatically Enable Versioning to a Sharepoint List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="We often have a requirement to create a list using the SharePoint object 
+                            model and at the same time we have to enable the versioning settings.
+                            This can be achieved by navigating to the list settings but what if we want to 
+                            enable it through the object model only." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Programmatically Enable Versioning</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Programmatically Enable Versioning to a Sharepoint List</h3>
+						</header>
+                        <br />
+                        <p >
+                            <span>We often have a requirement to create a list using the SharePoint object 
+                            model and at the same time we have to enable the versioning settings.<br />
+                            <br />
+                            This can be achieved by navigating to the list settings but what if we want to 
+                            enable it through the object model only.<br />
+                            <br />
+                            In this article we will see how we can enable the versioning programmatically.  
+                            </span>
+                        </p>
+                        <ol start="1" type="1">
+                            <li ><span>Change the AllowUnsafeProperty of the web to true so 
+                                that SharePoint will allow to change the properties of the list. </span></li>
+                            <li ><span>Get the list in SPlist Object. </span></li>
+                            <li ><span>Set the properties accordingly. </span></li>
+                        </ol>
+                        <p >
+                            <span>The following is the code snippet which is used to do the versioning 
+                            settings. </span></p>
+                        <p >
+                            <span>/***************************************************************/ </span></p>
+                        <p >
+                            <span>///Enable Versioning to lists </span></p>
+                        <p >
+                            <span>/// </span></p>
+                        <p >
+                            <span>SPContext.Current.Web.AllowUnsafeUpdates = true; </span></p>
+                        <p >
+                            <span>SPList objList = SPContext.Current.Web.Lists[&quot;TestDoc&quot;]; </span></p>
+                        <p >
+                            <span>//EnableVersioning:- True if versioning is enabled for the document 
+                            library; Otherwise false.  </span>
+                        </p>
+                        <p >
+                            <span>objList.EnableVersioning = true; </span></p>
+                        <p >
+                            <span>//EnableMinorVersions:- true if minor versions are enabled when versioning 
+                            is enabled for the document library; otherwise false. </span></p>
+                        <p >
+                            <span>objList.EnableMinorVersions = true; </span></p>
+                        <p >
+                            <span>//EnableModeration: property is true if Content Approval is enabled; 
+                            otherwise, false </span></p>
+                        <p >
+                            <span>objList.EnableModeration = true; </span></p>
+                        <p >
+                            <span>//ForceCheckout:- This property is true if Forced checkout is enabled for 
+                            the document library; otherwise false </span></p>
+                        <p >
+                            <span>objList.ForceCheckout = true; </span></p>
+                        <p >
+                            <span>//DraftVersionVisibility:- Set the accessibilty of the minor versions of 
+                            document drafts within the list. </span></p>
+                        <p >
+                            <span>objList.DraftVersionVisibility = DraftVisibilityType.Author; </span></p>
+                        <p >
+                            <span>objList.Update(); </span></p>
+                        <p >
+                            <span>SPContext.Current.Web.AllowUnsafeUpdates = false; </span></p>
+                        <p >
+                            <span>/****************************************************************/  
+                            </span>
+                        </p>
+                        <p >
+                            <span>In this we can play with the versioning settings for a list. </span></p>
+                        
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

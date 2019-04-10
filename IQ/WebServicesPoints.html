@@ -1,0 +1,546 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Remoting, Web Services, XML, XSLT Points</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="There is the MessageName property of a WebMethod attribute! The MessageName property enables
+                                     the XML Web Service to uniquely identify overloaded methods using an alias. The default value of this property is the method name,
+                                     but you can change it to distinguish this overloaded method implementation from others." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Remoting, Web Services, XML, XSLT Points</strong></a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						 <p>
+                            <b><u><span>
+                            Is overloading possible in web services?</span></u></b></p>
+                        <p>
+                            <span>Yes, We can overload webmethods in a webservice.
+                            <br />
+                            There is the MessageName property of a WebMethod attribute! The MessageName 
+                            property enables the XML Web Service to uniquely identify overloaded methods 
+                            using an alias. The default value of this property is the method name, but you 
+                            can change it to distinguish this overloaded method
+                            <br />
+                            implementation from others. When specifying the method name, the resulting SOAP 
+                            messages will reflect this name instead of an actual method name.</span></p>
+                        <p>
+                            <b><u><span>
+                            Can two different programming languages be mixed in a single ASMX file?</span></u></b></p>
+                        <p>
+                            <span>&nbsp;NO.</span></p>
+                        <p>
+                            <b><u><span>
+                            Difference between XMLDoc and XMLReader?</span></u></b></p>
+                       
+                        <p>
+                            <span>We use XMLTextReader to read XML streams.XMLdocument can be used to edit 
+                            and navigate the document</span></p>
+                        <p>
+                            <b><u><span>
+                            What are the facilities available in .NET to deal with XML.</span></u></b></p>
+                        <p>
+                            <span>The main classes working with XML data are as follows: - 
+                            </span>
+                        </p>
+                        <p>
+                            <span>1. XmlTextReader<br />
+                            2. XMLTextWriter<br />
+                            3. XMLDocument<br />
+                            4. XmlDataDocument<br />
+                            5. XmlNodeReader<br />
+                            6. DocumentNavigator</span></p>
+                        <p>
+                            <b><u><span>
+                            What is singlecall?</span></u></b></p>
+                        <p>
+                            <span>Single Call types always have one instance per client request. The next 
+                            method invocation will be serviced by a different server instance, even if the 
+                            previous instance has not yet been recycled by the system.</span></p>
+                        <p>
+                            <b><u><span>
+                            What is singleton?</span></u></b></p>
+                        <p>
+                            <span>Singleton types never have more than one instance at any one time. If an 
+                            instance exists, all client requests are serviced by that instance.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is Remoting?</span></u></b></p>
+                        <p>
+                            <span>The process of communication between different operating system processes, 
+                            regardless of whether they are on the same computer. The .NET remoting system is 
+                            an architecture designed to simplify communication between objects living in 
+                            different application domains, whether on the same computer or not, and between 
+                            different contexts, whether in the same application domain or not.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            How to Create And Delploy A WebService Using C#</span></u></b></p>
+                        <p>
+                            <span>First, let&#39;s start off by creating a very simple webservice.
+                            <br />
+                            Creating A Webservice
+                            <br />
+                            1.Create a folder named Webservice under wwwroot
+                            <br />
+                            2. Create a File
+                            <br />
+                            &lt;%@ WebService Language=&quot;c#&quot; Class=&quot;AddNumbers&quot;%&gt;
+                            <br />
+                            <br />
+                            using System;
+                            <br />
+                            using System.Web.Services;
+                            <br />
+                            public class AddNumbers : WebService
+                            <br />
+                            {
+                            <br />
+                            [WebMethod]
+                            <br />
+                            public int Add(int a, int b){
+                            <br />
+                            int sum;
+                            <br />
+                            sum = a + b;
+                            <br />
+                            return sum;
+                            <br />
+                            }
+                            <br />
+                            }
+                            <br />
+                            3.Save this file as AddService.asmx [asmx-&gt; file extension]
+                            <br />
+                            4.Now the webservice is created and ready for the clients to use it.
+                            <br />
+                            5. Now we can call this webservice using
+                            <br />
+                            http://ip address/Webservice/Addservice.asmx/Add?a=10&amp;b=5
+                            <br />
+                            This will return the result in XML format
+                            <br />
+                            Deploying the Webservice in the Client Machine
+                            <br />
+                            1.At the command prompt:
+                            <br />
+                            WSDL http://ip address ofthe site/WebService/MathService.asmx /n:NameSp 
+                            /out:FileName.cs]
+                            <br />
+                            -This will create a file called FileNmame.cs .
+                            <br />
+                            WSDL -&gt; WebServices Description Language (This is an application available at 
+                            C:\Program
+                            <br />
+                            Files\Microsoft.NET\FrameworkSDK\Bin)
+                            <br />
+                            NameSp -&gt; Name of the NameSpace which will be used in client code for deploying 
+                            the webservice.
+                            <br />
+                            2.Compilation
+                            <br />
+                            CSC /t:library /r:system.web.dll /r:system.xml.dll CreatedFile.cs
+                            <br />
+                            This will create a dll with the name of the public class of the asmx file.( In 
+                            our case, it is &quot;AddNumbers.dll&quot; )
+                            <br />
+                            CSC is an application available at C:\WINNT\Microsoft.NET\Framework\v1.0.2914
+                            <br />
+                            3.Put the dll file inside WWWRooT\BIN [Create a BIN Folder in WWWRoot]
+                            <br />
+                            Making use of WebService in client asp/aspx page
+                            <br />
+                            &lt;%@ import Namespace = &quot;NameSp&quot; %&gt;
+                            <br />
+                            &lt;script language = &quot;c#&quot; runat = &quot;server&quot;&gt;
+                            <br />
+                            public void Page_Load(object o, EventArgs e){
+                            <br />
+                            int x = 10;
+                            <br />
+                            int y = 5;
+                            <br />
+                            int sum;
+                            <br />
+                            //Instantiating the public class of the webservice
+                            <br />
+                            AddNumbers AN = new AddNumbers();
+                            <br />
+                            sum = AN.Add(x,y);
+                            <br />
+                            string str = sum.ToString();
+                            <br />
+                            response.writeline(str);
+                            <br />
+                            }
+                            <br />
+                            &lt;/script&gt;
+                            <br />
+                            Note
+                            <br />
+                            It is advisable to
+                            <br />
+                            1. Copy the .asmx file to the folder containing WSDL aplication (C:\Program 
+                            Files\Microsoft.NET\FrameworkSDK\Bin) before creating cs file.
+                            <br />
+                            2. Copy the created .cs file to the folder containing CSC application</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            When would you use .NET Remoting and when Web services?</span></u></b></p>
+                        <p>
+                            <span>Use remoting for more efficient exchange of information when you control 
+                            both ends of the application. Use Web services for open-protocol-based 
+                            information exchange when you are just a client or a server with the other end 
+                            belonging to someone else.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            Describe the term Channel in .Net Remoting</span></u></b></p>
+                        <p>
+                            <span>In .Net Remoting, an application use Channel to send message to another 
+                            application which is running in different domain or process. Before sending 
+                            message, Channel converts message into appropriate format like XML or binary 
+                            format. The channel that carries message(Mashalled parameter) can use protocal 
+                            like TCP and HTTP. Channel can be HTTPChannel and TCPChannel. The HTTPChannel 
+                            use soapFormatter to serialize messages into the XML format using SOAP protocal. 
+                            Using SOAP method allows the client to call method on the remote object that 
+                            might not be using .Net framework. The TCPChannel use binaryFormatter to 
+                            serialize message into binary stream.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is the difference between well-formed and valid XML document?</span></u></b></p>
+                        <p>
+                            <span>W3C, in the XML specification, has defined certain rules that need to be 
+                            followed while creating XML documents. The examples of such rules include: 
+                            having exactly one root element, having end-tag for each start- tag, using 
+                            single/double quotes for attribute values, and so on. If an XML document follows 
+                            all these rules, it is said to be well-formed document and XML parsers can be 
+                            used to parse and process such documents.
+                            <br />
+                            Document Type Definitions (DTDs) or XML Schemas can be used to define the 
+                            structure and content of a specific class of XML documents. This includes the 
+                            parent-child relationship details, attribute lists, data type information, value 
+                            restrictions, etc. In addition to the well-formedness rules, if an XML document 
+                            also follows the rules specified in the associated DTD/Schema, it is said to be 
+                            a valid XML document. All valid XML documents are well-formed; but the reverse 
+                            is not always true, that is, well-formed XML documents do not necessarily have 
+                            to be valid.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is UDDI?</span></u></b></p>
+                        <p>
+                            <span>UDDI is a platform-independent framework for describing services, 
+                            discovering businesses, and integrating business services by using the Internet.
+                            <br />
+                            <br />
+                            1. UDDI stands for Universal Description, Discovery and Integration
+                            <br />
+                            2. UDDI is a directory for storing information about web services
+                            <br />
+                            3. UDDI is a directory of web service interfaces described by WSDL
+                            <br />
+                            4. UDDI communicates via SOAP
+                            <br />
+                            5. UDDI is built into the Microsoft .NET platform</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What are the consideration in deciding to use .NET Remoting or ASP.NET Web 
+                            Services?</span></u></b></p>
+                        <p>
+                            <span>Remoting is a more efficient communication exchange when you can control 
+                            both ends of the application involved in the communication process. Web Services 
+                            provide an open-protocol-based exchange of informaion. Web Services are best 
+                            when you need to communicate with an external organization or another (non-.NET) 
+                            technology.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What are the remotable and non-remotable objects in .Net Remoting.</span></u></b></p>
+                        <p>
+                            <span>The remotable objects are the objects which can be distributed accross 
+                            domains, can be used with domain. The non-remotable objects are the objects 
+                            which can&#39;t be distributed accross domains. In distributed system, if an object 
+                            is very big, we can make it non-remotable object.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            Describe the type of remotable objects in .Net Remoting.</span></u></b></p>
+                        
+                        <p>
+                            <span>Marshal-by-value-objects - When client calls a method on 
+                            marshal-by-value-object, the remoting system creates a copy of this object and 
+                            passes the copy to the client application domain. The copy hence received can 
+                            handle any method call in client domain. Using Marshal-by-value-object reduces 
+                            resource consuming trip across network.
+                            <br />
+                            Marshal-by-reference-object - When client calls a method on Marshal by reference 
+                            object, the remoting system create proxy object in the caller application that 
+                            contains the reference of all method and properties of the object.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            Describe the term Channel in .Net Remoting</span></u></b></p>
+                        <p>
+                            <span>In .Net Remoting, an application use Channel to send message to another 
+                            application which is runing in different domain or process. Before sending 
+                            message, Channel converts message into appropriate format like XML or binary 
+                            format. The channel that carries message(Mashalled parameter) can use protocal 
+                            like TCP and HTTP. Channel can be HTTPChannel and TCPChannel. The HTTPChannel 
+                            use soapFormatter to serialize messages into the XML format using SOAP protocal. 
+                            Using SOAP method allows the client to call method on the remote object that 
+                            might not be using .Net framework. The TCPChannel use binaryFormatter to 
+                            serialize message into binary stream.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is WSDL?</span></u></b></p>
+                        <p>
+                            <span>WSDL (Web Services Description Language) is an XML-based language for 
+                            describing Web services and how to access them.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is DOM?</span></u></b></p>
+                        <p>
+                            <span>Document Object Model (DOM) is a W3C specification that defines a standard 
+                            (abstract) programming API to build, navigate and update XML documents. It is a 
+                            &quot;tree-structure-based&quot; interface. As per the DOM specification, the XML parsers 
+                            (such as MSXML or Xerces), load the entire XML document into memory, before it 
+                            can be processed. XPath is used to navigate randomly in the document, and 
+                            various DOM methods are used to create and update (add elements, delete 
+                            elements, add/remove attributes, etc.) the XML documents.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What security measures exist for .NET Remoting in System.Runtime.Remoting?</span></u></b></p>
+                        <p>
+                            <span>None. Security should be taken care of at the application level. 
+                            Cryptography and other security techniques can be applied at application or 
+                            server level.</span></p>                        
+                        <p>
+                            <b><u><span>
+                            What’s Singleton activation mode?</span></u></b></p>
+                        <p>
+                            <span>A single object is instantiated regardless of the number of clients 
+                            accessing it. Lifetime of this object is determined by lifetime lease.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What’s SingleCall activation mode used for?</span></u></b></p>
+                        <p>
+                            <span>If the server object is instantiated for responding to just one single 
+                            request, the request should be made in SingleCall mode.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is a formatter?</span></u></b></p>
+                        <p>
+                            <span>A formatter is an object that is responsible for encoding and serializing 
+                            data into messages on one end, and deserializing and decoding messages into data 
+                            on the other end.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What are remotable objects in .NET Remoting?</span></u></b></p>
+                        <p>
+                            <span>Remotable objects are the objects that can be marshaled across the 
+                            application domains. You can marshal by value, where a deep copy of the object 
+                            is created and then passed to the receiver. You can also marshal by reference, 
+                            where just a reference to an existing object is passed.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is XSL?</span></u></b></p>
+                        <p>
+                            <span>A language used to transform XML based data into HTML or other 
+                            presentation format for display in the web browser.
+                            <br />
+                            <br />
+                            OR
+                            <br />
+                            XSL specifies the styling of an XML document by using XSLT to describe how the 
+                            document is transformed into another XML document that uses the formatting 
+                            vocabulary.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is SOAP?</span></u></b></p>
+                        <p>
+                            <span>SOAP (Simple Object Access Protocol) is the union of XML and HTTP. SOAP is 
+                            W3C submitted note that uses XML and HTTP to encode &amp; transmit application data.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What’s a proxy of the server object in .NET Remoting?</span></u></b></p>
+                        <p>
+                            <span>It’s a fake copy of the server object that resides on the client side and 
+                            behaves as if it was the server. It handles the communication between real 
+                            server object and the client object. This process is also known as marshaling.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is XML?</span></u></b></p>
+                        <p>
+                            <span>XML (Extensive Markup Language) is a subset of SGML that is optimized for 
+                            delivery over the web.
+                            <br />
+                            OR
+                            <br />
+                            XML provides a uniform method for describing &amp; exchanging structured data that 
+                            is independent of applications and vendor.
+                            <br />
+                            OR
+                            <br />
+                            XML is the web language for data exchange.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is Document Type Definition (DTD)?</span></u></b></p>
+                        <p>
+                            <span>DTD (Document Type Definition) can essentially defines the rules of the 
+                            document eg. which element are present and the structural relationship between 
+                            the elements.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is DOM?</span></u></b></p>
+                        <p>
+                            <span>DOM (Document Object Model) is a platform and language neutral interface 
+                            that allows program &amp; scripts to dynamically access &amp; update the content, 
+                            structure &amp; style of the documents.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is Data Source Object?</span></u></b></p>
+                        <p>
+                            <span>Data Source Object provides a way to bind HTML controls directly to an XML 
+                            data island.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is complex data types?</span></u></b></p>
+                        <p>
+                            <span>An element that can contain other elements or attributes is known as 
+                            Complex Data Type.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is CDF?</span></u></b></p>
+                        <p>
+                            <span>CDF (Channel Definition Format) is an XML based data format used in the 
+                            Microsoft internet explorere 4.0 and later to describe active channel contents 
+                            and desktop contents.</span></p>
+                        
+                        <p>
+                            <b><u><span>
+                            What is XSLT?</span></u></b></p>
+                        <p>
+                            <span>XSLT (Extensible Stylesheet Language Transformation) is the stylesheet 
+                            language for XML data.</span></p>
+						
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+                        <li>
+							<span class="opener active">Interview Question</span>
+							<ul>
+								<li><a href="/IQ/index.html">Interview Question</a></li>
+                                <li><a href="/IQ/InterviewTips.html">Interview Tips</a></li>
+                                <li><a href="/IQ/SkillsAndExperience.html">Skills and Experience</a></li>
+                                <li><a href="/IQ/ProjectManagementPoints.html">Project Management Points</a></li>
+                                <li><a href="/IQ/ADONETPoints.html">ADONET Points</a></li>
+                                <li><a href="/IQ/AJAXPoints.html">AJAX Points</a></li>
+                                <li><a href="/IQ/HtmlPoints.html">HTML Points</a></li>
+                                <li><a href="/IQ/jQueryPoints.html">jQuery Points</a></li>
+                                <li><a href="/IQ/HTMLDHTMLPoints.html">HTML DHTML Points</a></li>
+                                <li><a href="/IQ/WebServicesPoints.html">Web Services, XML, XSLT</a></li>
+                                <li><a href="/IQ/CSSPoints.html">CSS Points</a></li>
+                                <li><a href="/IQ/OOPSPoints.html">OOPS Points</a></li>
+                                <li><a href="/IQ/SharepointPoints.html">Sharepoint Points</a></li>
+                                <li><a href="/IQ/SQLServerPoints.html">SQL Server Points</a></li>
+                                <li><a href="/IQ/ASPNETPoints.html">ASPNET Points</a></li>
+                                <li><a href="/IQ/WWFPoints.html">WWF Points</a></li>
+                                <li><a href="/IQ/WPFPoints.html">WPF Points</a></li>
+                                <li><a href="/IQ/WCFPoints.html">WCF Points</a></li>
+                                <li><a href="/IQ/Sharepoint.html">Sharepoint</a></li>
+							</ul>
+						</li>
+						<li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/Powershell/index.html">Powershell</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>                        
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

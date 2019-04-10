@@ -1,0 +1,214 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>PS Config</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="psconfig -cmd helpcollections -installall  Secure resources in file system and registry entries psconfig -cmd secureresources 
+                                 Install services on the server psconfig -cmd services -install" />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>PS Config</strong></a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>PS Config</strong></h3>
+						</header>
+						<p>
+                            <span >1. psconfig -cmd configdb -create -server &quot;SERVER\INSTANCE&quot; 
+                            -database &quot;nameOFtheConfigDB&quot; -admincontentdatabase &quot;nameOFtheadmincontentDB&quot; 
+                            -user DOMAIN\FARMACCOUNT -password PASSWORD </span></p>
+                        <p>
+                            <span ><span>&nbsp;</span>2. psconfig -cmd helpcollections -installall  
+                            </span>
+                        </p>
+                        <p>
+                            <span >// Secure resources in file system and registry entries
+                            <br />
+                            psconfig -cmd secureresources </span></p>
+                        <p>
+                            <span >// Install services on the server
+                            <br />
+                            3. psconfig -cmd services -install </span></p>
+                        <p>
+                            <u><span >** Setup Services **</span></u><span >  
+                            </span>
+                        </p>
+                        <p>
+                            <span >// Configure Windows SharePoint Services Help Search service: 
+                            mandatory to successfully provision services on this server </span></p>
+                        <p>
+                            <span >4. Stsadm -o spsearch -action start -farmserviceaccount 
+                            DOMAIN\FARMACCOUNT -farmservicepassword PASSWORD -databaseserver 
+                            &quot;SERVER\INSTANCE&quot; -databasename &quot;nameOFtheSearchDB&quot; </span></p>
+                        <p>
+                            <span >// Configure Office SharePoint Server search service </span></p>
+                        <p>
+                            <span >5. Stsadm –o Osearch -action start -role Index -farmcontactemail 
+                            &quot;EMAIL&quot; -farmperformancelevel Reduced -farmserviceaccount DOMAIN\SEARCHSERVICE 
+                            -farmservicepassword PASSWORD </span></p>
+                        <p>
+                            <span >// Actually enable services on the server
+                            <br />
+                            6. psconfig -cmd services -provision </span></p>
+                        <p>
+                            <span >7. psconfig -cmd installfeatures  </span>
+                        </p>
+                        <p>
+                            <span >// Create central administration website  </span>
+                        </p>
+                        <p>
+                            <span >8. psconfig -cmd adminvs -provision -port PORT 
+                            -windowsauthprovider onlyusentlm  </span>
+                        </p>
+                        <p>
+                            <span >9. psconfig -cmd applicationcontent -install  </span>
+                        </p>
+                        <p>
+                            <b><u><span >Add servers to your farm</span></u></b><span > </span></p>
+                        <p>
+                            <span >Once you finished to configure the first server, you can add 
+                            additional servers to the farm. Procedure is the same whatever you installed 
+                            MOSS or WSS  </span>
+                        </p>
+                        <p>
+                            <![if !supportLists]><span >1.<span>&nbsp; </span></span><![endif]>
+                            <span >psconfig -cmd configdb -connect -server &quot;SERVER\INSTANCE&quot; 
+                            -database &quot;nameOFtheConfigDB&quot; -admincontentdatabase &quot;nameOFtheadmincontentDB&quot; 
+                            -user DOMAIN\FARMACCOUNT -password PASSWORD  </span>
+                        </p>
+                        <p>
+                            <![if !supportLists]><span >2.<span>&nbsp; </span></span><![endif]>
+                            <span >psconfig -cmd helpcollections -installall  </span>
+                        </p>
+                        <p>
+                            <![if !supportLists]><span >3.<span>&nbsp; </span></span><![endif]>
+                            <span >psconfig -cmd secureresources  </span>
+                        </p>
+                        <p>
+                            <![if !supportLists]><span >4.<span>&nbsp; </span></span><![endif]>
+                            <span >psconfig -cmd services install  </span>
+                        </p>
+                        <p>
+                            <![if !supportLists]><span >5.<span>&nbsp; </span></span><![endif]>
+                            <span >psconfig -cmd installfeatures  </span>
+                        </p>
+                        <p>
+                            <![if !supportLists]><span >6.<span>&nbsp; </span></span><![endif]>
+                            <span >psconfig -cmd applicationcontent -install  </span>
+                        </p>
+                        <p>
+                            <b><u><span >Optional</span></u></b><span > </span></p>
+                        <p>
+                            <span >CreateSSP </span></p>
+                        <p>
+                            <![if !supportLists]><span >1.<span>&nbsp; </span></span><![endif]>
+                            <span >Create web applications for the Shared Services Provider  
+                            </span>
+                        </p>
+                        <p>
+                            <![if !supportLists]><span >2.<span>&nbsp; </span></span><![endif]>
+                            <span >Create a new web app for the SSP admin site  </span>
+                        </p>
+                        <p>
+                            <span >Stsadm -o extendvs -url &lt;URL for the web app&gt; -ownerlogin 
+                            domain\username -owneremail email@yourdomain.com -exclusivelyusentlm -apidname 
+                            “AppPoolName″ -apidtype configurableID -apidlogin &lt;domain\username&gt; -apidpwd 
+                            &lt;app pool password&gt;Create a new web app for the My site  </span>
+                        </p>
+                        <p>
+                            <span >Stsadm -o extendvs -url &lt;URL for the web app&gt; -ownerlogin 
+                            domain\username -owneremail email@yourdomain.com -exclusivelyusentlm -apidname 
+                            “AppPoolName″ -apidtype configurableID -apidlogin &lt;domain\username&gt; -apidpwd 
+                            &lt;app pool password&gt; </span></p>
+                        <p>
+                            <span >3. Create the Shared Services Provider </span></p>
+                        <span >Stsadm -o Createssp -title “Shared Service Provider” -url 
+                        &lt;created in 1a.&gt; -mysiteurl &lt;created in 1b.&gt; -indexserver %COMPUTERNAME% 
+                        -indexlocation “%Programfiles%\Microsoft Office Servers\12.0\Data\Applications” 
+                        -ssplogin domain\username -ssppassword password</span><p>
+                           
+                        </p>                        
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+                        <li>
+							<span class="opener active">Powershell</span>
+							<ul>
+								<li><a href="/Powershell/index.html">Powershell</a></li>
+								<li><a href="/Powershell/PSConfig.html">PS Config</a></li>
+							</ul>
+						</li>
+						<li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Change the Default EditForm, NewForm and DispForm in sharepoint</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="You have developed some custom new, edit and display application pages that 
+                                    are stored in the _layouts directory. Let’s assume the filenames are newform.aspx,
+                                    dispform.aspx and editform.aspx You now want to change the properties of your custom list so that any new, edit 
+                                    or display requests point to your custom pages." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Change the Default EditForm, NewForm and DispForm</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Change the Default EditForm, NewForm and DispForm in sharepoint</h3>
+						</header>
+						<h2>
+                            <span>Problem</span></h2>
+                        <p>
+                            <span>You’ve developed some custom new, edit and display application pages that 
+                            are stored in the<strong>_layouts</strong></span><span 
+                                class="apple-converted-space">&nbsp;</span><span>directory. Let’s assume the 
+                            filenames are</span><span class="apple-converted-space">&nbsp;</span><strong><span>newform.aspx</span></strong><span>,</span><span 
+                                class="apple-converted-space">&nbsp;</span><strong><span>dispform.aspx</span></strong><span 
+                                class="apple-converted-space">&nbsp;</span><span>and<strong>editform.aspx</strong>. 
+                            You now want to change the properties of your custom list so that any new, edit 
+                            or display requests point to your custom pages.</span></p>
+                        <p>
+                            <span>If you open up your site within</span><span class="apple-converted-space">&nbsp;</span><strong><span>SharePoint 
+                            Designer</span></strong><span class="apple-converted-space">&nbsp;</span><span>and 
+                            expand the</span><span class="apple-converted-space">&nbsp;</span><strong><span>Lists</span></strong><span 
+                                class="apple-converted-space">&nbsp;</span><span>folder, from there you can 
+                            access the properties of that custom list by right clicking on it and selecting<strong>Properties</strong>. 
+                            Once the</span><span class="apple-converted-space">&nbsp;</span><strong><span>List 
+                            Properties</span></strong><span class="apple-converted-space">&nbsp;</span><span>pane 
+                            is open, click on the</span><span class="apple-converted-space">&nbsp;</span><strong><span>Supporting 
+                            Files</span></strong><span class="apple-converted-space">&nbsp;</span><span>tab.</span></p>
+                        
+                        <p>
+                            <span>You’ll see there that you can actually choose what display, edit and new 
+                            forms you want your list to be using. So if you’ve developed something custom, 
+                            you would click</span><span class="apple-converted-space">&nbsp;</span><strong><span>Browse…</span></strong><span>,&nbsp;point 
+                            to your new location and select the file. Here is where it starts to fail, I am 
+                            only able to browse within the site itself and cannot navigate to my</span><span 
+                                class="apple-converted-space">&nbsp;</span><strong><span>_layouts</span></strong><span 
+                                class="apple-converted-space">&nbsp;</span><span>directory to select the files I 
+                            mentioned above.</span></p>
+                        <h2>
+                            <span>Solution</span></h2>
+                        <p>
+                            <span>I suspected this was a limitation of the SharePoint Designer UI and not 
+                            actually a limitation of the Object Model. I did a bit of fiddling with my</span><span 
+                                class="apple-converted-space">&nbsp;</span><strong><span>SPList</span></strong><span 
+                                class="apple-converted-space">&nbsp;</span><span>object and was not able to find 
+                            anything that let me change those properties. If you look at the screenshot 
+                            above, there is a key piece of information that’ll make the light turn on (at 
+                            least it did for me). The</span><span class="apple-converted-space">&nbsp;</span><strong><span>Supporting 
+                            Files</span></strong><span class="apple-converted-space">&nbsp;</span><span>tab has a 
+                            drop down selector for the</span><span class="apple-converted-space">&nbsp;</span><strong><span>Content 
+                            type specific forms</span></strong><span>. If you think about that a moment, 
+                            you’ll remember that</span><span class="apple-converted-space">&nbsp;</span><strong><span>ALL</span></strong><span 
+                                class="apple-converted-space">&nbsp;</span><span>lists within SharePoint inherit 
+                            from a default</span><span class="apple-converted-space">&nbsp;</span><strong><span>content 
+                            type</span></strong><span>.</span></p>
+                        <p>
+                            <span>So armed with that knowledge, I created an</span><span 
+                                class="apple-converted-space">&nbsp;</span><strong><span>SPContentType</span></strong><span 
+                                class="apple-converted-space">&nbsp;</span><span>object and took a look at it’s 
+                            properties and methods. Sure enough, there are 3 properties I can set to change 
+                            these forms:<strong>EditFormUrl</strong>,</span><span 
+                                class="apple-converted-space">&nbsp;</span><strong><span>NewFormUrl</span></strong><span 
+                                class="apple-converted-space">&nbsp;</span><span>and</span><span 
+                                class="apple-converted-space">&nbsp;</span><strong><span>DisplayFormUrl</span></strong><span>. 
+                            Here is some sample code I used to change the forms for my custom list called 
+                            ‘My List’ that inherits from the</span><span class="apple-converted-space">&nbsp;</span><strong><span>Item</span></strong><span 
+                                class="apple-converted-space">&nbsp;</span><span>content type:</span></p>
+                        <table border="0" cellpadding="0" width="543" class="MsoNormalTable" style="width:407.25pt; mso-cellspacing:1.5pt;mso-yfti-tbllook:1184" >
+                            <tr>
+                                <td valign="bottom">
+                                    <pre>1</pre>
+                                    <pre>2</pre>
+                                    <pre>3</pre>
+                                    <pre>4</pre>
+                                    <pre>5</pre>
+                                    <pre>6</pre>
+                                    <pre>7</pre>
+                                    <pre>8</pre>
+                                    <pre>9</pre>
+                                    <pre>10</pre>
+                                    <pre>11</pre>
+                                    <pre>12</pre>
+                                    <pre>13</pre>
+                                    <pre>14</pre>
+                                </td>
+                                <td valign="bottom" width="519">
+                                    <pre>SPWeb web <span>=</span> SPContext<span>.Current.Web;</span></pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre>web<span>.AllowUnsafeUpdates</span> <span>=</span> <b><span>true</span></b><span>;</span></pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre>SPList list <span>=</span> web<span>.Lists[&quot;My List&quot;];</span></pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre>SPContentType ct <span>=</span> list<span>.ContentTypes[&quot;Item&quot;];</span></pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre>ct<span>.EditFormUrl</span> <span>=</span> <span>&quot;_layouts/editform.aspx&quot;;</span></pre>
+                                    <pre>ct<span>.NewFormUrl</span> <span>=</span> <span>&quot;_layouts/newform.aspx&quot;;</span></pre>
+                                    <pre>ct<span>.DisplayFormUrl</span> <span>=</span> <span>&quot;_layouts/dispform.aspx&quot;;</span></pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre>ct<span>.Update();</span></pre>
+                                    <pre>list<span>.Update();</span></pre>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <span>So in the example code above, I had to determine what default content type 
+                            my list inherited from. In this case it was the</span><span 
+                                class="apple-converted-space">&nbsp;</span><strong><span>Item</span></strong><span 
+                                class="apple-converted-space">&nbsp;</span><span>content type.</span></p>
+                        <p>
+                            <strong><span>NOTE</span></strong><span>: If you need to change the content type 
+                            directly, you can definitely do that, however, I did a bit of testing and found 
+                            that any lists ALREADY inheriting from that content type did not pickup my 
+                            changes to the form locations. Any NEW list that I created that was inheriting 
+                            from that content type did pickup the changes. In order for me to change the 
+                            form locations for the existing list I had to use the code above. For reference, 
+                            here is how you would change the content type directly. The code has only a 
+                            subtle difference.</span></p>
+                        <table border="0" cellpadding="0" class="MsoNormalTable" style="width:407.25pt;
+ mso-cellspacing:1.5pt;mso-yfti-tbllook:1184" width="543">
+                            <tr>
+                                <td valign="bottom">
+                                    <pre>1</pre>
+                                    <pre>2</pre>
+                                    <pre>3</pre>
+                                    <pre>4</pre>
+                                    <pre>5</pre>
+                                    <pre>6</pre>
+                                    <pre>7</pre>
+                                    <pre>8</pre>
+                                    <pre>9</pre>
+                                    <pre>10</pre>
+                                    <pre>11</pre>
+                                </td>
+                                <td valign="bottom" width="519">
+                                    <pre>SPWeb web <span>=</span> SPContext<span>.Current.Web;</span></pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre>web<span>.AllowUnsafeUpdates</span> <span>=</span> <b><span>true</span></b><span>;</span></pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre>SPContentType ct <span>=</span> web<span>.ContentTypes[&quot;Name Of Your Content Type&quot;];</span></pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre>ct<span>.EditFormUrl</span> <span>=</span> <span>&quot;_layouts/editform.aspx&quot;;</span></pre>
+                                    <pre>ct<span>.NewFormUrl</span> <span>=</span> <span>&quot;_layouts/newform.aspx&quot;;</span></pre>
+                                    <pre>ct<span>.DisplayFormUrl</span> <span>=</span> <span>&quot;_layouts/dispform.aspx&quot;;</span></pre>
+                                    <pre>&nbsp;</pre>
+                                    <pre>ct<span>.Update();</span></pre>
+                                </td>
+                            </tr>
+                        </table>
+                        
+						
+                       
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

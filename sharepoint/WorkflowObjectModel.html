@@ -1,0 +1,1314 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Workflow Object Model</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Programmatically added workflows unavailable.Getting Acquainted with the Workflow Object Model" />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Workflow Object Model</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<p>
+                            <b>Getting Acquainted with the Workflow Object Model</b></p>
+                        <p>
+                            You are familiar with workflow and other common concepts in Microsoft 
+                            SharePoint 2010, but you want to write code that harnesses the power of the 
+                            workflow object model in Microsoft SharePoint Foundation 2010. This article 
+                            focuses on patterns that you can use to develop stand-alone console applications 
+                            for managing workflows of a farm, rather than on code that is part of a custom 
+                            workflow or workflow activity, although the two areas do overlap. A brief 
+                            overview of the workflow object model in SharePoint Foundation 2010 leads into 
+                            specific examples that illustrate common administrative tasks in the SharePoint 
+                            workflow paradigm.</p>
+                        <p>
+                            <b>Common Workflow Classes in SharePoint Foundation</b></p>
+                        <p>
+                            Table 1 summarizes the commonly used workflow classes. For a comprehensive 
+                            and authoritative reference, see the Microsoft.SharePoint.Workflow namespace.</p>
+                        <p>
+                            <b>Table 1. Common workflow classes</b></p>
+                        <table border="0" cellpadding="0" >
+                            <tr>
+                                <td>
+                                    <p align="center">
+                                        <b>Class
+  </b>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p align="center">
+                                        <b>Description
+  </b>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflow</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        Represents an instance of a workflow association that is either currently 
+                                        running or has been run on a site.</p>
+                                    <p>
+                                        This class contains information about the state of the running workflow, 
+                                        and pointers to related objects.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflowAssociation</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        Represents the association of a workflow template (that is, a definition) 
+                                        with a specific list, content type, or site.</p>
+                                    <p>
+                                        After a template is associated with a list, content type, or site, your 
+                                        code can start instances of the template.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflowAssociationCollection</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        Represents a collection of workflow associations that have been added to a 
+                                        list (either directly or via content type) or a site.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflowCollection</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        Represents a collection of workflow instances.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflowFilter</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        Represents filter criteria that can be applied to a workflow or workflow 
+                                        task collection, to limit the number of items available in the collection.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflowManager</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        A static class that provides much of the functionality needed to 
+                                        administer workflows on sites and site collections.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflowTask</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        Represents a single workflow task for a given instance of a workflow.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflowTaskCollection</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        Represents a collection of the workflow tasks for a workflow instance.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflowTaskProperties</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        Represents the properties of a workflow task.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflowTemplate</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        Represents a single workflow template (that is, a definition) that has 
+                                        been deployed on the SharePoint site.</p>
+                                    <p>
+                                        A template must be associated with a list, content type, or site before 
+                                        your code can start instances of the workflow.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        SPWorkflowTemplateCollection</p>
+                                </td>
+                                <td>
+                                    <p>
+                                        Represents the collection of workflow templates that are currently 
+                                        deployed on a site.</p>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <table border="0" cellpadding="0" >
+                           
+                            <tr>
+                                <td>
+                                    <p>
+                                        On the Microsoft SharePoint team blog, Eilene Hao posted 
+                                        
+                                        Introduction to SharePoint Workflow, a helpful overview 
+                                        of SharePoint workflow as it existed in Windows SharePoint Services 3.0 and 
+                                        Microsoft Office SharePoint Server 2007.</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <b>Managing Non-Workflow Support Objects in SharePoint Foundation</b></p>
+                        <p>
+                            In most cases, creating solutions to administer workflows requires working 
+                            with related SharePoint objects. This section provides examples and tips on how 
+                            to avoid common pitfalls when you use these objects in common design patterns.</p>
+                        <p>
+                            <b>Working with SharePoint List Items</b></p>
+                        <p>
+                            As with any development in SharePoint, you use certain programming 
+                            patterns throughout a project. Because workflows work with the basic components 
+                            of SharePoint, it is worth a brief overview of how to work with the list items 
+                            to which you intend to attach workflows.</p>
+                        <p>
+                            <b>Creating List Items</b></p>
+                        <p>
+                            The following is a simple example of creating a new Announcements list 
+                            item. The key point of interest is the use of the Factory design pattern in 
+                            SharePoint. Most objects don&#39;t have public constructors (SPContentType
+                            is an exception); they are created by calling the Add method of the parent 
+                            object.</p>
+                        <p>
+                            C#</p>
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://locahost&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList list = 
+                            web.Lists[&quot;Announcements&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPListItem item = 
+                            list.AddItem();</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item.Title = &quot;New 
+                            Announcement&quot;;</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item.Update();</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Accessing List Item Fields</b></p>
+                        <p>
+                            In this example, the priority field is updated for the task list item 
+                            whose ID = 1. Notice that the generic 
+                            SPListItem</a> class doesn&#39;t have properties for each list 
+                            item field. You must use the correct case in the field name—and use the internal 
+                            name of the field, not the display name. If the field name contains a 
+                            discrepancy, attempting to access the field throws the exception &quot;One or more 
+                            field types are not installed properly.&quot;</p>
+                        <p>
+                            C#</p>
+                        
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://locahost&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList list = 
+                            web.Lists[&quot;Tasks&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPListItem item = 
+                            list.GetItemById(1);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item[&quot;Priority&quot;] = 1;</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item.Update();</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Querying Specific List Items by Using Non-Unique Fields</b></p>
+                        <p>
+                            This example manually constructs a CAML query and uses it with 
+                            SPQuery to retrieve the first list item whose title 
+                            contains the search string. A collection of list items is returned from the call 
+                            to <b>GetItems</b>; the code captures the first item in the collection. A common 
+                            pattern in workflow console applications is to use <b>SPWorkflowManager</b> to 
+                            start a workflow on items in the list item collection that were returned by the 
+                            query.</p>
+                        <p>
+                            C#</p>
+                       
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;SPList list = 
+                            web.Lists[&quot;Announcements&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPListItem item = null;</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPQuery query = new SPQuery();</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; query.Query = 
+                            &quot;&lt;Where&gt;&lt;Contains&gt;&lt;FieldRef Name=&#39;Title&#39;/&gt;</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Value&nbsp; 
+                            Type=&#39;Text&#39;&gt;Getting started with Microsoft&lt;/Value&gt;</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&lt;/Contains&gt;&lt;/Where&gt;&quot;;</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; query.RowLimit = 1;</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPListItemCollection items = 
+                            list.GetItems(query);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (items.Count &gt; 0)</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; item = 
+                            items[0];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Keeping SharePoint Objects in Sync</b></p>
+                        <p>
+                            The SharePoint object model has the benefit that it abstracts database 
+                            communication from layers that build on it. As a result, though, determining how 
+                            to keep SharePoint objects synchronized with the content database in a 
+                            performant manner can be tricky.</p>
+                        <p>
+                            The following are some general &quot;rules of thumb&quot;:</p>
+                        <ul type="disc">
+                            <li>The <b>Update</b> method of an object pushes local 
+                                changes to the content database, but does not pull any changes made by other 
+                                applications.</li>
+                            <li>New items are not created in the content database until
+                                <b>Update</b> is called.</li>
+                            <li>To pull changes from the content database, an object 
+                                must be reacquired from its parent.</li>
+                            <li>Trying to maintain multiple 
+                                SPWeb instances in different user contexts is not a good 
+                                idea.</li>
+                        </ul>
+                        <p>
+                            <b>Pushing a New Workflow Association to the Content Database</b></p>
+                        <p>
+                            In this example, the last line—<b>announcements.Update()</b>—is the call 
+                            that actually creates the new workflow association in the content database.</p>
+                        <p>
+                            C#</p>                        
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList announcements = 
+                            web.Lists[&quot;Announcements&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList tasks = 
+                            web.Lists[&quot;Tasks&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList history = 
+                            web.Lists[&quot;Workflow History&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowTemplate template =&nbsp;&nbsp; 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            web.WorkflowTemplates.GetTemplateByName(&quot;Approval&quot;, web.Locale);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowAssociation 
+                            association = 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPWorkflowAssociation.CreateListAssociation(template, 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Announcements 
+                            Approval&quot;, tasks, history);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            announcements.WorkflowAssociations.Add(association);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; announcements.Update();</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Refreshing a Workflow Association</b></p>
+                        <p>
+                            In this example, the <b>while</b> loop reacquires the association by using 
+                            the GetAssociationByName method. This call pulls the latest 
+                            version from the content database, so that a meaningful comparison can be made 
+                            on <b>association.RunningInstances</b>.</p>
+                        <p>
+                            C#</p>
+                        
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList announcements = 
+                            web.Lists[&quot;Announcements&quot;];</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;// Wait until the association has 
+                            one or more running instances.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bool isRunning = false;</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (!isRunning)</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPWorkflowAssociation association =
+
+                        </p>
+                        <p>
+                            announcements.WorkflowAssociations.GetAssociationByName(</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &quot;Announcements Approval&quot;, web.Locale);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            isRunning = (association.RunningInstances &gt; 0);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            System.Threading.Thread.Sleep(100);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Starting an On-Edit Triggered Workflow as Two Different Users</b></p>
+                        <p>
+                            This example first creates an admin web to get the user tokens, and then 
+                            creates a site and web in the context of each user. List-item updates occur in 
+                            the context of that user, and thus also start any on-edit trigger workflows as 
+                            the same user. Notice that the site and web of the first user is disposed before 
+                            creating the site and web of the second user. Following this pattern avoids the 
+                            complications of keeping the two different webs synchronized.</p>
+                        
+
+
+
+
+
+
+
+
+
+
+                        <p>
+                            C#</p>
+                         
+                        <p>
+                            using (SPSite adminSite = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb adminWeb = adminSite.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPUser user1 = 
+                            adminWeb.Users[&quot;domain\\user1&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPUser user1 = 
+                            adminWeb.Users[&quot;domain\\user2&quot;];</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Update list item to start 
+                            on-edit workflow (as user1).</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using (SPSite user1Site = new 
+                            SPSite(&quot;http://server&quot;, user1.UserToken))</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using 
+                            (SPWeb user1Web = user1Site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPList list = user1Web.Lists[&quot;Announcements&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPListItem item = list.GetItemById(1);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            item.Title += &quot; [updated by user1]&quot;;</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            item.Update();</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Update list item to start 
+                            on-edit workflow (as user2).</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using (SPSite user2Site = new 
+                            SPSite(&quot;http://server&quot;, user2.UserToken))</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using 
+                            (SPWeb user2Web = user2Site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPList list = user2Web.Lists[&quot;Announcements&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPListItem item = list.GetItemById(2);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            item.Title += &quot; [updated by user2]&quot;;</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            item.Update();</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Managing Workflows in SharePoint Foundation</b></p>
+                        <p>
+                            The following sections examine management of the common workflow objects: 
+                            workflow tasks, associations, collections, and instances.</p>
+                        <p>
+                            <b>Working with SharePoint Workflow Tasks</b></p>
+                        <p>
+                            Tasks are a key component of SharePoint workflows. This section covers a 
+                            few examples of how to interact with workflow tasks from an administrative 
+                            application.</p>
+                        <p>
+                            <b>Starting an Approval Workflow and Verifying Task Creation</b></p>
+                        <p>
+                            This example starts a new instance of an already associated SharePoint 
+                            2010 Approval workflow by using the 
+                             StartWorkflow method on <b>SPWorkflowManager</b>. The <b>
+                            SPWorkflowTask</b> object is then retrieved, and the title is verified.</p>
+                        <p>
+                            C#</p>
+                         
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Start a new workflow 
+                            instance.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList list = 
+                            web.Lists[&quot;Announcements&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPListItem item = 
+                            list.GetItemById(1);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowAssociation assoc = 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            list.WorkflowAssociations.GetAssociationByName(&quot;Approval&quot;);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            site.WorkflowManager.StartWorkflow(item, assoc, String.Empty);</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Basic delay to accommodate 
+                            workflow spin-up and task creation.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            System.Threading.Thread.Sleep(1000);</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Verify the title of the 
+                            task.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            item.EnsureWorkflowInformation();</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowTask task = 
+                            item.Tasks[0];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String title = task[&quot;Title&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (title == null || 
+                            !title.StartsWith(&quot;Please approve&quot;))</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw 
+                            new System.FormatException(</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &quot;Unexpected task title: This task was not assigned &quot; +</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &quot;by the SharePoint 2010 Approval workflow.&quot;);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Adding Extended Task Properties</b></p>
+                        <p>
+                            This example starts an already associated approval workflow, waits for the 
+                            workflow to assign a task, adds a property to the extended properties collection 
+                            of the task, and then verifies the existence of the property. Normally extended 
+                            properties are added to a full-trust workflow template via the workflow.xml 
+                            file, but in this case the property is added programmatically, for illustration 
+                            purposes. The key point of interest is that the property must be defined with 
+                            the &quot;ows_&quot; prefix, although the call to 
+                             GetExtendedPropertiesAsHashtable strips out the prefix.</p>
+                        <p>
+                            C#</p>
+                        
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; { 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Start a new workflow 
+                            instance.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList list = 
+                            web.Lists[&quot;Announcements&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPListItem item = 
+                            list.GetItemById(1);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowAssociation assoc = 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            list.WorkflowAssociations.GetAssociationByName(&quot;Approval&quot;);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            site.WorkflowManager.StartWorkflow(item, assoc, String.Empty);</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Basic delay to accommodate 
+                            workflow spin-up and task creation.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            System.Threading.Thread.Sleep(5000);</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            item.EnsureWorkflowInformation();</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowTask task = 
+                            item.Tasks[0];</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Add an extended task 
+                            property.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            task[SPBuiltInFieldId.ExtendedProperties] += &quot;ows_Color=&#39;Blue&#39;&quot;;</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Verify extended property 
+                            creation.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hashtable properties = 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPWorkflowTask.GetExtendedPropertiesAsHashtable(task);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (properties[&quot;Color&quot;] != 
+                            &quot;Blue&quot;)</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw 
+                            new Exception(&quot;The extended property &#39;Color&#39; &quot; +</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;was not set to the 
+                            expected value &#39;Blue&#39;.&quot;);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Working with SharePoint Workflow Collections</b></p>
+                        <p>
+                            This section provides some examples of how to manage workflow collections, 
+                            including some pitfalls that workflow developers might encounter.</p>
+                        <p>
+                            <b>Retrieving Workflow Templates from a Template Collection</b></p>
+                        <p>
+                            In this example, the template ID uniquely identifies the template in the 
+                            workflow template collection of the site collection. This is the most robust way 
+                            to retrieve a template, but you must first know the template ID of the workflow 
+                            that you need. One way to find this ID is to browse for workflow.xml files 
+                            (full-trust workflows) in your SharePoint features folder (%ProgramFiles%\Common 
+                            Files\Microsoft Shared\web server extensions\14\TEMPLATE\FEATURES\<i>workflow_feature_name</i>), 
+                            or the contents of the corresponding workflow.config.xml file (SharePoint 
+                            Designer workflows).</p>
+                        <p>
+                            When searching your features folder for the IDs of the workflows that are 
+                            included with SharePoint, be aware that the workflow template names don&#39;t always 
+                            match the feature folder names. (For example, on a server that is set up for the
+                            <b>en-us</b> locale ID, the 2010 Approval workflow resides in a feature folder 
+                            named &quot;ReviewWorkflowsSPD1033&quot;.)</p>
+                        <p>
+                            You can also retrieve workflow templates by template name, using the Microsoft.SharePoint.Workflow.SPWorkflowTemplateCollection.GetTemplateByName( System.String,System.Globalization.CultureInfo) 
+                            method.</p>
+                        <p>
+                            C#</p>
+                         
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowTemplate template = 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;web.WorkflowTemplates.GetTemplateByBaseID(new
+
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            Guid(&quot;3BC0C1E1-B7D5-4e82-AFD7-9F7E59B60409&quot;));</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (template == null || 
+                            !template.Name.Contains(&quot;Approval&quot;))</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw 
+                            new ArgumentException(&quot;Expected to find the Approval workflow &quot; +</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &quot;template. Please verify the template ID and server type.&quot;);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Handling Workflow Collection Errors</b></p>
+                        <p>
+                            This example presents two ways to retrieve a workflow template: by 
+                            template ID and by index. The key point to notice is that failed attempts to 
+                            match a template by template ID return <b>null</b> ; failed attempts to access a 
+                            template by index throw an <b>IndexOutOfRangeException</b> exception. If you 
+                            want error handling for the first case (template ID), you must add it manually.</p>
+                        <p>
+                            C#</p>
+                         
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Retrieve a workflow template 
+                            by GUID (custom error handling).</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowTemplate template = 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;web.WorkflowTemplates[new 
+                            Guid(&quot;00000000-0000-0000-0000-000000000000&quot;)];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (template == null)</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw 
+                            new ArgumentException(&quot;The specified template could not be found.&quot;);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Retrieve a workflow template 
+                            by GUID (built-in error handling).</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; template = 
+                            web.WorkflowTemplates[995];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Bad Coding Practice: How Local Collection Changes Affect Data 
+                            Synchronization</b></p>
+                        <p>
+                            This example attempts to track a collection of workflow associations that 
+                            need to be updated. The collection begins with the associations on the Links 
+                            list, but it might branch at some point in the future. The interesting point is 
+                            that the data for the second collection is fetched on first request—in this 
+                            case, when the Count property is accessed in the first call to <b>
+                            Console.WriteLine</b>. At this point the second collection is marked as no 
+                            longer dirty, and the data for that collection won&#39;t be fetched again, for 
+                            performance reasons. When the second workflow association is added, the <b>
+                            workflowsToUpdate</b> collection doesn&#39;t pick up the update, so the second <b>
+                            Console.WriteLine</b> call also outputs &quot;1&quot;.</p>
+                        <p>
+                            C#</p>
+                         
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowAssociationCollection 
+                            workflowsToUpdate = null;</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Set up lists and template.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList links = 
+                            web.Lists[&quot;Links&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList tasks = 
+                            web.Lists[&quot;Tasks&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList history = 
+                            web.Lists[&quot;Workflow History&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowTemplate template = 
+                            web.WorkflowTemplates[0];</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Initialize collection.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; workflowsToUpdate = 
+                            links.WorkflowAssociations;</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Add to association collection.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowAssociation workflow1 
+                            = 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPWorkflowAssociation.CreateListAssociation(template, 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Workflow 1&quot;, 
+                            tasks, history);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            links.WorkflowAssociations.Add(workflow1);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            Console.WriteLine(String.Format(</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Workflows 
+                            associations in workflowsToUpdate: {0}&quot;),
+
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            workflowsToUpdate.Count);</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Add another to association 
+                            collection.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowAssociation workflow2 
+                            = 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPWorkflowAssociation.CreateListAssociation(template,
+
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Workflow 2&quot;, 
+                            tasks, history);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            links.WorkflowAssociations.Add(workflow2);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            Console.WriteLine(String.Format(</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Workflows 
+                            associations in workflowsToUpdate: {0}&quot;),
+
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            workflowsToUpdate.Count);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+                        <p>
+                            The way to make this scenario work is to not maintain local copies of 
+                            collections, or to store the IDs of interest in a separate construction, such as 
+                            an <b>ArrayList</b>.</p>
+                        <p>
+                            <b>Starting New Workflow Instances</b></p>
+                        <p>
+                            This section provides examples of various ways to start new instances of 
+                            workflows by using <b>SPWorkflowManager</b>.</p>
+                        <p>
+                            <b>Starting New Workflow Instances by Using the Various Start Type Options</b></p>
+                        <p>
+                            This example creates an association of the already deployed Basic Workflow 
+                            template on the Links list. The <b>Synchronous</b> option (from the SPWorkflowRunOptions enumeration) starts the workflow 
+                            immediately on list item 1, bypassing the workflow throttling settings. The <b>
+                            SynchronousAllowPostpone</b> option attempts to start the workflow 
+                            synchronously; if it fails, it queues the workflow to be started later, exactly 
+                            the same way that on-edit and on-create workflow associations are triggered 
+                            today. The <b>Asynchronous</b> option queues the workflow to be started by the 
+                            workflow timer job at the next timer interval. Refer to StartWorkflow for a comprehensive description of the 
+                            various workflow start options.</p>
+                        <p>
+                            C#</p>
+                        
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Create association.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList links = 
+                            web.Lists[&quot;Links&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList tasks = 
+                            web.Lists[&quot;Tasks&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList history = 
+                            web.Lists[&quot;Workflow History&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowTemplate template = 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            web.WorkflowTemplates.GetTemplateByName(&quot;Basic Workflow&quot;);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowAssociation workflow 
+                            = 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPWorkflowAssociation.CreateListAssociation(template, 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;My Basic 
+                            Workflow&quot;, tasks, history);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            links.WorkflowAssociations.Add(workflow);</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Start the workflow on document 1.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            site.WorkflowManager.StartWorkflow(links.GetItemById(1), workflow, 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String.Empty, 
+                            SPWorkflowRunOptions.Synchronous);</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Start the workflow on list 
+                            item 2 by using the 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // SynchronousAllowPostpone 
+                            start option.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            site.WorkflowManager.StartWorkflow(links.GetItemById(2), workflow, 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String.Empty, 
+                            SPWorkflowRunOptions.SynchronousAllowPostpone);</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Start the workflow on list 
+                            item 3 by using the 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Asynchronous start option.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            site.WorkflowManager.StartWorkflow(links.GetItemById(3), workflow, 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String.Empty, 
+                            SPWorkflowRunOptions.Asynchronous);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; } 
+                        </p>
+                        <p>
+                            }</p>
+                        <p>
+                            <b>Starting the SharePoint 2010 Approval Workflow with Initiation Data</b></p>
+                        <p>
+                            This example creates an association of the SharePoint 2010 approval 
+                            workflow, and then starts it on the first item in the Shared Documents library. 
+                            Because the association is created programmatically and without association 
+                            data, we need to construct the workflow settings XML string and pass it to <b>
+                            StartWorkflow</b> as event data. The string gives the workflow the information 
+                            it needs to assign approval tasks.</p>
+                        <p>
+                            C#</p>
+                        
+                        <p>
+                            using (SPSite site = new SPSite(&quot;http://server&quot;))</p>
+                        <p>
+                            {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; using (SPWeb web = site.OpenWeb())</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; {</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Create new association.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList docs = web.Lists[&quot;Shared 
+                            Documents&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList tasks = web.Lists[&quot;Tasks&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPList history = 
+                            web.Lists[&quot;Workflow History&quot;];</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowTemplate template = 
+                            
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            web.WorkflowTemplates.GetTemplateByBaseID(new 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            Guid(&quot;3BC0C1E1-B7D5-4e82-AFD7-9F7E59B60409&quot;));</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SPWorkflowAssociation workflow 
+                            = 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            SPWorkflowAssociation.CreateListAssociation(template, 
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Document 
+                            Approval&quot;, tasks, history);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            docs.WorkflowAssociations.Add(workflow);</p>
+                        <p>
+                            </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Start the workflow on the 
+                            first document.</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String data = 
+                            String.Format(&quot;&lt;dfs:myFields 
+                        </p>
+                        <p>
+                            xmlns:xsd=\&quot;http://www.w3.org/2001/XMLSchema\&quot; 
+                        </p>
+                        <p>
+                            
+                            xmlns:dms=\&quot;http://schemas.microsoft.com/office/2009/documentManagement/types\&quot; 
+                            
+                        </p>
+                        <p>
+                            
+                            xmlns:dfs=\&quot;http://schemas.microsoft.com/office/infopath/2003/dataFormSolution\&quot; 
+                            
+                        </p>
+                        <p>
+                            
+                            xmlns:q=\&quot;http://schemas.microsoft.com/office/infopath/2009/WSSList/queryFields\&quot; 
+                            
+                        </p>
+                        <p>
+                            
+                            xmlns:d=\&quot;http://schemas.microsoft.com/office/infopath/2009/WSSList/dataFields\&quot; 
+                            
+                        </p>
+                        <p>
+                            
+                            xmlns:ma=\&quot;http://schemas.microsoft.com/office/2009/metadata/properties/metaAttributes\&quot; 
+                            
+                        </p>
+                        <p>
+                            
+                            xmlns:pc=\&quot;http://schemas.microsoft.com/office/infopath/2007/PartnerControls\&quot; 
+                            
+                        </p>
+                        <p>
+                            xmlns:xsi=\&quot;http://www.w3.org/2001/XMLSchema-instance\&quot;&gt;</p>
+                        <p>
+                            &lt;dfs:queryFields&gt;&lt;/dfs:queryFields&gt;&lt;dfs:dataFields&gt;</p>
+                        <p>
+                            &lt;d:SharePointListItem_RW&gt;&lt;d:Approvers&gt;&lt;d:Assignment&gt;&lt;d:Assignee&gt;</p>
+                        <p>
+                            
+                            &lt;pc:Person&gt;&lt;pc:DisplayName&gt;{0}&lt;/pc:DisplayName&gt;&lt;pc:AccountId&gt;{1}&lt;/pc:AccountId&gt;</p>
+                        <p>
+                            &lt;pc:AccountType&gt;User&lt;/pc:AccountType&gt;&lt;/pc:Person&gt;&lt;/d:Assignee&gt;</p>
+                        <p>
+                            &lt;d:Stage xsi:nil=\&quot;true\&quot; /&gt;&lt;d:AssignmentType&gt;Serial&lt;/d:AssignmentType&gt;</p>
+                        <p>
+                            &lt;/d:Assignment&gt;&lt;/d:Approvers&gt;&lt;d:ExpandGroups&gt;true&lt;/d:ExpandGroups&gt;</p>
+                        <p>
+                            &lt;d:NotificationMessage /&gt;&lt;d:DueDateforAllTasks xsi:nil=\&quot;true\&quot; /&gt;</p>
+                        <p>
+                            &lt;d:DurationforSerialTasks xsi:nil=\&quot;true\&quot; 
+                            /&gt;&lt;d:DurationUnits&gt;Day&lt;/d:DurationUnits&gt;</p>
+                        <p>
+                            &lt;d:CC /&gt;&lt;d:CancelonRejection&gt;false&lt;/d:CancelonRejection&gt;</p>
+                        <p>
+                            &lt;d:CancelonChange&gt;false&lt;/d:CancelonChange&gt;</p>
+                        <p>
+                            &lt;d:EnableContentApproval&gt;false&lt;/d:EnableContentApproval&gt;</p>
+                        <p>
+                            &lt;/d:SharePointListItem_RW&gt;&lt;/dfs:dataFields&gt;&lt;/dfs:myFields&gt;&quot;,
+
+                        </p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;User Display 
+                            Name&quot;, &quot;DOMAIN\\User&quot;);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            site.WorkflowManager.StartWorkflow(docs.GetItemById(1), docs, data);</p>
+                        <p>
+                            &nbsp;&nbsp;&nbsp; }</p>
+                        <p>
+                            }</p>
+						                       
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

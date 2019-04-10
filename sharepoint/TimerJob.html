@@ -1,0 +1,810 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Timer Job</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="A Timer Job is a periodically executed task inside SharePoint Server. It provides us a task execution environment.
+                         For example, we can execute tasks like: sending emails every hour, data updating every day, creating reports every week, etc." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Timer Job</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						
+                        <p>
+                            <b><span>What is a Timer Job?</span></b></p>
+                        <p>
+                            <span>A Timer Job is a periodically executed task inside <b>SharePoint</b> 
+                            Server. It provides us a task execution environment. </span>
+                        </p>
+                        <p>
+                            <span>For example, we can execute tasks like: sending emails every hour, <b>data</b> 
+                            updating every day, creating reports every week, etc.</span></p>
+                        <p>
+                            <b><span>Default Timer Jobs inside SharePoint</span></b></p>
+                        <p>
+                            <span>There are many timer jobs inside <b>SharePoint</b> which do internal tasks 
+                            like:</span></p>
+                        <ul type="disc">
+                            <li><span>Send emails</span></li>
+                            <li><span>Validate sites</span></li>
+                            <li><span>Delete unused sites</span></li>
+                            <li><span>Health analysis</span></li>
+                            <li><span>Product versioning</span></li>
+                            <li><span>Diagnostics</span></li>
+                        </ul>
+                        <p>
+                            <span>These tasks will having execution periods like:</span></p>
+                        <ul type="disc">
+                            <li><span>Minute</span></li>
+                            <li><span>Hour</span></li>
+                            <li><span>Day</span></li>
+                            <li><span>Week</span></li>
+                            <li><span>Month</span></li>
+                        </ul>
+                        <p>
+                            <b><span>Manage Timer Jobs</span></b></p>
+                        <p>
+                            <span>You can see all Timer Jobs from Central Administration &gt; Monitoring &gt; 
+                            Manager Timer Jobs. </span>
+                        </p>
+                        <p>
+                        <img src="image/image001.jpg" />
+                            </p>
+                        <p>
+                            <span>Following is the list of some Timer Job definitions:</span></p>
+                        <p>
+                            <img src="image/image002.jpg" /></p>
+                        <p>
+                            <span>You can select each Job Definition and change the schedule or disable it.</span></p>
+                        <p>
+                            <b><span>Creating a Custom Timer Job Definition</span></b></p>
+                        <p>
+                            <span>Now we are ready with the basics to proceed with creating a <b>Custom</b> 
+                            Timer Job.</span></p>
+                        <p>
+                            <b><span>Scenario</span></b></p>
+                        <p>
+                            <span>We have a list named <b>Products</b> which is <b>custom</b> template.&nbsp;Any 
+                            new product arriving has to be posted to an SQL Server <b>data</b>base so that 
+                            the company website can show it to potential <b>custom</b>ers.</span></p>
+                        <p>
+                            <span>So the activities involved are the following:</span></p>
+                        <ol start="1" type="1">
+                            <li><span>Create Products List inside <b>SharePoint</b></span></li>
+                            <li><span>Create Product Table inside <b>Data</b>base</span></li>
+                            <li><span>Create the Timer Job Definition</span></li>
+                            <li><span>Create Event Receiver</span></li>
+                            <li><span>Create the <b>Data</b>base Insert method</span></li>
+                            <li><span>Deploy the Timer Job</span></li>
+                            <li><span>View the Results&nbsp;</span></li>
+                        </ol>
+                        <p>
+                            <i><span>(Please note that the same scenario can be done through a combination 
+                            of Workflow / Events / SSS)</span></i><span>&nbsp;<b>&nbsp;</b></span></p>
+                        <p>
+                            <b><span>Step 1: Create Products List inside SharePoint</span></b></p>
+                        <p>
+                            <span>Here is the List Definition: <i>(the list template with <b>data</b> is 
+                            attached with the article)</i></span></p>
+                        <p>
+                            <img src="image/image003.jpg" /></p>
+                        <p>
+                            <span>You can see that the core columns of the list are:</span></p>
+                        <table border="1" cellpadding="0" cellspacing="0" class="MsoNormalTable" 
+                            style="background: white; border-collapse: collapse; border: none; mso-border-top-alt: solid #CCCCCC .75pt; mso-border-left-alt: solid #CCCCCC .75pt; mso-yfti-tbllook: 1184">
+                            <tr>
+                                <td valign="top" width="198">
+                                    <p>
+                                        <b><span>Column</span></b><span></span></p>
+                                </td>
+                                <td valign="top" width="433">
+                                    <p>
+                                        <b><span>Description</span></b><span></span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="198">
+                                    <p>
+                                        <span>Title</span></p>
+                                </td>
+                                <td valign="top" width="433">
+                                    <p>
+                                        <span>The name of the Product</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="198">
+                                    <p>
+                                        <span>Description</span></p>
+                                </td>
+                                <td valign="top" width="433">
+                                    <p>
+                                        <span>About the Product</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" width="198">
+                                    <p>
+                                        <span>Price</span></p>
+                                </td>
+                                <td valign="top" width="433">
+                                    <p>
+                                        <span>The price of the Product</span></p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            <span>The HasPosted column determines whether the item is copied to the Products
+                            <b>data</b>base.&nbsp; </span>
+                        </p>
+                        <p>
+                            <span>After installing the list from template you will can see it is having two 
+                            items:</span></p>
+                        <p>
+                            <img src="image/image004.jpg" /></p>
+                        <p>
+                            <b><span>Step 2: Create Product Table inside Database</span></b></p>
+                        <p>
+                            <span>Now we need to create the destination <b>data</b>base and table.&nbsp; 
+                            Following is the table definition.&nbsp;<i>(The table SQL is attached with the 
+                            article.)</i></span></p>
+                        <p>
+                            <img src="image/image005.jpg" /></p>
+                        <p>
+                            <span>Step 3: Create the Timer Job </span>
+                        </p>
+                        <p>
+                            <span>In this step we can go ahead and create the Timer Job.&nbsp; For this you 
+                            require <b>Visual</b> <b>Studio</b> <b>2010</b> and the <b>SharePoint</b> 
+                            templates installed.</span></p>
+                        <p>
+                            <span>Open <b>Visual</b> <b>Studio</b> and create a new Empty <b>SharePoint</b>
+                            <b>Project</b> as shown below:</span></p>
+                        <p>
+                            <img src="image/image006.jpg" /></p>
+                        <p>
+                            <span>In the next page select your server and use Deploy as Farm solution 
+                            option:</span></p>
+                        <p>
+                            <img src="image/image007.jpg" /></p>
+                        <p>
+                            <span>Click the Finish button after entering the options.</span></p>
+                        <p>
+                            <span>Now add a new class and derive it from SPJobDefinition as shown below:</span></p>
+                        <div>
+                            <p>
+                                <span>using System;</span></p>
+                            <p>
+                                <span>using System.Collections.Generic;</span></p>
+                            <p>
+                                <span>using System.Linq;</span></p>
+                            <p>
+                                <span>using System.Text;</span></p>
+                            <p>
+                                <span>using Microsoft.<b>SharePoint</b>.Administration;</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span>namespace SPTimerJobExample</span></p>
+                            <p>
+                                <span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; public</span> <span>class</span> 
+                                ProductsJobDefinition : SPJobDefinition</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>}</span></p>
+                            <p>
+                                <span>}</span></p>
+                        </div>
+                        <p>
+                            <span>Now replace the above file with the following <b>content</b>:</span></p>
+                        <div>
+                            <p>
+                                <span>using System;</span></p>
+                            <p>
+                                <span>using System.Collections.Generic;</span></p>
+                            <p>
+                                <span>using System.Linq;</span></p>
+                            <p>
+                                <span>using System.Text;</span></p>
+                            <p>
+                                <span>using Microsoft.<b>SharePoint</b>.Administration;</span></p>
+                            <p>
+                                <span>using Microsoft.<b>SharePoint</b>;</span></p>
+                            
+                            <p>
+                                <span>namespace SPTimerJobExample</span></p>
+                            <p>
+                                <span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; public</span> <span>class</span> 
+                                ProductsTimerJob : SPJobDefinition</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; public</span> 
+                                ProductsTimerJob()</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>: <span>base</span>()</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>{</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; </span>}</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; public</span> 
+                                ProductsTimerJob(<span>string</span> jobName, SPService service, 
+                                </span>
+                            </p>
+                            <p>
+                                <span><span>&nbsp; 
+                                &nbsp;</span>SPServer server, SPJobLock<b>Type</b> lock<b>Type</b>)</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>: <span>base</span>(jobName, service, server, lock<b>Type</b>)</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; 
+                                this</span>.Title = <span>&quot;Products Timer Job&quot;</span>;</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>}</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; public</span> 
+                                ProductsTimerJob(<span>string</span> jobName, SPWebApplication webapp)</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>: <span>base</span>(jobName, webapp, <span>null</span>, SPJobLock<b>Type</b>.<b>ContentData</b>base)</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; 
+                                this</span>.Title = <span>&quot;Products Timer Job&quot;</span>;</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>}</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; public</span>
+                                <span>override</span> <span>void</span> Execute(Guid targetInstanceId)</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>SPWebApplication webapp = <span>this</span>.Parent <span>as</span> 
+                                SPWebApplication;</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>SP<b>ContentData</b>base <b>content</b>Db = webapp.<b>ContentData</b>bases[targetInstanceId];</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>SPList list = <b>content</b>Db.Sites[<span>0</span>].RootWeb.Lists[<span>&quot;Products&quot;</span>];</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>CopyItems(list);</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>}</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; private</span>
+                                <span>void</span> CopyItems(SPList list)</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; 
+                                foreach</span> (SPListItem item <span>in</span> list.Items)</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; 
+                                bool</span> hasPosted = (<span>bool</span>)item[<span>&quot;HasPosted&quot;</span>];</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; 
+                                if</span> (!hasPosted)</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; 
+                                new</span> DbManager().Insert(item);</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>item[<span>&quot;HasPosted&quot;</span>] = <span>true</span>;</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>item.Update();</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>}</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>}</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>}</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>}</span></p>
+                            <p>
+                                <span>}</span></p>
+                        </div>
+                        <p>
+                            <span>The above <b>code</b> is performing the following activities:</span></p>
+                        <ol start="1" type="1">
+                            <li><span>Get the list of items from Products where HasPosted is 
+                                false.</span></li>
+                            <li><span>Insert the Product into <b>data</b>base.</span></li>
+                            <li><span>Mark the item HasPosted to true.</span></li>
+                        </ol>
+                        <p>
+                            <span>We need to include the DbManager class file and will be done in the 
+                            upcoming step.</span></p>
+                        <p>
+                            <b><span>Step 4: Create Event Receiver</span></b></p>
+                        <p>
+                            <span>Now we have to create an event receiver which performs the installation or 
+                            un-installation of the Job Definition.</span></p>
+                        <p>
+                            <span>In the Solution Explorer right click on Feature and use the <b>Add Feature</b> 
+                            item.</span></p>
+                        <p>
+                            <img src="image/image008.jpg" /></p>
+                        <p>
+                            <span>In the appearing dialog change the title to <b>Products Job Definition</b> 
+                            and the Scope to <b>Site</b>.</span></p>
+                        <p>
+                            <img src="image/image009.jpg" /></p>
+                        <p>
+                            <span>Now right click on the Solution Explorer &gt; Feature 1 and click <b>Add 
+                            Event Receiver</b></span></p>
+                        <p>
+                            <img src="image/image010.jpg" /></p>
+                        <p>
+                            <span>Inside the class <b>content</b> of <i>Feature1.EventReceiver.cs</i> place 
+                            the following <b>code</b>:</span></p>
+                        
+                        <div>
+                            <p>
+                                <span>const <span>string</span> JobName = <span>&quot;Products Timer Job&quot;</span>;</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span>public <span>override</span> <span>void</span> 
+                                FeatureActivated(SPFeatureReceiverProperties properties)</span></p>
+                            <p>
+                                <span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>SPSite site = 
+                                properties.Feature.Parent <span>as</span> SPSite;</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; </span>DeleteJob(site); <i><span>// 
+                                Delete Job if already Exists</span></i></span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; </span>CreateJob(site); <i><span>// 
+                                Create new Job</span></i></span></p>
+                            <p>
+                                <span>}</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span>private <span>static</span> <span>void</span> DeleteJob(SPSite 
+                                site)</span></p>
+                            <p>
+                                <span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; foreach</span> (SPJobDefinition job
+                                <span>in</span> site.WebApplication.JobDefinitions)</span></p>
+                            <p>
+                                <span><span>&nbsp; if</span> (job.Name 
+                                == JobName)</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>job.Delete();</span></p>
+                            <p>
+                                <span>}</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span>private <span>static</span> <span>void</span> CreateJob(SPSite 
+                                site)</span></p>
+                            <p>
+                                <span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>ProductsTimerJob job = <span>new</span> 
+                                ProductsTimerJob(JobName, site.WebApplication);</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; </span>SPMinuteSchedule schedule =
+                                <span>new</span> SPMinuteSchedule();</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>schedule.BeginSecond = <span>0</span>;</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>schedule.EndSecond = <span>5</span>;</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>schedule.Interval = <span>5</span>;</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; </span>job.Schedule = schedule;</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>job.Update();</span></p>
+                            <p>
+                                <span>}</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span>public <span>override</span> <span>void</span> 
+                                FeatureDeactivating(SPFeatureReceiverProperties properties)</span></p>
+                            <p>
+                                <span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>
+                                DeleteJob(properties.Feature.Parent <span>as</span> SPSite); <i><span>// Delete 
+                                the Job</span></i></span></p>
+                            <p>
+                                <span>}</span></p>
+                        </div>
+                        <p>
+                            <span>You need to add the using as well:</span></p>
+                        
+                        <div>
+                            <p>
+                                <span>using Microsoft.<b>SharePoint</b>.Administration;</span></p>
+                        </div>
+                        <p>
+                            <b><span>Step 5: Create the Database Insert Method</span></b></p>
+                        <p>
+                            <span>In this step we can complete the DbManager class file.&nbsp; Here we are 
+                            using Entity Framework associated with .Net 3.5 version.</span></p>
+                        <p>
+                            <span>For this add a new Entity <b>Data</b> Model into the <b>project</b> and 
+                            map to the Product table which we have created in previous step.</span></p>
+                        <p>
+                            <img src="image/image011.jpg" /></p>
+                        <p>
+                            <span>Now create a class file named <i>DbManage.cs</i> and replace it with the 
+                            following <b>content</b>:</span></p>
+                        
+                        <div>
+                            <p>
+                                <span>using System;</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span>namespace SPTimerJobExample</span></p>
+                            <p>
+                                <span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; public</span> <span>class</span> 
+                                DbManager</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; public</span>
+                                <span>void</span> Insert(Microsoft.<b>SharePoint</b>.SPListItem item)</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; 
+                                using</span> (ProductionModel context = <span>new</span> 
+                                ProductionModel(GetConnectionString()))</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>Product product = <span>new</span> Product();</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>product.Title = item[<span>&quot;Title&quot;</span>].ToString();</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>product.Description = item[<span>&quot;Description&quot;</span>].ToString();</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>product.Url = item[<span>&quot;Url&quot;</span>].ToString();</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>product.Price = (<span>double</span>)item[<span>&quot;Price&quot;</span>];</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>product.PostedOn = DateTime.Today;</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; 
+                                &nbsp;</span>context.AddToProducts(product);</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>context.SaveChanges();</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>}</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>}</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; public</span>
+                                <span>string</span> GetConnectionString()</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp; 
+                                string</span> connectionString = <span>new</span> System.<b>Data</b>.EntityClient.EntityConnectionStringBuilder</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>Meta<b>data</b> = <span>&quot;res://*&quot;</span>,</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>Provider = <span>&quot;System.<b>Data</b>.SqlClient&quot;</span>,</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>ProviderConnectionString = <span>new</span> System.<b>Data</b>.SqlClient.SqlConnectionStringBuilder</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>{</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>InitialCatalog = <span>&quot;YOUR-DB-NAME-HERE&quot;</span>,</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span><b>Data</b>Source = <span>@&quot;YOUR-SERVER-NAME-HERE&quot;</span>,</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>IntegratedSecurity = <span>false</span>,</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>UserID = <span>&quot;YOUR-USER-ID-HERE&quot;</span>,<span>&nbsp; </span>
+                                </span>
+                            </p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>Password = <span>&quot;YOUR-PASSWORD-HERE&quot;</span>,<span>&nbsp;
+                                </span></span>
+                            </p>
+                            <p>
+                                <span><span>&nbsp; 
+                                &nbsp;</span>}.ConnectionString</span></p>
+                            <p>
+                                <span><span>&nbsp;
+                                </span>}.ConnectionString;</span></p>
+                            <p>
+                                </p>
+                            <p>
+                                <span><span>&nbsp; 
+                                return</span> connectionString;</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>}</span></p>
+                            <p>
+                                <span><span>&nbsp; </span>}</span></p>
+                            <p>
+                                <span>}</span></p>
+                        </div>
+                        <p>
+                            <span>The above <b>code</b> contains the Insert() method to insert new record 
+                            into the Product table.</span></p>
+                        <p>
+                            <span>For the time being I am hard coding the connection string.&nbsp; You need 
+                            to specify the correct user credentials in the GetConnectionString() method.</span></p>
+                        <p>
+                            <b><span>Note</span></b><span>: Please note that the connection string is loaded 
+                            from the executing application’s configuration file.&nbsp; In the case of Timer 
+                            Jobs the configuration file will be <i>OWSTIMER.exe.config</i> residing in the 
+                            14hive folder.</span></p>
+                        <p>
+                            <b><span>Step 6: Deploy the Timer Job</span></b></p>
+                        <p>
+                            <span>Now we are ready to deploy the Timer Job into the <b>SharePoint</b> Site.&nbsp; 
+                            For this right click on the solution and click the <b>Deploy</b> option. 
+                            </span>
+                        </p>
+                        <p>
+                            <span>If you get the <b>Deploy Succeeded</b> message we are good.</span></p>
+                        <p>
+                            <b><span>Step 7: View the Results</span></b></p>
+                        <p>
+                            <span>Now we can go to the Central Administration to see our Timer Job.&nbsp; 
+                            For this open Central Administration web site and go to Monitoring &gt; Review Job 
+                            Definitions</span></p>
+                        <p>
+                            <img src="image/image012.jpg" /></p>
+                        <p>
+                            <span>On clicking the Review Job Definitions link you can see our item as shown 
+                            below:</span></p>
+                        <p>
+                            <img src="image/image013.jpg" /></p>
+                        <p>
+                            <span>Click on the item and in the appearing page click the button <b>Run Now</b></span></p>
+                        <p>
+                            <img src="image/image014.jpg" /></p>
+                        <p>
+                            <span>You can see that the Timer Job is set for 5 Minutes according to our <b>
+                            code</b>. </span>
+                        </p>
+                        <p>
+                            <span>Now we can go back to the Products list and see that the <b>HasPosted</b> 
+                            is set to True. </span>
+                        </p>
+                        
+                        <p>
+                            <span>Going to the SQL Server Table we can see both the records are inserted 
+                            there.</span></p>
+                       
+                        <p>
+                            <b><span>Troubleshooting Tips</span></b></p>
+                        <p>
+                            <span>While developing timer jobs, you might need to delete the assembly and 
+                            feature as well.&nbsp; Please note the following points for troubleshooting 
+                            guidance:</span></p>
+                        <ul type="disc">
+                            <li><span>Features are deployed to the 14hive folder</span></li>
+                            <li><span>The assembly gets deployed to GAC folder</span></li>
+                            <li><span>You can use RETRACT option from&nbsp; <b>Visual</b> <b>Studio</b></span></li>
+                            <li><span>You can use GACUTIL to uninstall the assembly</span></li>
+                            <li><span>You can remove the Feature from 14hive folder</span></li>
+                        </ul>
+                        <p>
+                            <span>For troubleshooting the Farm Solutions or User Solutions you can use:</span></p>
+                        <ul type="disc">
+                            <li><span>Central Administration &gt; System Settings &gt; Manage Farm 
+                                Solutions</span></li>
+                            <li><span>Central Administration &gt; System Settings &gt; Manage User 
+                                Solutions</span></li>
+                        </ul>
+                        
+                        <p>
+                            <span>You can Retract or undo the last Retract schedule there.</span></p>
+                        <p>
+                            <span>For checking the Job Status or History you can use:</span></p>
+                        <ul type="disc">
+                            <li><span>Central Administration &gt; Monitoring &gt;&nbsp; Check Job Status 
+                                &gt; Timer Job Status</span></li>
+                            <li><span>Central Administration &gt; Monitoring &gt;&nbsp; Check Job Status 
+                                &gt;&nbsp; Timer Job History</span></li>
+                        </ul>
+                        <p>
+                            <span>These screens will show the Success / Failure status of the jobs and any 
+                            errors associated.&nbsp; For example an invalid connection string problem is 
+                            identified as shown below:</span></p>
+                        
+                        <p>
+                            <b><span>Debugging Tips</span></b></p>
+                        <p>
+                            <span>In some cases the Timer Service hold the old version of assembly.&nbsp; So 
+                            the new changes you have done through <b>Visual</b> <b>Studio</b> may not get 
+                            reflect immediately.&nbsp; You can change the assembly version and view the GAC 
+                            to ensure the correct version was deployed.</span></p>
+                       
+                        <p>
+                            <span>Plus you can restart the <b>SharePoint 2010 Timer Service</b> from 
+                            services.msc</span></p>
+                        <p>
+                             <img src="image/image015.jpg" /></p>
+                        <p>
+                            <b><span>Note</span></b><span>: In the case of Integrated Security as True in 
+                            connection strings, the authenticated user would be the Service Account user 
+                            assigned in the service.</span></p>
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

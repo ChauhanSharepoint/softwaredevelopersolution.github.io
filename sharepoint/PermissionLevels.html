@@ -1,0 +1,295 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Access SharePoint Permission Levels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="SharePoint permission levels can be accessed programmatically with C# using the SPRoleType enumeration. Here’s how the SPRoleType enumeration members map to the permission levels" />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Access SharePoint Permission Levels</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Access SharePoint Permission Levels</h3>
+						</header>
+						<p>
+                        The above OOTB SharePoint permission levels can be accessed programmatically with C# using the SPRoleType enumeration. Here’s how the SPRoleType enumeration members map to the permission levels:
+                        </p>
+                        
+                            <table border="0" cellpadding="0" cellspacing="0" width="400px">
+                                <tr>
+                                    <td valign="bottom">
+                                       <b> Permission Level</b>
+                                    </td>
+                                    <td valign="bottom">
+                                      <b>  SPRoleType Member</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="bottom">
+                                        Full Control
+                                    </td>
+                                    <td valign="bottom">
+                                        SPRoleType.Administrator
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="bottom">
+                                       Design
+                                    </td>
+                                    <td valign="bottom">
+                                       SPRoleType.WebDesigner
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="bottom">
+                                        Contribute
+                                    </td>
+                                    <td valign="bottom">
+                                        SPRoleType.Contributor
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="bottom">
+                                        Read
+                                    <td valign="bottom">
+                                        SPRoleType.Reader
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="bottom">
+                                       Limited Access
+                                    </td>
+                                    <td valign="bottom">
+                                        SPRoleType.Guest
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="bottom">
+                                       Approve
+                                    </td>
+                                    <td valign="bottom">
+                                        SPRoleType.None
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="bottom">
+                                        Manage Hierarchy
+                                    </td>
+                                    <td valign="bottom">
+                                        SPRoleType.None
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="bottom">
+                                        Restricted Read
+                                    </td>
+                                    <td valign="bottom">
+                                        SPRoleType.None
+                                    </td>
+                                </tr>
+                            </table>
+                        
+                        <p>
+                            Notice that the&nbsp;<b>Approve,</b>&nbsp;<b>Manage Hierarchy</b>&nbsp;and&nbsp;<b>Restricted 
+                            Read</b>&nbsp;permission levels all map to<b>SPRoleType.None.</b>&nbsp;We will discuss the 
+                            significance of this later and show how to work with these particular SharePoint 
+                            permission levels programmatically.
+                       </p>
+
+                            <table border="1" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td >
+                                       <b>Member name</b>
+                                    </td>
+                                    <td>
+                                        <b>Description</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" >
+                                        None
+                                    </td>
+                                    <td valign="top">
+                                        Has no rights on the Web site.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" >                                        
+                                            Guest
+                                    </td>
+                                    <td valign="top">
+                                            Has limited rights to view pages and specific page elements. This role is 
+                                            used to give users access to a particular page, list, or item in a list, without 
+                                            granting rights to view the entire site. Users cannot be added explicitly to the 
+                                            Guest role; users who are given access to lists or document libraries by way of 
+                                            per-list permissions are added automatically to the Guest role. The Guest role 
+                                            cannot be customized or deleted.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" >
+                                        Reader
+                                    </td>
+                                    <td valign="top">
+                                        Has rights to view items, personalize Web parts, use alerts, and create a 
+                                            top-level Web site using Self-Service Site Creation. A reader can only read a 
+                                            site; he or she cannot add content. When a reader creates a site using 
+                                            Self-Service Site Creation, he or she becomes the site owner and a member of the 
+                                            Administrator role for the new site. This does not affect the user&#39;s role 
+                                            membership for any other site. Rights included:&nbsp;<b>CreateSSCSite</b>
+                                            ,&nbsp;<b>ViewListItems</b>,&nbsp;<b>ViewPages</b>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" >
+                                        Contributor
+                                    </td>
+                                    <td valign="top">
+                                        Has Reader rights, plus rights to add items, edit items, delete items, 
+                                            manage list permissions, manage personal views, personalize Web Part Pages, and 
+                                            browse directories. Inclues all rights in the Reader role, plus the following:
+                                            <b>AddDelPrivateWebParts</b>,&nbsp;<b>AddListItems</b>,<b>BrowseDirectories</b>
+                                            ,&nbsp;<b>CreatePersonalGroups</b>,&nbsp;<b>DeleteListItems</b>
+                                            ,&nbsp;<b>EditListItems</b>,&nbsp;<b>ManagePersonalViews</b>
+                                            ,&nbsp;<b>UpdatePersonalWebParts</b>. 
+                                            Contributors cannot create new lists or document libraries, but they can add 
+                                            content to existing lists and document libraries.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" >
+                                        WebDesigner
+                                    </td>
+                                    <td valign="top">
+                                        Has Contributor rights, plus rights to cancel check out, delete items, 
+                                            manage lists, add and customize pages, define and apply themes and borders, and 
+                                            link style sheets. Includes all rights in the Contributor role, plus the 
+                                            following:&nbsp;<b>AddAndCustomizePages</b>,&nbsp;<b>ApplyStyleSheets</b>
+                                            ,<b>ApplyThemeAndBorder</b>
+                                            ,&nbsp;<b>CancelCheckout</b>,&nbsp;<b>ManageLists</b>.WebDesigners 
+                                            can modify the structure of the site and create new lists or document libraries.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" >
+                                        Administrator
+                                    </td>
+                                    <td valign="top">
+                                        Has all rights from other roles, plus rights to manage roles and view 
+                                            usage analysis data. Includes all rights in the WebDesigner role, plus the 
+                                            following:&nbsp;<b>ManageListPermissions</b>,&nbsp;<b>ManageRoles</b>
+                                            ,&nbsp;<b>ManageSubwebs</b>,&nbsp;<b>ViewUsageData</b>. 
+                                            The Administrator role cannot be customized or deleted, and must always contain 
+                                            at least one member. Members of the Administrator role always have access to, or 
+                                            can grant themselves access to, any item in the Web site.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" >
+                                        Editor
+                                    </td>
+                                    <td valign="top">
+                                        Has Contributor rights, plus rights to manage lists. Includes all rights 
+                                            in the Contributor role. Editors can create new lists or document libraries.
+                                    </td>
+                                </tr>
+                            </table>
+                       
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">SHAREPOINT</span>
+							<ul>
+								<li><a href="/sharepoint/index.html">Sharepoint</a></li>
+                                <li><a href="/sharepoint/OverviewSharepointStructure.html">Overview Sharepoint Structure</a></li>
+                                <li><a href="/sharepoint/PermissionLevels.html">Permission Levels</a></li>
+                                <li><a href="/sharepoint/AnonymousAccess.html">Anonymous Access</a></li>
+                                <li><a href="/sharepoint/SiteCollectionDatabase.html">Site Collection Database</a></li>
+                                <li><a href="/sharepoint/ChangeDefaultFormSharepoint.html">Change Default Form</a></li>
+                                <li><a href="/sharepoint/UNABLESAVETHEFORM.html">Unable to save the form</a></li>
+                                <li><a href="/sharepoint/ManagePermissionPolicies.html">Manage Permission Policies</a></li>
+                                <li><a href="/sharepoint/EnableVersioning.html">Enable Versioning</a></li>
+                                <li><a href="/sharepoint/UnderstandingScope.html">Understanding Scope</a></li>
+                                <li><a href="/sharepoint/AllowUnsafeUpdates.html">Allow Unsafe Updates</a></li>
+                                <li><a href="/sharepoint/TimerJob.html">Timer Job</a></li>
+                                <li><a href="/sharepoint/WorkflowAssociationsProperty.html">Workflow Associations Property</a></li>
+                                <li><a href="/sharepoint/WorkflowObjectModel.html">Workflow Object Model</a></li>
+                                <li><a href="/sharepoint/FBAUserLogin.html">FBA User Login</a></li>
+                                <li><a href="/sharepoint/InfopathDataSources.html">Data Sources in Infopath</a></li>
+							</ul>
+						</li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/jquery/index.html">jquery</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

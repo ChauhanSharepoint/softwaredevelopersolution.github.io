@@ -1,0 +1,407 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Display SharePoint List Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Display SharePoint List Data Using REST and AngularJS: Part 1." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo">Display SharePoint List Data Using REST and AngularJS</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h1>Display SharePoint List Data Using REST and AngularJS</h1>
+						</header>
+						<p style="box-sizing: border-box; font-size: 14px; margin: 1em 0px; line-height: 1.5; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                            <strong style="box-sizing: border-box;">Requirement:</strong><span>&nbsp;</span>Get 
+                            all the list items and display them in a specific format. (Actually here we have 
+                            multiple options to satisfy this requirement including a List Viewer web part or 
+                            writing a simple script in JavaScript and showing the result in either a Content 
+                            Editor web part or a Script Viewer web part. Since we need to explore AngularJS 
+                            and MVC patterns using it we will go with the AngularJS option.)<br 
+                                style="box-sizing: border-box;" />
+                            <br style="box-sizing: border-box;" />
+                            We can use any type list, here I am using an OOB link list as in the following:<br 
+                                style="box-sizing: border-box;" />
+                            <br style="box-sizing: border-box;" />
+                            <img alt="" 
+                                src="https://csharpcorner-mindcrackerinc.netdna-ssl.com/UploadFile/prasham/display-sharepoint-list-data-using-rest-and-angular-js-part/Images/Picture1.jpg" 
+                                style="box-sizing: border-box; max-width: 100%; border-style: solid; border-image: none 100% / 1 / 0 stretch;" /><br 
+                                style="box-sizing: border-box;" />
+                            <br style="box-sizing: border-box;" />
+                            <strong style="box-sizing: border-box;">Figure 1:<span>&nbsp;</span></strong>OOB Link 
+                            List<br style="box-sizing: border-box;" />
+                            <br style="box-sizing: border-box;" />
+                            Since this is my first article, I&#39;ll use only one JavaScript file for now and 
+                            show the results in a Content Editor web part. In the next article I&#39;ll divide 
+                            code into multiple files as in the MVC architecture.<br 
+                                style="box-sizing: border-box;" />
+                            <br style="box-sizing: border-box;" />
+                            For using AngularJS we need to include a reference to the AngularJS. Either we 
+                            can use it directly from CDN or download and copy it into the _layouts folder or 
+                            upload into the master pages gallery like display templates. For now, I have 
+                            downloaded it and copied to the _layouts/15/AngularJSDemo folder.<br 
+                                style="box-sizing: border-box;" />
+                            <br style="box-sizing: border-box;" />
+                            The following is the snippet for displaying the data (in other words, View):<br 
+                                style="box-sizing: border-box;" />
+                        </p>
+                        <div class="dp-highlighter" 
+                            style="box-sizing: border-box; font-family: Consolas, &quot;Courier New&quot;, Courier, mono, serif; font-size: 12px; background-color: rgb(231, 229, 220); width: 665.922px; overflow: auto; padding-top: 1px; margin: 18px 0px !important; color: rgb(33, 33, 33); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+                            <div class="bar" style="box-sizing: border-box; padding-left: 45px;">
+                            </div>
+                            <ol class="dp-xml" 
+                                style="box-sizing: border-box; margin: 0px 0px 1px 45px !important; padding: 0px; border: none; list-style: decimal; background-color: rgb(255, 255, 255); color: rgb(92, 92, 92);">
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    <span class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &lt;</span><span class="tag-name" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">div</span>&nbsp;<span 
+                                        class="attribute" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">ng-app</span>=<span 
+                                        class="attribute-value" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&quot;list-module&quot;</span><span 
+                                        class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&gt;</span>&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&lt;</span><span 
+                                        class="tag-name" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">div</span>&nbsp;<span 
+                                        class="attribute" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">ng-controller</span>=<span 
+                                        class="attribute-value" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&quot;list-controller&quot;</span><span 
+                                        class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&lt;</span><span 
+                                        class="tag-name" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">ul</span>&nbsp;<span 
+                                        class="attribute" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">style</span>=<span 
+                                        class="attribute-value" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&quot;list-style-type:none;&quot;</span><span 
+                                        class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&gt;</span>&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    <span class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &lt;</span><span class="tag-name" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">li</span>&nbsp;<span 
+                                        class="attribute" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">ng-repeat</span>=<span 
+                                        class="attribute-value" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&quot;item&nbsp;in&nbsp;listitems&quot;</span>&nbsp;<span 
+                                        class="attribute" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">style</span>=&quot;align:left;<span 
+                                        class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&gt;</span>&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    {{item.URL.Description}}{{item.URL.Url}}&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&lt;/</span><span 
+                                        class="tag-name" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">li</span><span 
+                                        class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&gt;</span>&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&lt;/</span><span 
+                                        class="tag-name" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">ul</span><span 
+                                        class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&gt;</span>&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&lt;/</span><span 
+                                        class="tag-name" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">div</span><span 
+                                        class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&gt;</span>&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    <span class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &lt;/</span><span class="tag-name" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">div</span><span 
+                                        class="tag" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">&gt;</span>&nbsp;&nbsp;</span></li>
+                            </ol>
+                        </div>
+                        <span style="color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                        Here we are using the AngularJS directives, ng-app, ng-controller&nbsp;and ng-repeat. 
+                        Here we will not go into those directives in depth. There are already some good 
+                        articles on those. I have listed a few of those in the references section below.</span><br 
+                            style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                        <br style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                        <span style="color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                        The key point here is we are getting the list items in listitems and we are 
+                        looping using ng-repeat and displaying those. Since we are using a link list, we 
+                        are displaying the link URL and link description.</span><br 
+                            style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                        <br style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                        <span style="color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                        The next is a script for getting the list items using Rest APIs.</span><br 
+                            style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                        <div class="dp-highlighter" 
+                            style="box-sizing: border-box; font-family: Consolas, &quot;Courier New&quot;, Courier, mono, serif; font-size: 12px; background-color: rgb(231, 229, 220); width: 665.922px; overflow: auto; padding-top: 1px; margin: 18px 0px !important; color: rgb(33, 33, 33); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+                            <div class="bar" style="box-sizing: border-box; padding-left: 45px;">
+                            </div>
+                            <ol class="dp-c" 
+                                style="box-sizing: border-box; margin: 0px 0px 1px 45px !important; padding: 0px; border: none; list-style: decimal; background-color: rgb(255, 255, 255); color: rgb(92, 92, 92);">
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &lt;script&nbsp;src=<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;_layouts/15/AngularJSDemo/angular.min.js&quot;</span>&gt;&lt;/script&gt;&nbsp;<span 
+                                        class="comment" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">//AngularJS&nbsp;reference</span>&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &lt;script&nbsp;type=<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;text/javascript&quot;</span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    <span class="keyword" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 102, 153); background-color: inherit; font-weight: bold;">
+                                    var</span>&nbsp;spApp=&nbsp;angular.module(<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&#39;list-module&#39;</span>,&nbsp;[]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    spApp.controller(<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&#39;list-controller&#39;</span>,&nbsp;<span 
+                                        class="keyword" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 102, 153); background-color: inherit; font-weight: bold;">function</span>($scope,&nbsp;$http){&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;$http({&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    url:&nbsp;_spPageContextInfo.webAbsoluteUrl&nbsp;+&nbsp;<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;/_api/lists/getbytitle(&#39;Linkit&#39;)/items&quot;</span>,&nbsp;<span 
+                                        class="comment" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">//assuming&nbsp;web&nbsp;part&nbsp;is&nbsp;added&nbsp;on&nbsp;same&nbsp;site&nbsp;:)&nbsp;</span>&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method:&nbsp;<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;GET&quot;</span>,&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers:&nbsp;{&nbsp;<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;Accept&quot;</span>:&nbsp;<span 
+                                        class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;application/json;odata=verbose&quot;</span>&nbsp;}&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}).success(<span class="keyword" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 102, 153); background-color: inherit; font-weight: bold;">function</span>&nbsp;(data)&nbsp;<span 
+                                        class="comment" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">//got&nbsp;the&nbsp;result&nbsp;successfully</span>&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 102, 153); background-color: inherit; font-weight: bold;">var</span>&nbsp;dataResults&nbsp;=&nbsp;data.d.results;&nbsp;<span 
+                                        class="comment" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">//&nbsp;List&nbsp;Items</span>&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.listitems&nbsp;=&nbsp;dataResults;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;})&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.error(<span class="keyword" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 102, 153); background-color: inherit; font-weight: bold;">function</span>&nbsp;(data,&nbsp;status,&nbsp;headers,&nbsp;config)&nbsp;<span 
+                                        class="comment" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">//&nbsp;got&nbsp;the&nbsp;error</span>&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(<span class="string" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: blue; background-color: inherit;">&quot;error&quot;</span>);&nbsp;<span 
+                                        class="comment" 
+                                        style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: rgb(0, 130, 0); background-color: inherit;">//ToDo:Display&nbsp;proper&nbsp;error&nbsp;message/Stack&nbsp;Trace/&nbsp;Status&nbsp;Code</span>&nbsp;&nbsp;</span></li>
+                                <li class="alt" 
+                                    style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(255, 255, 255); color: inherit; line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+                                <li style="box-sizing: border-box; margin: 0px !important; padding: 0px 3px 0px 10px !important; border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgb(108, 226, 108); border-image: initial; list-style-type: decimal-leading-zero; list-style-image: initial; background-color: rgb(248, 248, 248); color: rgb(92, 92, 92); line-height: 14px; list-style-position: outside !important;">
+                                    <span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; color: black; background-color: inherit;">
+                                    });&nbsp;&nbsp;</span></li>
+                            </ol>
+                        </div>
+                    </div>
+				</section>
+                <strong style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                Result:</strong><span 
+                    style="color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"><span>&nbsp;</span>Just 
+                snap of content editor web part. Also please bear with the UI part.</span><br 
+                    style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <br style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <img alt="" 
+                    src="https://csharpcorner-mindcrackerinc.netdna-ssl.com/UploadFile/prasham/display-sharepoint-list-data-using-rest-and-angular-js-part/Images/Picture2.jpg" 
+                    style="box-sizing: border-box; max-width: 100%; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; border-style: solid; border-image: none 100% / 1 / 0 stretch;" /><br 
+                    style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <br style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <strong style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                Figure 2:<span>&nbsp;</span></strong><span 
+                    style="color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Link 
+                our JavaScript file in CEWP</span><br 
+                    style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <br style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <strong style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                References:<span>&nbsp;</span><br style="box-sizing: border-box;" />
+                </strong>
+                <br style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                AngularJS:<span>&nbsp;</span></span><a href="https://angularjs.org/" 
+                    style="box-sizing: border-box; color: rgb(30, 136, 229); text-decoration: none; cursor: pointer; font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><span 
+                    style="box-sizing: border-box; color: rgb(0, 0, 255);">https://angularjs.org/<span>&nbsp;</span></span></a><br 
+                    style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <a href="https://docs.angularjs.org/misc/downloading" 
+                    style="box-sizing: border-box; color: rgb(0, 0, 255); text-decoration: none; cursor: pointer; font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+                https://docs.angularjs.org/misc/downloading<span>&nbsp;</span></a><br 
+                    style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <a href="http://www.w3schools.com/angular/angular_directives.asp" 
+                    style="box-sizing: border-box; color: rgb(0, 0, 255); text-decoration: none; cursor: pointer; font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+                http://www.w3schools.com/angular/angular_directives.asp<span>&nbsp;</span></a><br 
+                    style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">
+                $scope:<span>&nbsp;</span></span><a href="https://docs.angularjs.org/guide/scope" 
+                    style="box-sizing: border-box; color: rgb(0, 0, 255); text-decoration: none; cursor: pointer; font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">https://docs.angularjs.org/guide/scope</a><span 
+                    style="color: rgb(33, 33, 33); font-family: 'open sans', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none; background-color: rgb(255, 255, 255)">&nbsp;</span><br 
+                    style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <br style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <strong style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+                REST APIs:<br style="box-sizing: border-box;" />
+                <br style="box-sizing: border-box;" />
+                </strong>
+                <a href="https://msdn.microsoft.com/en-us/library/office/jj860569.aspx" 
+                    style="box-sizing: border-box; color: rgb(0, 0, 255); text-decoration: none; cursor: pointer; font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+                https://msdn.microsoft.com/en-us/library/office/jj860569.aspx<span>&nbsp;</span></a><br 
+                    style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <a href="https://msdn.microsoft.com/en-us/library/office/fp142380.aspx" 
+                    style="box-sizing: border-box; color: rgb(0, 0, 255); text-decoration: none; cursor: pointer; font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+                https://msdn.microsoft.com/en-us/library/office/fp142380.aspx<span>&nbsp;</span></a><br 
+                    style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <a href="https://msdn.microsoft.com/en-us/magazine/dn198245.aspx" 
+                    style="box-sizing: border-box; color: rgb(0, 0, 255); text-decoration: none; cursor: pointer; font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+                https://msdn.microsoft.com/en-us/magazine/dn198245.aspx<span>&nbsp;</span></a><br 
+                    style="box-sizing: border-box; color: rgb(33, 33, 33); font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <a href="https://msdn.microsoft.com/en-us/library/office/jj164022.aspx" 
+                    style="box-sizing: border-box; color: rgb(0, 0, 255); text-decoration: none; cursor: pointer; font-family: &quot;open sans&quot;, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+                https://msdn.microsoft.com/en-us/library/office/jj164022.aspx<span>&nbsp;</span></a></div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">JQUERY</span>
+							<ul>
+								<li><a href="/jquery/index.html">jquery</a></li>
+                                <li><a href="/jquery/HideMenuItems.html">Hide Menu Items</a></li>
+                                <li><a href="/jquery/DisplaySharePointListData.html">Display SharePoint List Data</a></li>
+                                <li><a href="/jquery/RetrieveSharePointListItems.html">Retrieve SharePoint List Items</a></li>
+                                <li><a href="/jquery/AllItemsFromSharePointList.html">All Items From SharePoint List</a></li>
+							</ul>
+						</li>
+                        <li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/Powershell/index.html">Powershell</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <section>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>

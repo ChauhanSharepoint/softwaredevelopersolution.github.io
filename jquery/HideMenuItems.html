@@ -1,0 +1,187 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- google ads -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+    <title>Hide Menu Items</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Hide Menu Items from Personal Menu in SharePoint using JQuery. My Settings menu item from user 
+                        personal menu. Place this script code in master page to hide the menu item." />
+    <meta name="keywords" content="Sharepoint, Asp.net, Sql Server, Sql, MS Sql, HTML, CSS, XML, Bootstrap, JavaScript, asp, language, tutorial, application, framework, programming, Interview Questions, Powershell Tutorial" />
+    <link href="../assets/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="is-preload">
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4466196973375945",
+            enable_page_level_ads: true
+        });
+    </script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4466196973375945">
+    </amp-auto-ads>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+					<a href="index.html" class="logo"><strong>Hide Menu Items</a>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
+                <!-- Banner -->
+                <section id="banner">
+					<div class="content">
+						<header>
+							<h3>Hide Menu Items from Personal Menu in SharePoint using JQuery</h3>
+						</header>
+						<p>
+                            <span>&lt;script src=&quot;/_layouts/jquery-1.7.1.min.js&quot; type=&quot;text/javascript&quot; &gt; 
+                            &lt;/script&gt; </span></p>
+                        <p>
+                            <span>&nbsp;&lt;script type=&quot;text/javascript&quot;&gt;<br />
+                            $(document).ready(function($)<br />
+                            {<br />
+                            &nbsp;var objects = document.getElementsByTagName(&quot;ie:menuitem&quot;);
+                            <br />
+                            &nbsp;<br />
+                            &nbsp;for (var i = 0; i &lt; objects.length; i++) {
+                            <br />
+                            &nbsp;&nbsp;itm = objects[i];<br />
+                            &nbsp;&nbsp;if ($(&#39;#&#39; + itm.id).attr(&quot;text&quot;) == &quot;My Settings&quot;)<br />
+                            &nbsp;&nbsp;{ $(&#39;#&#39; + itm.id).remove();}<br />
+                            &nbsp;}<br />
+                            })<br />
+                            &lt;/script&gt; </span></p>
+                        <span>The above code snippet will remove the My Settings menu item from user 
+                        personal menu. Place this script code in master page to hide the menu item.</span>
+                        <header>
+							<h3>Filtering Files based on Extensions in ASP.Net FileUpload Control using JavaScript</h3>
+						</header>
+						<p>
+                            <span>​&lt;script type =&quot;text/javascript&quot;&gt;  </span>
+                        </p>
+                        <p>
+                            <span>var validFilesTypes=[&quot;bmp&quot;,&quot;gif&quot;,&quot;png&quot;,&quot;jpg&quot;,&quot;jpeg&quot;,&quot;doc&quot;,&quot;xls&quot;]; </span></p>
+                        <p>
+                            <span>function ValidateFile() </span></p>
+                        <p>
+                            <span>{ </span></p>
+                        <p>
+                            <span>var file = document.getElementById(&quot;&lt;%=FileUpload1.ClientID%&gt;&quot;);  
+                            </span>
+                        </p>
+                        <p>
+                            <span>var label = document.getElementById(&quot;&lt;%=Label1.ClientID%&gt;&quot;);  
+                            </span>
+                        </p>
+                        <p>
+                            <span>var path = file.value; </span></p>
+                        <p>
+                            <span>var ext=path.substring(path.lastIndexOf(&quot;.&quot;)+1,path.length).toLowerCase(); </span></p>
+                        <p>
+                            <span>var isValidFile = false; </span></p>
+                        <p>
+                            <span>for (var i=0; i&lt;validFilesTypes.length; i++) </span></p>
+                        <p>
+                            <span>{  </span>
+                        </p>
+                        <p>
+                            <span>if (ext==validFilesTypes[i])  </span>
+                        </p>
+                        <p>
+                            <span>{ </span></p>
+                        <p>
+                            <span>isValidFile=true; </span></p>
+                        <p>
+                            <span>break; </span></p>
+                        <p>
+                            <span>} </span></p>
+                        <p>
+                            <span>} </span></p>
+                        <p>
+                            <span>if (!isValidFile) </span></p>
+                        <p>
+                            <span>{ </span></p>
+                        <p>
+                            <span>label.style.color=&quot;red&quot;; </span></p>
+                        <p>
+                            <span>label.innerHTML=&quot;Invalid File. Please upload a File with&quot; +  
+                            </span>
+                        </p>
+                        <p>
+                            <span>&quot; extension:\n\n&quot;+validFilesTypes.join(&quot;, &quot;); </span></p>
+                        <p>
+                            <span>} </span></p>
+                        <p>
+                            <span>return isValidFile; </span></p>
+                        <p>
+                            <span>} </span></p>
+                        <span>&lt;/script&gt;</span><p>
+                        
+                        </p>
+                    </div>
+				</section>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Logo -->
+                <section id="search" class="alt">
+					<header>
+							<h4><a href="http://softwaredevelopersolution.com">Software Developer Solution</a></h4>
+						</header>
+				</section>
+                <!-- Menu -->
+                <nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						
+						<li>
+							<span class="opener active">JQUERY</span>
+							<ul>
+								<li><a href="/jquery/index.html">jquery</a></li>
+                                <li><a href="/jquery/HideMenuItems.html">Hide Menu Items</a></li>
+                                <li><a href="/jquery/DisplaySharePointListData.html">Display SharePoint List Data</a></li>
+                                <li><a href="/jquery/RetrieveSharePointListItems.html">Retrieve SharePoint List Items</a></li>
+                                <li><a href="/jquery/AllItemsFromSharePointList.html">All Items From SharePoint List</a></li>
+							</ul>
+						</li>
+                        <li><a href="/sharepoint/index.html">sharepoint</a></li>
+                        <li><a href="/aspnet/index.html">asp.net</a></li>
+                        <li><a href="/sql/index.html">sql</a></li>
+                        <li><a href="/Powershell/index.html">Powershell</a></li>
+                        <li><a href="/html/index.html">html</a></li>
+                        <li><a href="/css/index.html">css</a></li>
+                        <li><a href="/javascript/index.html">java script</a></li>
+                        <li><a href="/bootstrap/index.html">bootstrap</a></li>
+                        <li><a href="/IQ/index.html">Interview Question</a></li>
+					</ul>
+				</nav>
+                <!-- Footer -->
+                <footer id="footer">
+					<p class="copyright">&copy; All rights reserved. <a href="http://softwaredevelopersolution.com">Software Developer Solution</a>.</p>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="/../assets/js/jquery.min.js"></script>
+    <script src="/../assets/js/browser.min.js"></script>
+    <script src="/../assets/js/breakpoints.min.js"></script>
+    <script src="/../assets/js/util.js"></script>
+    <script src="/../assets/js/main.js"></script>
+</body>
+</html>
